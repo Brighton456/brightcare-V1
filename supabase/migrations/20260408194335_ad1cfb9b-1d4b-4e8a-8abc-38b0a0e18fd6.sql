@@ -1,0 +1,1 @@
+ALTER TABLE public.prescription_items ADD COLUMN IF NOT EXISTS medicine_id uuid;

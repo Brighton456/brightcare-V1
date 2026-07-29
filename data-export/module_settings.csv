@@ -1,0 +1,97 @@
+id,module_key,module_name,category,is_enabled,description,updated_at,hospital_id
+f811c32f-6569-48c6-940f-e198c9052597,patients,Patients,Hospital,t,Patient registration and records,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+80018e8b-df72-4668-a251-c0c85745decd,appointments,Appointments,Hospital,t,Appointment scheduling,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a020c25e-99cf-4627-9a4f-aabc56119fce,patient_history,Patient History,Hospital,t,View patient visit history,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+9408d3e5-2c08-495b-b84c-d7b3d5dcdf15,medical_records,Medical Records,Hospital,t,Medical records management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5aa6e684-7f22-4785-81e4-63a510a0fe3f,wait_times,Wait Times,Hospital,t,Patient wait time monitoring,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+29bba8ec-7344-4f60-8d0b-6f3caf90ffb9,patient_education,Patient Education,Hospital,t,Patient education resources,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+b7949b9f-5392-42a8-84aa-be8766266204,patient_feedback,Patient Feedback,Hospital,t,Patient feedback and surveys,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+8db22061-7be2-432a-a53d-05dc645a591d,doctor,Doctor Console,Doctor & Consultation,t,Doctor's main console,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+614599d6-d3e4-4663-a8d9-c67ad79bba70,patient_queue,Patient Queue,Doctor & Consultation,t,Manage patient queue,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+47adf4f2-82e8-4d0b-9745-53ab1c18e64b,prescriptions,Prescriptions,Doctor & Consultation,t,Write and manage prescriptions,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+e0e61f51-bc74-4ad3-ad6e-f80a4ba70223,clinical_notes,Clinical Notes,Doctor & Consultation,t,Doctor clinical notes,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3e43f7cb-dd26-4646-ab95-5c76c1c2b794,treatment_plans,Treatment Plans,Doctor & Consultation,t,Patient treatment plans,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+c09dcef3-b738-4d50-a0fb-91b42dce382a,follow_up,Follow-up Scheduling,Doctor & Consultation,t,Schedule follow-up visits,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+747df365-a134-4031-8585-55ec8660b7cb,drug_interactions,Drug Interactions,Doctor & Consultation,t,Check drug interaction alerts,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a0666a39-25ba-45b5-af0c-33272fdde8fb,referrals,Referral Management,Doctor & Consultation,t,Manage patient referrals,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+471e6dd6-3954-46c1-a265-8ee6f1b767d4,consent_management,Consent Forms,Doctor & Consultation,t,Patient consent management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+0f7aa97d-c560-4202-9828-c0fca715e892,consultation_analytics,Consultation Analytics,Doctor & Consultation,t,Consultation statistics,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3781efbf-1794-49b8-8799-b832dfd61a04,laboratory,Lab Dashboard,Laboratory,t,Laboratory overview,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3f096d5f-9442-44ff-836d-4689b17125b6,lab_pending,Pending Tests,Laboratory,t,Pending lab test queue,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5ed8fd57-0998-4c4d-b643-ed132e640a62,lab_results,Enter Results,Laboratory,t,Enter lab test results,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+1ba8e8dc-f9b7-4765-822b-c895c8917e84,lab_consumables,Lab Consumables,Laboratory,t,Lab supplies management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+9002a53f-3a12-4b48-bafa-5aa98e8ec5a2,lab_quality,Quality Control,Laboratory,t,Lab quality assurance,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+b8989544-3d61-400b-9856-a0f65798c41e,billing,Billing,Billing & Payments,t,Billing dashboard,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+20d9c785-8562-4aac-9e69-581a3f5376f2,create_bill,Create Bill,Billing & Payments,t,Create patient bills,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a992a385-89ed-4a31-be7e-4dea69b64c12,process_payment,Process Payment,Billing & Payments,t,Process payments,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+43dbc39f-f3ba-42d6-8c6b-ac1dafeeb711,insurance_claims,Insurance Claims,Billing & Payments,t,Insurance claim management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+80930734-631a-46be-97da-e08d2cf59706,refunds,Refunds,Billing & Payments,t,Process refunds,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+1d962319-8016-4aea-bf94-1424c6d15860,outstanding_balances,Outstanding Balances,Billing & Payments,t,Track unpaid balances,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+b675bb7d-2ad9-459e-8ee3-fca3f02bb6dd,billing_analytics,Billing Analytics,Billing & Payments,t,Billing statistics,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d57c8665-0a22-48f6-8a30-7b36d8b7c7cd,pos,Pharmacy POS,Pharmacy POS,t,Point of sale system,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+ac322354-35e6-4836-80be-af3c421d1f01,sales_history,Sales History,Pharmacy POS,t,Sales transaction history,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+0b7a5225-618b-43ff-b4e6-a13888552f3d,medicines,Medicines,Pharmacy POS,t,Medicine catalog,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d386b107-7661-42fc-b48d-90011ca7fc0a,inventory,Inventory,Pharmacy POS,t,Inventory management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+939e6123-5696-46bd-a485-1102f85ad5f3,inventory_analytics,Inventory Analytics,Pharmacy POS,t,Inventory statistics,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+339bb1be-8f84-4ca6-a774-cfe379830777,purchase_orders,Purchase Orders,Pharmacy POS,t,Manage purchase orders,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+7e4044aa-767a-499c-b9ed-47bbd0b2f491,supply_chain,Supply Chain,Pharmacy POS,t,Supply chain management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+dc504a63-4af2-44ae-8d42-02d0812f7b72,stock_reconciliation,Stock Reconciliation,Pharmacy POS,t,Reconcile stock,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+0ef37a04-7341-4734-bdd9-9a4825e4ef3b,controlled_drugs,Controlled Drugs,Pharmacy POS,t,Controlled substance tracking,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+52ae8230-d689-4db6-923a-aeea20399fec,expiry_alerts,Expiry Alerts,Pharmacy POS,t,Medicine expiry monitoring,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+2932e7ee-93c8-40d1-80e2-4e70c009b7a4,customers,Customers,Pharmacy POS,t,Customer management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+6eef31b6-f0f0-452d-a458-e55833845da0,suppliers,Suppliers,Pharmacy POS,t,Supplier management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+fef8cf93-6008-4b7a-83cc-9d4034831e79,inpatient,Ward Overview,Inpatient & Ward,t,Inpatient ward overview,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+791c4ec5-939c-411a-a46e-e639ca65fac3,bed_allocation,Bed Allocation,Inpatient & Ward,t,Manage bed assignments,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+87b5c1e6-ec92-43b1-a023-ad90597e063c,bed_occupancy,Bed Occupancy,Inpatient & Ward,t,Bed occupancy tracking,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+c47fccd7-b43e-473a-b026-f754dfc356b7,nurse_console,Nurse Console,Inpatient & Ward,t,Nurse dashboard,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+208120b0-219d-4ac0-ad95-49bb2e60e926,medication_administration,Medication Admin,Inpatient & Ward,t,Medication administration,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+849448b3-f7ef-45c3-992e-432c25b3dfc6,vitals,Vitals Recording,Inpatient & Ward,t,Record patient vitals,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+47a4af5b-ad38-4f37-92a9-12cb13c52466,nursing_notes,Nursing Notes,Inpatient & Ward,t,Nursing documentation,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+e1d0b93a-9016-4a69-8cad-c71de1d93cf6,ward_rounds,Ward Rounds,Inpatient & Ward,t,Ward round documentation,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+685c7c49-3072-4984-96d5-c922ac815a94,handover,Handover Board,Inpatient & Ward,t,Shift handover management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+7af6bdb9-e189-4698-87c7-573c657c48b5,diet_plans,Diet Plans,Inpatient & Ward,t,Patient diet management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+df1d98c2-6858-4eb7-a5f5-67ad6a053503,surgery,Surgery Scheduling,Inpatient & Ward,t,Surgery scheduling,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+88f728fd-a63e-493d-895e-192c6ab40574,icu,ICU Monitoring,Inpatient & Ward,t,ICU patient monitoring,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+ee14a968-caac-4b71-aa8b-7af3efb87946,discharge_checklist,Discharge Checklist,Inpatient & Ward,t,Pre-discharge checklist,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5fff97c4-99bb-46ec-95a4-ed8be082a812,discharge,Discharge,Inpatient & Ward,t,Patient discharge workflow,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d83e6ae1-a2f5-4857-8ea3-3ba04f860a39,emergency,Emergency,Departments,t,Emergency department,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+e7948947-5ff0-488d-ad39-4ee2d7e841cb,emergency_protocols,Emergency Protocols,Departments,t,Emergency protocol library,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+95729b2f-412a-4fc2-8c79-532533aa022c,opd,OPD,Departments,t,Outpatient department,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+7dd35f39-2033-47a5-b06e-d14e8c4a9b9b,radiology,Radiology,Departments,t,Radiology imaging,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+9033c63f-2b34-46fa-ba8d-37b8bb6741bf,blood_bank,Blood Bank,Departments,t,Blood bank management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5279de3b-9997-4d58-8cc3-15431bc143cc,operation_theatre,Operation Theatre,Departments,t,OT management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+17118a12-0b1b-474d-822b-69a1637ace4b,nutrition,Nutrition,Departments,t,Nutrition and dietetics,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+65074b53-61ef-4290-8186-87c24e2422eb,physiotherapy,Physiotherapy,Departments,t,Physical therapy,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5b8c2421-89a2-44b3-9758-4d623d409386,telemedicine,Telemedicine,Departments,t,Virtual consultations,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+588ee23a-0b4b-4972-ad9f-e5ff8e2dd6d6,infection_control,Infection Control,Departments,t,Infection prevention,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+083337cf-abdf-4931-b41a-6e312e75c447,quality_assurance,Quality Assurance,Departments,t,Quality improvement,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+35310ac4-867f-4fb0-896a-e7def0e31419,clinical_tools,Medical Calculators,Clinical Tools,t,Clinical calculation tools,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3fbb1754-6cbe-40c9-86d5-fcf8126bf9f6,staff,Staff Management,Administration,t,Staff management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+ea0fa72a-cd7c-49e5-9c6c-19838ee9d421,staff_directory,Staff Directory,Administration,t,Staff contact directory,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+004b4568-200a-4f24-8e05-bfe74a32aefc,staff_workload,Staff Workload,Administration,t,Workload monitoring,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+ed421c2b-32a6-469f-a7a2-9a59f47095f7,staff_checkin,Staff Check-In,Administration,t,Staff attendance check-in,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d4289930-70c6-42f7-8818-f37a6fe5295b,hr_payroll,HR & Payroll,Administration,t,HR and payroll management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+56f572c0-f193-4de3-bba7-d41308693051,attendance,Attendance,Administration,t,Attendance tracking,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+9dbffb0b-8ccb-4726-8555-eca657f60f15,performance,Performance Reviews,Administration,t,Staff performance reviews,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+316a95f9-72da-4f89-ac52-dc08efb24c18,assets,Asset Management,Administration,t,Hospital asset tracking,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+8146110d-a827-4867-8dde-22ef2c3d3cf4,compliance,Compliance,Administration,t,Regulatory compliance,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+407b5701-7c7a-43fd-98f7-6053dd1dc72c,incidents,Incident Reporting,Administration,t,Incident management,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+f23fa92f-d474-4a32-801e-1288b89fc8d3,mortality_review,Mortality Review,Administration,t,Mortality case reviews,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+8cdb9372-564e-4ef0-8f56-945519319129,audit_trail,Audit Trail,Administration,t,System audit logs,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+051b32fa-a252-4426-9dd3-f879a817bc44,reports,Reports,Administration,t,Generate reports,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+b35c52f2-c4cc-4a2f-9d57-8e55574fd9d0,end_of_day,End of Day,Administration,t,End of day reconciliation,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+bd866a4c-43f1-4eea-8a6d-acfcd592b3a3,financial_reconciliation,Reconciliation,Administration,t,Financial reconciliation,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+4904d634-66f6-49d1-a13c-867ddfe697e4,business_hours,Business Hours,Administration,t,Operating hours config,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+0d0c6d2d-c09d-414d-a6ec-0d2a94ef652d,role_permissions,Role Permissions,Administration,t,RBAC configuration,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+2b907b62-5032-46c7-b3d3-5b06a625dbfa,notifications,Notifications,Administration,t,Notification center,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3f871b2c-d3b4-44d2-b7ac-15361430a76c,documentation,Documentation,Administration,t,System documentation,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5d881dd7-a93f-4a74-bf37-83f045490889,ai_assistant,AI Assistant,AI & Analytics,t,AI-powered clinical assistant,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d2316cc6-4343-4194-a05f-6bb656d45dbf,predictive_analytics,Predictive Analytics,AI & Analytics,t,AI-driven trend analysis,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d9d514b0-cb4f-4cb5-8abb-fa3f97dfd2cf,patient_portal,Patient Portal,Digital Health,t,Patient self-service portal,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5cd88d1d-9654-425b-b4f2-6faa7d77593c,sms_notifications,SMS Notifications,Communication,t,SMS alerts to patients,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+c9cc6a78-6a25-41c3-8464-0fbd0df34d69,email_notifications,Email Notifications,Communication,t,Email communication system,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+20f3ecdf-c562-4ce2-8fb9-bf2471cc8ae5,document_management,Document Management,Administration,t,Digital document storage,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+c1713a14-0eeb-473a-9fcd-c164bee8d03b,data_export,Data Export,Administration,t,Export data to CSV/PDF,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+783fd2ad-e01d-4251-88b4-43727c9533d1,backup_management,Backup Management,System,t,Data backup configuration,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+688c267a-e211-40a1-bcad-86cb257c44b7,system_logs,System Logs,System,t,Technical system logs,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+9a6aa1f0-1331-483a-9d80-18ce147d21a6,api_management,API Management,System,t,External API integrations,2026-03-29 16:12:43.857064+00,23c72a30-2d42-442e-abcf-67009d5e51cd

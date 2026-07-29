@@ -1,0 +1,655 @@
+id,patient_id,doctor_id,consultation_no,visit_type,status,chief_complaint,symptoms,diagnosis,diagnosis_code,treatment_plan,doctor_notes,vitals,consultation_fee,follow_up_date,created_at,completed_at,hospital_id
+c66170a6-97d1-44c3-8802-cf51844f9e29,0e1da08b-417d-4c14-8405-b45cd168d76a,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-037615,inpatient,completed,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-05,2026-04-05 07:27:20.369219+00,2026-04-08 00:42:08.64+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3691f1c0-2439-414d-a775-b1f128c99681,3ae998bc-3eee-4bd0-afe8-e7abd107d9a3,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-401702,outpatient,completed,LOWER ABDOMINAL PAINS,,UTI/AKI,,"URINALYSIS- LEUC(+++),BLOOD(+++),KETONE(+++)
+RBS-12.3MMOL
+IV CEFTRIAXONE 1G + BUSCOPAN 40MG STAT
+IV CEFTRIAXONE OD*2/7
+P.O CEFIXIME 400MG BD*5/7
+P.O FLUCONAZOLE 150MG 0D DAY 1,3,5
+P.O SECNIDY 2G STAT
+P.O ACE-P 1 TAB BD*5/7
+AGGRESSIVE WATER INTAKE
+PARTNER TREATMENT",,"{""spo2"": """", ""pulse"": ""117"", ""height"": """", ""weight"": """", ""temperature"": ""36.7"", ""blood_pressure"": ""124/84""}",500.00,,2026-04-04 18:13:23.257403+00,2026-04-04 18:13:21.702+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+95f6344a-d602-472b-9afb-06df7c44ff12,faba14c6-6dff-416b-a244-0febedab8428,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-307212,outpatient,completed,HOTNESS OF THE BODY,HOTNESS OF THE BODY*3/7,ACUTE TONSILITTIS GRADE 2,,"IM PPF+DINAC+DEXA STAT 
+IM PPF+DEXA 0D * 2/7.
+P.O CEPHALEXIN 10MLS BD*5/7
+P.O IBUGESIC 7.5 MLS STAT,THEN 5MLS TDS*5/7
+IF NO IMPROVEMENT ON DAY 2,SWITCH TO CEFTRIAXONE",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""40"", ""blood_pressure"": """"}",0.00,2026-04-05,2026-04-04 17:38:28.6151+00,2026-04-04 17:38:27.212+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+28956cf2-a69a-492f-ad67-6ae536ab2197,0e1da08b-417d-4c14-8405-b45cd168d76a,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-104659,outpatient,completed,mouth sores,,Oral candidiasis,,p.o nystatin sye 100000iu qid,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-05 07:11:45.385349+00,2026-04-05 07:11:44.659+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+8d3fc473-ba67-43b7-8ab8-f3dd071eb8c2,cb95051d-77a4-42c6-bdff-6b7141ed0219,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-850546,outpatient,completed,headache,chills,,,,,"{""spo2"": """", ""pulse"": ""68"", ""height"": """", ""weight"": ""72"", ""temperature"": ""36"", ""blood_pressure"": """"}",0.00,2026-04-04,2026-04-05 06:34:13.293724+00,2026-04-05 07:25:17.835+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0332b8b0-e220-406a-b622-210021b4f4c6,9a463b2a-2566-4647-9bd0-c07a348d39c3,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-002666,outpatient,completed,cough,"cough
+runny nose",rti,,,,"{""spo2"": """", ""pulse"": ""78"", ""height"": """", ""weight"": ""12"", ""temperature"": ""34.8"", ""blood_pressure"": """"}",0.00,2026-04-05,2026-04-05 07:26:43.358094+00,2026-04-05 07:26:42.666+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+098d41c5-4c56-4740-b928-fd9b5a968196,c6849050-9ff5-4b2e-919a-c36dac138d78,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-832961,outpatient,completed,mother,"persistent fevers 
+Currently on amoxyl and pcm
+
+FHG done -wbc 5.24,hb 13.3 ,plt 294,lymp 47.7{elevated}
+
+O/E
+fgc
+{jaccold}0
+Temp 36.6
+ENT -Tongue has white patches,gum on incisor inflammed ",Oral candidiasis/Teething /Gum abcsess??? in a child with SAM on supplements [scotts and folic},,"Po ibugesic 5ml tds 5/7
+Po nystatin 100000iu qid 7/7
+po cephalexin 5ml bd 5/7
+To repeat FHG 
+","","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""9"", ""temperature"": ""36.6"", ""blood_pressure"": """"}",0.00,2026-04-07,2026-04-05 10:43:53.967953+00,2026-04-05 10:43:52.961+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4ff8ec1b-cad2-4b99-9583-9c4388f7cbef,e623dcbf-949c-433b-bf8d-f7f74ad49fd0,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-855588,outpatient,in_progress,mother,"Pt treated on 31st/03,DXof tonsillitis/pneumonia made.Was put on ppf/dexa 3/7,cephalexin 10ml bd,ibugesic 7.5ml tds and nicof.NO IMPROVEMENT NOTED 
+
+Still has fevers, productive cough, loss of asppetite
+O/E Fgc,{Jaccold}0,Temp 36.3
+
+R/S-Bae
+PLAN
+1.full haemogram-Wbc 9.12,gran and lymph Normal,HB 11g/dl,PLT 335H",Bacteremia,,"IV cef 1g OD 5/7
+PO ibugesic 10ml tds
+Po deleased paeds syrup",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""36.3"", ""blood_pressure"": """"}",0.00,2026-04-05,2026-04-05 11:34:16.60338+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6e4070ab-6572-42db-840a-abe29fbba205,9a2e6117-5d6a-4b1e-a111-b990ac894fa9,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-094877,outpatient,in_progress,"","LAPS radiating to the back
+PAIN ON MICTURITION
+FEVER/CHILLS
+GBM
+
+LNMP 1/04/26","UTI
+
+Leuc +++",,"IM DINAC 75MG STAT
+IV Cef 1g OD 2/7
+Po doxycline 100mg BD
+PO flagyl 400mg tds
+Po piroxicam bd","","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""123/88""}",0.00,,2026-04-05 12:28:16.059479+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6c519fb6-da38-451c-bb60-5e2f3213b84c,466412fb-10ae-4776-aa3b-aa0515f7d975,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-999560,outpatient,completed,"","dib
+sob
+Started on day ago..No fevers/chills,no chest pains",Pneumonia/AAA??,,"IV Dexamethasone 200mg stat 
+Nebulisation with salbutamol
+IV genta/dexa 3/7
+PO amoxiclav 625mg BD 5/7
+PO pdl 10mg BD","PATIENT DECLINED TREATMENT AFTER STABLIZATION
+given pdl 10mg bd","{""spo2"": """", ""pulse"": ""84"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""120\\94""}",0.00,,2026-04-05 09:06:40.424659+00,2026-04-08 00:42:18.088+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+f25d9ca9-8084-4332-b1b2-9e34bcfa54f5,7f0ece6d-3d40-4f07-ba49-6c0a1a769235,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-248096,outpatient,completed,"","Pt attacked yesterday at 12am by people unknown to him Kwa reli Mwiki..attained deep cut on lip and ear.
+Wound cleaned with alot of saline and dead tissue debrided n stitched
+
+",cut wound,,"PLAN
+1.wound cleaning and dressing one
+2.Im tt 0.5MLS STATS
+3.PO ampiclox 500mg tds given
+4.PO flagy tds 5/7
+5.po piroxicam bd",,"{""spo2"": """", ""pulse"": ""68"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""110/76""}",0.00,2026-04-06,2026-04-05 15:00:48.801192+00,2026-04-05 15:00:48.096+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+dda437e1-5b89-4c12-bbbc-329835854bb9,b936ff0f-db38-4b1a-8e0e-9aabb5bb1c6d,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-463487,outpatient,completed,mother,"Ear pain with discharge, no itchness
+Tooth decay
+o/e fgc,{jaccold}0.L/E-NO DISCHARGE, NO REDNESS",OTITIS MEDIA,,"Po amoxyl 7.5ml tds
+Po ibufesic tds 5/7
+P.E gentamycin ear drops",Seek dental care for the tooth,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-10,2026-04-05 16:11:04.360608+00,2026-04-08 00:46:42.269+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+fc0ec90a-e10b-46dd-b8a3-3957a5f2d997,a593051e-9977-4797-9660-30db0dd60f1a,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-079499,outpatient,in_progress,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-06 12:04:43.2467+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+23513c64-d4e0-47d1-8084-24de3469e7b7,65d75904-e461-43cb-ba7d-830a27b782f4,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-661051,outpatient,in_progress,Mother,"Severe vomiting-post prandial-many episodes
+Diarrhoea 1 episode
+Mild feveres",ACUTE G.E,,"IV ringers lactate 70ml/kg over 2.5hrs
+IV Ondansetron/Genta 2/7
+Po ctx 5mls bd 5/7
+Ct zinc/flagy as before
+Review tomorrow",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""37"", ""blood_pressure"": """"}",500.00,2026-04-06,2026-04-05 17:37:42.020709+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+fe1af7e7-7a31-4009-8a09-8a5f7f423a56,e28399ac-e054-4f34-9bc3-aad841d49ce6,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-478364,outpatient,in_progress,83YRS,"Runny nose 
+Mild cough ",RTI,,"1.amoxyl 500mg tds 5/7
+2.Tridex 10mls tds
+3.Cetrizine 181
+4.Follow up on BPS-GIVEN NIFELAT AND HCTZ",,"{""spo2"": """", ""pulse"": ""88"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""189/100""}",0.00,2026-04-09,2026-04-07 11:46:22.947845+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e5109ade-5512-42a4-b019-16ce38bbb3ad,156609bf-c64b-491f-a765-668f3e8ba33c,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-131286,outpatient,completed,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-05 19:25:34.570694+00,2026-04-08 00:42:37.36+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+83aa4b00-31ad-4d3e-bf6c-6140516528d8,3627f940-2d29-496f-8ab2-03ac8f61ae41,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-522810,outpatient,in_progress,Mother,"GBM
+Vomiting 4 episodes, post prandial
+Diarrhoea containing food contents 
+No fevers 
+O/E fgc, {jaccold]0,tonsills inflamed n swollne, foul breath .P/A-Mildly distented",Tonsillitis/Gi inf,,"IV ondansetron stat
+IV Gentamicin 80mg 3/7
+PO cephalexin 10mls BD 5/7
+PO flagyl tds 5/7
+",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""35.1"", ""blood_pressure"": """"}",0.00,2026-04-08,2026-04-07 07:53:47.554792+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+eebce708-96d1-4b7b-8367-bf3c7c01eae5,8b5b6d35-d995-4932-aab1-79622099b75a,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-741786,outpatient,completed,17 Yrs,"Brought in by brother with history of having consented  unprotected sexual contact with the boyfriend.LNMP 04/2026.
+She reportes to have engaged severally with him over the past 3 months.",,,"1.Hiv test
+2.Pdt test",,"{""spo2"": """", ""pulse"": ""88"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""123/88""}",0.00,,2026-04-07 11:34:06.752513+00,2026-04-08 00:47:31.468+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+f5853d05-dbd6-4c16-90c2-0aabcf42cf32,1c8d5f36-2a63-40d0-8126-c4601b2daa24,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-712331,outpatient,completed,headache,headache,high fever,,lab test;blood testing and malaria,,"{""spo2"": ""98"", ""pulse"": ""68"", ""height"": """", ""weight"": ""60"", ""temperature"": ""23"", ""blood_pressure"": ""122""}",0.00,2026-04-06,2026-04-06 06:41:55.593011+00,2026-04-08 00:47:05.644+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+5e1a1c87-432b-4704-b8f5-fb7acc556ae3,da5ba993-c042-432c-bf44-1a1d9d4a4a92,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-586861,outpatient,in_progress,"","COUGH
+RUNING NOSE
+",BRONCHIOLITTIS,,"IM GENTA/DEXA
+P.O CEPHALEXIN 5MLS TDS FOR 5 DAYS
+P.O PREDNISOLONE SYRUP 5MLS BD FOR 5 DAYS
+P.O IBUGESIC 5MLS TDS FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""12"", ""temperature"": ""36.7"", ""blood_pressure"": """"}",0.00,2026-04-07,2026-04-06 07:46:27.76808+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6411947f-cc5c-468b-9eef-254727a4c28f,b2340812-e015-4ce4-a34f-4aa75c9085b7,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-657736,outpatient,completed,DIFFICULTY IN BREATHING,DIB,BRONCHILITIS R/O ASTHMA,,"NEBULIZATION WITH 2.5MG SALBUTAMOL IN 2MLS NS
+IM DEXA 8MG STAT
+CT WITH AMOXIL/CURAMOL/LUNAHIST",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""37.2"", ""blood_pressure"": """"}",0.00,2026-04-06,2026-04-06 08:37:38.719228+00,2026-04-06 09:23:23.277+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4e1b8ed3-1718-47ec-a759-85412e179a6e,ebeec873-d14c-48ac-8cd5-78e17597ff53,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-381272,outpatient,completed,"",,,,IM DMPA 150MG STAT,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""74"", ""temperature"": """", ""blood_pressure"": ""109/76""}",150.00,,2026-04-06 18:14:46.451469+00,2026-04-07 04:27:55.608+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b5112bde-2d40-4223-b620-e0e052cb859c,a593051e-9977-4797-9660-30db0dd60f1a,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-335662,outpatient,in_progress,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-06 11:34:00.275129+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ad2e9fe4-c92e-4db8-be6d-81a727aebc7e,a593051e-9977-4797-9660-30db0dd60f1a,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-926738,outpatient,in_progress,LEFT UPPER LIMB PAIN ,LEFT UPPER LIMB PAIN,? GREENSTICK FRACTURE,,"IMMOBILIZATION WITH CREPE BANDAGE
+P.O FEVAPYN ETRA 10MLS TDS FOR 3 DAYS
+TOPICAL RUFENAC GEL,APPLY TWICE DAILY FOR 5 DAYS
+LEFT UPPER LIMB XRAY ",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,2026-04-06,2026-04-06 11:27:11.449504+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+20770b8f-a20a-42d6-8db3-79e95fbb6d18,10e545c9-7666-46a0-8334-160541a5b404,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-110446,outpatient,in_progress,FATHER,"pain on swallowing
+Fever and chills
+Foul smell mouth",Tonsillitis/Dermatitis,,"IV cef 1g Od 3/7
+CTX 480mg BD
+Brufen 200mg tds
+Clozole B BD
+Ctzn 10mg",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""28"", ""temperature"": ""37.8"", ""blood_pressure"": """"}",0.00,2026-04-06,2026-04-06 06:48:31.327715+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1cbe9994-5afd-4c4a-bf89-3ffc6f115c75,9259993e-3b6e-4bff-ab79-2f1a27582715,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-890894,outpatient,completed,CHEST CONGESTION,"CHEST CONGESTION
+GBM",BRONCHITIS,,"IV CEFTRIAXONE 1G OD FOR 3 DAYS
+IV DEXAMETHASONE 4MG STAT
+P.O AZYTHROMYCIN 500MG OD FOR 3 DAYS
+P.O PDL 10MG TDS FOR 3 DAYS
+P.O NICOFF 10MLS TDS FOR 5 DAYS
+P.O PIROXICAM 20MG BD FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",1300.00,2026-04-07,2026-04-07 06:19:55.627069+00,2026-04-07 16:26:02.668+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1d5070c9-6d2a-4c31-a493-4c61dbdab5c6,9f9c18b4-e88c-44a8-bcaa-ea812331cf1b,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-480905,outpatient,in_progress,LOOSE STOOL,"LOOSE STOOL
+HOB
+ABDOMINAL DISCOMFORTS",ACUTE BACTERIAL GASTROENTERITIS,,"IM PPF/DINAC STAT
+IM GENTAMICIN OD FOR 2 DAYS
+P.O CEFIXIME 5MLS BD FOR 5 DAYS
+P.O ENTAMAXIN 5MLS TDS FOR 5 DAYS
+P.O ZINC SULPHATE 5MLS BD FOR 5 DAYS
+P.O TRUMOL 5MLS TDS FOR 5 DAYS
+STOOL FOR HPAG","HpAG- Negative
+Stool for o/c- pus cells seen ","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.8"", ""blood_pressure"": """"}",500.00,,2026-04-07 07:03:05.541284+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+52351381-4a8c-4183-b8b1-b26e2b3dc772,185ed0e7-8992-4116-9fd2-2dba49cc907d,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-764252,outpatient,completed,"COUGH,VOMITING","COUGH
+VOMITING
+HOB",BRONCHIOLITIS,,"IM GENTA/DEXA OD FOR 3/7
+PO. AMOXICILIN 5MLS TDS FOR 5/7
+P.O PIRITON 5MLS TDS FOR 5/7
+P.O FEVAPYN EXTRA 5MLS TDS FOR 3/7
+TCA IF VOMITING PERSISTS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""7"", ""temperature"": ""37.2"", ""blood_pressure"": """"}",1200.00,2026-04-07,2026-04-06 13:04:29.033233+00,2026-04-06 23:10:08.449+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6c7a17b0-f5f3-4e94-898d-25471a7974ae,8b5b6d35-d995-4932-aab1-79622099b75a,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-214254,outpatient,completed,17 Yrs,"Brought in by brother with history of having consented  unprotected sexual contact with the boyfriend.LNMP 04/2026.
+She reportes to have engaged severally with him over the past 3 months.",,,"1.Hiv test
+2.Pdt test",,"{""spo2"": """", ""pulse"": ""88"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""123/88""}",0.00,,2026-04-07 11:41:58.929012+00,2026-04-08 00:47:17.02+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+45c0a5e7-5453-4f03-b3d6-878c1cca8598,eb5b1e6c-c96b-40f7-82c5-78a97833f7e4,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-096731,outpatient,in_progress,21yrs,"Chest pains 
+DIB
+Cough
+GBM
+Started 3 days ago.Premeds none,NKFDA
+O/E
+Fgc
+[JACCOLD]0
+R/S-Bilateral crepitations",PNEUMONIA,,"IV Dexamethasone/gentamicin OD 3/7
+PO CTX 960mg BD 5/7
+PO pdl 10mg bd 5/7
+PO piroxicam bd 5/7
+PO tricohist 10mls tds 5/7",,"{""spo2"": """", ""pulse"": ""63"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""92/54""}",0.00,2026-04-08,2026-04-07 13:03:20.838235+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+952f02d7-5ba6-4232-929a-c75a14a1ce5e,c8f01b2f-6998-44aa-b165-d55d0f71ac95,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-790210,outpatient,completed,"","Epigastric pains -2/7
+Premeds -omeprazole
+No fever/chills, no nausea/vomiting
+O/E Fgc,[jaccold}0,P/A-flat,epigastric tenderness",GASTRITIS??Hyperacidty,,"1.IV esomad 40mg stat + hyoscine 20mg stat
+2.Po  esomad 20mg BD before meals 
+3.Po allugel 10ml tds
+4.Po hysocine 10mg tds 5/7
+5.Secnidazole 1g stat
+6.Po Abz 400mg stat","Givren injctions, to come for orals later ","{""spo2"": """", ""pulse"": ""83"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""126/86""}",0.00,2026-04-06,2026-04-05 20:09:52.130809+00,2026-04-08 00:46:55.5+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c4196f8b-7fb1-4ad2-ac82-9062f241251f,7f0ece6d-3d40-4f07-ba49-6c0a1a769235,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-563737,outpatient,completed,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-06 13:36:07.432836+00,2026-04-07 22:26:04.218+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+dd0eb1aa-0986-4adc-bfd6-c8685f42e580,d04a1423-eb3f-40b8-8332-cd732954b049,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-024598,outpatient,completed,"",,,,IM DMPA 150MG STAT,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""61"", ""temperature"": """", ""blood_pressure"": ""113/73""}",150.00,,2026-04-06 18:42:09.811546+00,2026-04-07 04:45:32.173+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+102ae4d1-1779-4c05-9ea8-5af65a03a08e,e21dcebd-d4f6-4445-90e6-5af9a1748893,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-881258,outpatient,in_progress,dmpa,,,,,dmpa 150mg stat,"{""spo2"": """", ""pulse"": ""86"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""113/77""}",0.00,2026-06-09,2026-04-09 15:49:46.427236+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b1a4a98f-7e11-466a-89b4-a6a74a8a3c2f,dd61bf0e-186a-47a9-bb36-d3215a2dd19a,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-433484,outpatient,in_progress,"neck pain, back pain","neck pain, back pain",bacterial infection,,"",,"{""spo2"": """", ""pulse"": ""90"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""133/ 85""}",0.00,,2026-04-23 14:58:59.54901+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0d6c3f97-0185-4957-92b4-6ce51ab5ac36,c990d9dd-f798-448c-83c7-8e1ac3136790,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-071638,outpatient,completed,mother,"watery eyes 
+cough
+nasal blockage
+fast breathing
+Started 1 day ago...premeds - septrin
+O/E
+  FGC
+   {JACCOLD}0
+Temp 36.2
+R/S-Bronchial breath sounds
+        RR=50b/min
+        mild chest wall indrawing",PNEUMONIA,,"IM genta/dexa 3/7
+Po cephalexin 5ml bd 5/7
+Po piriton 5mls tds 3/7
+Po brufen 5ml tds 3/7",TP-1250,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""36.2"", ""blood_pressure"": """"}",0.00,,2026-04-05 09:24:32.540975+00,2026-04-08 00:42:23.432+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+850c4e15-7d2d-4f01-ad9b-d67e7d4189a9,4ef4c4ab-3baf-434d-bd9c-5386e8540801,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-365921,outpatient,completed,mother,"Projectile vomiting
+No diarhoea
+mild cough...
+No fevers
+
+Premeds-promethazine,azithromycin ,ABZ
+0/E
+Fgc
+[jaccold}0
+R/S - clear
+P/A-flat
+
+",GI Infection,,"Im ondansetron/genta Od 3/7
+Po ctx 5mls bd 5/7
+Ct other meds",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-06,2026-04-05 20:52:47.506989+00,2026-04-08 00:41:50.752+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+9b7ecaf7-a7f3-4680-aa09-1917859ae14e,795730f7-7d90-4902-b9be-db06929dac0e,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-942931,outpatient,in_progress,25yrs,"incomplete emptying of bladder
+Urine disclouration-DARK BROWN
+Burning sensation on micturition
+
+
+",UTI/STI,,"IM genta 240mg stat
+IV Cef 1 g OD 3/7
+Azithro 1.5g stat
+Po secnidazole 1g stat",To bring partner,"{""spo2"": """", ""pulse"": ""81"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""122/78""}",0.00,2026-04-08,2026-04-07 17:10:47.047717+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4e9e5b38-49c3-4902-bf15-a8a1134dfe23,6d74ee65-8884-4c7e-b62e-24fd75220202,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-056242,outpatient,in_progress,1yr 3 months,"Fevers
+cough 
+O/E
+Fgc
+[jacold}0
+r/s - bronchial sounds
+Tonsils inflamed",Tonsillitis?Pneumonia,,"IM ppf/dexa 3/7
+Po cephalexin 5ml bd 5/7
+Ppo ibugesic tds 5/7
+Popirinox 5ml tds",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-08,2026-04-08 03:12:40.573701+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+9fbb1ef8-ef82-4f74-b0a7-c65d78c470a6,022ec1c3-ac37-4aab-b0cb-1266baacad5b,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-137117,outpatient,completed,"",WOUND BTWN FINGERS WITH MILD ITCHNESS,TINEA MANUUM,,"Apply dazole cream BD
+P.O terbinafine tab s OD
+PO ctzn 10mg OD
+",,"{""spo2"": """", ""pulse"": ""68"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""117/76""}",0.00,2026-04-08,2026-04-07 14:10:41.619318+00,2026-04-08 00:47:42.596+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c9c890b9-6c02-4fd9-88c0-7baeb67790cf,4066d2a1-f53a-45bb-9b3c-78510942c764,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-760758,outpatient,completed,"MID BACK PAIN,HEADACHE","MID BACK PAIN
+HEADACHE","?HYPERACIDITY
+?PLEURITIS",,"IV CEFTRIAXONE 1G STAT
+IM TRAMADOL 100MG STAT
+P.O ESOMOD 20MG BD FOR 2 DAYS
+P.O TAMEPYN 1 TAB BD FOR 2 DAYS
+CHEST XRAY UPON NO IMPROVEMENT",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",620.00,2026-04-09,2026-04-08 17:51:05.359908+00,2026-04-09 04:02:39.792+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+f0aef1e0-792e-4e3d-add7-5a817a0e685a,4a4d1990-ad54-4753-bd5e-896eaebacd09,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-378845,outpatient,completed,2.11 years,"Pt on inj at Demas maji due to RTI n Tonsillitis
+Demas advised to Ct genta and dexa
+Today-loss of appetite,no other complains
+O/E Fgc,{jaccold}0,ENT normal.child has dry skin which the mother reports is normal..since birth","",,im genta/dexa,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""12"", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-07 19:48:03.190576+00,2026-04-08 05:52:21.523+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ea010c23-a7a2-46ee-ae41-7dbd4cf04f4d,73587148-ff73-4a1d-b742-b31233a0f817,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-650273,outpatient,in_progress,25yrs,"Headache
+Chills
+GBM
+Cough
+O/E -Fgc,{JACCOLD}0
+Vitals- normal
+R/S -",Bacteremia,,"IV dinac 75mg 0D 2/7
+PO amoxiclav bd
+PO tamepyn tabs BD 2/7
+PO tridex 10mls tds
+","","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-07 16:49:14.426068+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+5dec7b0b-8572-4adc-850c-166c239c19a9,7f1085a4-a4f2-4c9b-bc7c-4e736eab8614,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-030020,outpatient,completed,"HOB,VOMITING,RUNNING NOSE","HOB
+COUGH
+RUNNING NOSE",ACUTE TONSILITTIS GRADE 1/RHINITIS,,"PR GACET 125MG STAT
+IM PPF/DINAC/ONDEX STAT
+IM PPF/DEXA 0D FOR 2 DAYS
+P.O CEFUROXIME 5MLS BD FOR 5 DAYS
+P.O TRIDEX 2.5MLS TDS FOR 5 DAYS","","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""12"", ""temperature"": ""38.8"", ""blood_pressure"": """"}",1000.00,2026-04-09,2026-04-08 12:38:54.566563+00,2026-04-11 00:21:55.792+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+625d3195-1f59-4ff6-a2f3-83277af03c66,f8170816-091b-4ccd-8271-d2e90912d4a1,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-260423,outpatient,completed,PUSTULES ON SKIN,"PUSTULES ON SKIN,ON AND OFF",ECZEMA ,,"TOPICAL XTRADERM CREAM,BD FOR 10 DAYS
+TOPICAL EPIMAX CREAM,BD FOR 1 MONTH",,"{""spo2"": """", ""pulse"": ""76"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""92/61""}",250.00,2026-04-08,2026-04-08 14:06:05.090249+00,2026-04-09 00:09:43.413+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0cb12b54-382a-4995-b6fe-8a9fc65831b1,8661a81c-7f5b-495d-a0a1-3d501656a3ec,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-066748,outpatient,in_progress, bp,Knowm dm/htn on follow up,Knowm dm/htn on follow up,,Knowm dm/htn on follow up,"RBS 8.8MMOL
+BP 107/71mmhg P 78","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-09,2026-04-09 08:56:11.510972+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+898a3980-838d-446b-8738-ef877ad8359a,722b9987-dc62-4eca-898a-f535d17d84cd,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-407808,outpatient,completed,44 yrs,Nail prick,Nail prick,,,"rbs
+PO brufen 400mg tds
+Advised on danger signs","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-09,2026-04-09 09:01:52.47662+00,2026-04-09 20:11:13.761+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6428c428-d4a2-47a2-8e3a-36fa1a3bfc35,d26b3f81-a5cf-496d-84f5-0eb6356101b2,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-247062,outpatient,in_progress,HEADACHE AND DIZINESS FOR 6 DAYS,"HEADACHE
+DIZZINESS","PNEUMONIA
+?NEWLY DIAGNOSED HTN",,"RBS
+MRDT
+IV PCM 1G STAT
+IV CEFTRIAXONE 1G OD FOR 3 DAYS
+P.O CEFUROXIME 500MG BD FOR 5 DAYS
+P.O MYOSPAZ 1 TAB BD FOR 3 DAYS
+ALTERNATE DAY BP CHECKUPS WITH POSSIBLE HTN DRUG INNITIATION","9th-169/97mmhg 
+p-64","{""spo2"": """", ""pulse"": ""80"", ""height"": """", ""weight"": ""82"", ""temperature"": """", ""blood_pressure"": ""160/105""}",2200.00,2026-04-09,2026-04-08 09:05:51.332789+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7e701d75-d71b-4b59-91af-00d41f9c02fb,52b8d33f-9cc2-4f64-9d8d-5b5fbbebd7e6,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-143473,outpatient,completed,30,ANC,normal pregnancy,,obs u/s,"","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""70"", ""temperature"": """", ""blood_pressure"": ""90/60""}",0.00,2026-04-09,2026-04-09 08:07:28.151056+00,2026-04-09 18:09:42.161+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3582b5f7-c930-4cba-a261-6bd31b26b396,d90e1f9b-80a4-4a82-a8a9-f3d76bd643f5,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-516895,outpatient,completed,"","RUNNING NOSE
+COUGH
+HOB",ACUTE TONSILLITIS GRADE 1,,"IM GENTA/DEXA OD FOR 3 DAYS
+P.O COTRIMOX 5MLS BD FOR 5 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",650.00,,2026-04-20 17:17:02.97564+00,2026-04-21 03:20:44.509+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e2951d63-ffbf-4974-8bb8-2bc0a7cca719,97db7987-c9ef-4183-96dc-a3dd98f6b227,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-164453,outpatient,completed,7 yrs,"neck pain
+No fevers,no othe associated symptoms
+
+Ent-normal","Myalgia
+",,"po ibuprofen tds 5/7
+Po dinac gel apply bd",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""36.1"", ""blood_pressure"": """"}",0.00,2026-04-09,2026-04-09 08:41:09.145661+00,2026-04-09 18:54:56.854+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d8b112ed-f88d-409e-a4b6-dc25102e82aa,66c1fc83-1437-45b7-8619-ed3a4869011d,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-390956,outpatient,in_progress,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-09 15:08:15.921864+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e23de272-6ae7-48f3-a3a1-de396d22f210,7bf1c3d9-7592-431e-8bca-a37250211046,67209af2-ee38-4915-80ca-791e52ad413c,CON-148320,outpatient,in_progress,breast engorgement with yellowish discharge,,mastitis,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-23 12:25:49.091994+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+aba13732-92fd-4aba-9a2a-77e3edc5726d,dc92db4a-0c1c-4994-b60a-46d37672bf1a,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-484127,outpatient,in_progress,urine incontinence,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-23 18:03:10.595172+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+aac47be4-f217-4834-8d3b-e918cfb891e4,39bf5f71-be3b-4e67-a6ad-13208ec0542c,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-114373,outpatient,in_progress,3 YRS,"Fevers
+Headache
+Abd pains 
+Persistent cough
+No vomiting, diarrhoea
+
+Ent-Swollen with white patches",Tonsillitis,,"IM ppf/Dexa 3/7
+PO Cephalexin bd 5/7
+Ct cetamol 3/7",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-11 10:56:59.262968+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+9a9bcaac-8c34-49a6-8a60-0e268d551db8,d5438ba1-9a66-4ee0-9228-a243edaa0464,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-431675,outpatient,completed,FP INSERTION+ PDT URINE,,,,"PDT URINE
+IMPLANON INSERTION",,"{""spo2"": """", ""pulse"": ""74"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""121/80""}",600.00,,2026-04-10 17:15:36.744295+00,2026-04-11 03:19:09.665+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+2d5b6878-0838-4833-9649-8194aae8aa3b,d46cb593-668c-4702-a317-2a309ee3564a,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-254968,outpatient,completed,"","HEAD ACHE
+DIZZINESS",ANAEMIA,,P.O RANFERON 1OMLS BD FOR 1 MONTH,PT HAD BEEN DIAGNOSED WITH ANAEMIA AT A PERIPHERAL FACILITY AND A BLOOD BUILDER SUBSCRIBED,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",750.00,2026-04-10,2026-04-10 10:49:19.832815+00,2026-04-10 20:52:32.311+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ba0fc1dd-e33f-4f6c-95ce-f3dca641c8c9,8762a2c6-4c40-4a7e-97d6-920179ea885d,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-561449,outpatient,in_progress,4YRS,"Fever 
+Headache
+O/E tonsills inflamed",Tonsilitis,,"Gazet stat thrn
+Po fevapyn tds 5/7
+Po cefalexin tds 5/7
+
+Declined ijections",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.6"", ""blood_pressure"": """"}",0.00,2026-04-11,2026-04-11 16:04:27.184163+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6657552c-6b4a-4286-b6bf-52169fcd0077,62f7d2f8-b129-42fc-b1b2-d6dc12536ae2,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-652127,outpatient,completed,29,"LAPS rAdiating o the back
+fevers
+Chills",uti??,,Declined full tx cause of financial constraints,"Po ctx 960mg BD 5/7
+PO diclomor bd 5/7","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""37.4"", ""blood_pressure"": """"}",500.00,2026-04-09,2026-04-09 16:35:57.17939+00,2026-04-09 16:39:55.114+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+eac79b60-2569-479d-9f7f-8247f5da630a,91eb2a0b-3c7f-4fc4-9f56-9d4cfe7bd13f,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-574540,outpatient,completed,"",,,,P.O TRAMADOL 100MG BD FOR 5 DAYS,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",100.00,2026-04-10,2026-04-10 10:54:39.440982+00,2026-04-10 20:56:59.523+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4bdcc557-1222-4b38-8b4c-c79903b3721f,0751162e-3740-4720-80e7-1ba2bf20a9a2,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-597430,outpatient,completed,2YRS 10 MONTHS,"HEAD ACHE
+THROAT PAIN",ACUTE TONSILITTIS GRADE 1,,"IM PPF/DEXA OD FOR 3/7
+P.O CEPHALEXIN 7.5MLS BD FOR 5 DAYS
+P.O IBUGESIC 5MLS TDS FOR 5 DAYS
+WARMS SALINE GAGGLES",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""12"", ""temperature"": ""36.2"", ""blood_pressure"": """"}",1150.00,2026-04-10,2026-04-10 19:15:02.6779+00,2026-04-11 05:19:22.036+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+afa31982-0964-4a9f-9d11-4a6f94bb6110,59d2c047-f155-4397-bf39-8c0a2fe114cc,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-898838,outpatient,completed,8yrs,"Fevers
+2 episodes of diarrhoea
+Lower abdominal pains
+O/E Fgc,{JACCOLD}0
+
+ENT-Normal
+",Food poisoning??\ bactaerial gastroenteritis,,"1.IV RL 500mls STAT + HYOSCINE STAT
+2.IM PPF/DINAC STAT then genta 80mg OD 2/7
+3.Cefixime 200mg BD /7
+4.Flagyl 200mg tds 5/7
+5.Po pcm 500mg tds 3/7
+6.ABZ 400mg stat",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.6"", ""blood_pressure"": """"}",0.00,,2026-04-09 13:03:23.960674+00,2026-04-10 02:53:31.109+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+32fb0278-b530-4c07-9c24-4635c1f70c8e,06588464-9bf7-4498-9760-a5c48e708bd5,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-199657,outpatient,in_progress,"","GBM
+CHILLS
+DIBR/S -BILATERAL CREPS",BRONCHITIS,,"IV genta/dexa 3/7
+PO ctx 960mg bd 5/7
+PO dexamar bd 5/7
+Po ace-p bd ",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""122/88""}",0.00,2026-04-11,2026-04-11 16:31:45.161689+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c2808881-d63d-4801-b4ad-c0e6097e13d9,e50b53e5-3062-4fcf-a169-3ce7dcf5ae5d,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-918316,outpatient,completed,"",CHEST PAIN,PNEUMONIA,,"IV CEFTRIAXONE 1G OD FOR 3/7
+P.O ACETAL MR 1 TAB BD  FOR 3/7",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",920.00,2026-04-10,2026-04-10 20:10:23.641839+00,2026-04-11 06:12:35.211+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+9ceff57d-f737-4cc8-88df-b25aeca62923,c1033347-4f29-43be-a63a-3989027ab9ce,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-572561,outpatient,in_progress,1 yr 3 months,"HOB
+RUNNING NOSE",ACUTE TONSILLITIS GRADE 2,,"PR GACET 125MG STAT
+IM PPF/DINAC STAT
+IM PPF/DEXA OD 2/7
+P.O CEPHALEXIN 5MLS TDS 5/7
+P.O IBUGESIC 5MLS TDS 3/7
+P.O PIRITON 5MLS TDS 5/7","","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.3"", ""blood_pressure"": """"}",1500.00,2026-04-09,2026-04-10 10:21:17.226573+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+98f0afb4-db25-428b-b4d1-85346a78cd58,3dbfeff4-d529-4a22-a08a-ed5bf2e25ed7,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-676238,outpatient,in_progress,2.5YRS,"Cough startde 1 day ago
+NO fevers",RTI,,"","erythromycin 5mls tds 5/7
+Ct cough syrup at home -BENALY","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""35.8"", ""blood_pressure"": """"}",0.00,2026-04-09,2026-04-09 17:43:01.389582+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+a47a341e-8ef2-4ece-a692-ac07333ad3d6,c04d8d7e-2c0d-4862-a9ed-992c64bc6d4b,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-917476,outpatient,in_progress,"",DYSURIA FOR 3 DAYS,UTI,,"URINALYSIS
+IM GENTA 240MG STAT
+IV CEFTRIAXONE 1 G OD FOR 3 DAYS
+P.O CEFIXIME 400MG BD FOR 5 DAYS
+P.O AZITHROMYCIN 1.5G STAT
+P.O FLUCONAZOLE 150MG DAY 1,7
+P.O SICLOFEN MR 1 TAB BD FOR 3 DAYS",,"{""spo2"": """", ""pulse"": ""80"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""122/87""}",2200.00,2026-04-10,2026-04-10 07:23:42.143805+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d7a8b5cf-0d68-45c3-990d-802617435972,146d47fa-07b6-4896-bd64-14380708f9a3,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-088216,outpatient,completed,3YRS 4 MONTHS,CHILLS,"BACTEREMIA
+R/O MALARIA",,"MRDT
+RBS
+IM PPF/DINAC STAT
+IM PPF OD FOR 2/7
+P.O CEFIXIME 5MLS BD FOR 5 DAYS
+P.O FEVAPYN EXTRA 5MLS
+KEEP WARM AND HYDRATE",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""36.4"", ""blood_pressure"": """"}",1200.00,2026-04-10,2026-04-10 19:23:13.445828+00,2026-04-11 05:27:33.558+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7748e15f-a86a-4984-8b2a-e449f1169427,89ce2cd2-3304-4439-8ddb-3dc1337e3a71,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-319138,outpatient,completed,"HEAD ACHE, DIZZINESS ON AND OFF","HEAD ACHE
+DIZZINESS","BACTEREMIA
+IRON DEFICIENCY ANAEMIA",,"FBC
+IV CEFTRIAXONE 1G OD FOR 3 DAYS
+P.O PIROXICAM 20MG BD FOR 5 DAYS
+P.O IFAS I TAB OD FOR 1/12",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",2000.00,,2026-04-10 17:47:04.281113+00,2026-04-11 04:00:12.809+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b5493d88-d348-4050-a54c-5db248a93825,be5c8a3c-b5aa-4f8e-9fca-c937b91a2dc6,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-853319,outpatient,completed,7 yrs,"HOB
+VOMITING
+ABDOMINAL DISCOMFORT",ACUTE BACTERIAL GE,,"IV GENTAMICIN+ONDEX+BUSCOPAN STAT
+IV GENTAMICIN OD FOR 2 DAYS
+P.O TRIMOXOL 10MLS BD FOR 5/7
+P.O METRONIDAZOLE 7.5MLS TDS FOR 5/7
+P.O TRUMOL 7.5MLS TDS FOR 3/7",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""26.5"", ""temperature"": ""38.7"", ""blood_pressure"": """"}",1100.00,2026-04-11,2026-04-11 06:25:58.621251+00,2026-04-11 16:34:02.17+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+bd3c5174-0dc9-4824-b222-a59330fc0877,ea2827c7-5bb9-4b48-83a8-f10e98548595,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-849323,outpatient,completed,23 YRS,"CHEST PAIN
+COUGH
+GBM",PNEMONIA,,"MRDT
+RBS
+IV CEFTRIAXONE 0D FOR 3 DAYS
+IV DEXAMETHASONE FOR 3 DAYS
+P.O CEFUROXIME 500MG BD FOR 5 DAYS
+P.O PREDNISOLONE 10MG TDS FOR 3 DAYS
+P.O ACETAL MR 1 TAB BD FOR 3 DAYS
+P.O AMBROXOL 10MLS TDS FOR 5 DAYS",,"{""spo2"": """", ""pulse"": ""91"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""117/86""}",1600.00,2026-04-12,2026-04-12 10:29:14.702563+00,2026-04-12 20:34:56.377+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d8dd422c-a7f4-4dfe-a21a-88a5aa809bc6,33d0de48-0078-40f4-9e32-5a7a04382dd1,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-044906,outpatient,in_progress,cut wound,bleeding,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,2026-04-12,2026-04-13 17:22:31.048637+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+bb59b77b-d876-46a8-b1b4-f36d0da3c606,8819a697-090b-437e-9986-c28577cbc1ec,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-614705,outpatient,completed,32 YRS,"Mild pains on micturition
+LAPS radiating to the back
+Lnmp -17/03/26, on oral contraceptives, Para 2+1
+
+O/E- Fgc,{Jaccold}0
+P/A- FLAT",UTI??,,"1.U/A
+2.PDT","IV CEF 1g OD 3/7
+PO doxy 100mg BD 5/7
+PO flagyl 400mg tds 5/7
+PO piroxicam bd 5/7
+
+11th/04-Has severe epigastric pains  ,given Esomad inj n TABS                                                                                                                                                                                                                                                                                     
+","{""spo2"": """", ""pulse"": ""78"", ""height"": """", ""weight"": ""86"", ""temperature"": """", ""blood_pressure"": ""131/95""}",0.00,2026-04-09,2026-04-09 07:41:59.307676+00,2026-04-13 08:24:30.927+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+307beaea-58a2-44d1-8086-88a66410a1ee,e21dcebd-d4f6-4445-90e6-5af9a1748893,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-000639,outpatient,waiting,"",,"",,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""78"", ""temperature"": """", ""blood_pressure"": ""87""}",0.00,,2026-04-13 13:28:26.144522+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3e38a6fe-913d-4e4b-b8e0-da97d44fc7da,e54ea88d-3f97-42a1-8639-9315b5921d3a,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-465858,outpatient,completed,4 YRS 4 MONTHS,"PUSTULES
+ITCHY SKIN",CHICKEN POX,,"P.O FLUCLOXACILLIN 5MLS QID FOR 5 DAYS
+P.O ZEDITONE 5MLS TDS FOR 5 DAYS
+P.O IBUGESIC 7.5MLS TDS FOR 3 DAYS
+TOPICAL CALAMINE LOTION,APPLY TWICE DAILY  FOR 10 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",550.00,,2026-04-12 11:29:31.392523+00,2026-04-12 21:37:20.167+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+f09bde7c-b3d5-4ef5-a914-52aaff3fd23b,5f5f7485-ada2-4baf-aaf5-5320c17b1af4,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-993306,outpatient,completed,"",PV BLEEDING FOR 1 WEEK,"THEATENED ABORTION
+INCOMPLETE ABORTION",,"PDT URINE
+PELVIC U/S ",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",100.00,,2026-04-12 12:28:18.847839+00,2026-04-12 22:30:40.353+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+a93b5edf-e2ac-43e3-9876-c7dbc08a4501,cf55d0f0-22b7-41f5-948b-21e86dc57a07,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-976511,outpatient,in_progress,chest pain,chest pain,pneumonia,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-13 16:14:42.544373+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b33664d2-795d-4934-9b0b-d2d4ca6315aa,e5dfafff-39e1-4da7-8d10-79387a4d210e,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-300471,outpatient,completed,"",MID BACK PAINS,?GASTRITIS,,"IV ESOMEPRAZOLE 40MG STAT
+PO ESOMOD 20BD FOR 5 DAYS
+P.O PIROXICAM 20MG BD FOR 5 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",150.00,,2026-04-12 12:33:26.126006+00,2026-04-12 22:36:10.27+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c9b9409c-3699-456e-87a4-c70db21b17f1,88576d1a-c59d-4e64-a5d4-57e41093726c,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-888497,outpatient,completed,10 MONTHS,"VOMITING
+LOOSE STOOL",ACUTE BACTERIAL GE,,"STOOL FOR O/C
+IM ONDEX 3MLS STAT
+P.O ERYTHROMICIN 5MLS TDS FOR 5 DAYS
+P.O ENTAMAXIN 2.5MLS TDS FOR 5 DAYS
+P.O ZINC SULPHATE 20MG OD FOR 10 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""37.0"", ""blood_pressure"": """"}",700.00,2026-04-12,2026-04-12 10:46:33.907862+00,2026-04-12 20:52:30.375+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b9f3f124-6a3e-431c-9327-476cb3d1277b,32018233-02df-4a92-b9c8-a2c19f261ffc,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-204758,outpatient,completed,"",BLOODY LOOSE STOOL FOR 1 DAY,"ACUTE BACTERIAL GE
+?SHIGELLA DYSENTRY",,"SAT
+HPAG
+IV GENTAMICIN 160MG 0D FOR 3 DAYS
+P.O CEFIXIME 400 BD FOR 5 DAYS
+P.O TINIDAZOLE 2G OD FOR 3 DAYS
+P.O ESOMOD 20MG BD FOR 5 DAYS",,"{""spo2"": """", ""pulse"": ""75"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""125/80""}",1900.00,,2026-04-12 15:01:50.159911+00,2026-04-13 01:20:18.581+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d5f7ad74-47de-458d-b564-5c2b0ea3610f,3ae31bf7-0361-4b45-b344-94935584eb15,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-857743,outpatient,completed,"cough, hob , loss of appetite",,"",,"",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""6"", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-13 13:42:43.229505+00,2026-04-14 00:01:47.349+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+8aa4c862-f709-4fe5-9a71-a64dfa42deb0,8bd1a614-070c-4018-b139-d3a61be9966b,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-619334,outpatient,completed,itching on the vaginal,itchnes vaginal,UTI,,"I.V Gentamycin 80mg odx3\7,   p.o doxy 100mg bd x 5\7,p.o piroxicam 20mg bd x 5\7                           ",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-13 15:18:45.337045+00,2026-04-14 01:21:16.845+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0a89745f-50dd-48ab-affb-bce669455707,8bd1a614-070c-4018-b139-d3a61be9966b,e36f1471-f777-497a-a06f-f2798b8bc3a6,CON-137244,outpatient,in_progress,vaginal itchness,itchness,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-13 16:34:03.342862+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+054bea19-ea4a-4628-80b5-fc39ee37e68f,70426d51-5a68-47a6-a29e-61836693b444,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-967565,outpatient,completed,"", BLEEDING CUT WOUND FOR 1 DAY,SOFT TISSUE INJURY SECONDARY TO TRAUMA,,"WOUND CLEANING AND DRESSING
+IM TT 0.5MLS STAT
+P.O AMPICLOX 500MG TDS FOR 5 DAYS
+P.O IBUPROFEN 400MG TDS FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",400.00,,2026-04-14 13:54:33.506667+00,2026-04-15 00:00:09.106+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1faebacc-8dec-4cbc-b73f-12433242a189,2021dd65-bb39-4761-aed6-c35ce8f208a5,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-044807,outpatient,completed,"",,HTN/DM,,"BP CHECK UP
+RBS",,"{""spo2"": """", ""pulse"": ""84"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""125/71""}",120.00,,2026-04-14 14:29:10.830658+00,2026-04-15 00:31:24.886+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+99bce9c4-368e-48b2-b6f0-3cd58bdc1acd,e1be373e-6579-442e-a0f7-721ccfbbaf21,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-124416,outpatient,completed,40 YRS,"COUGH 
+GBM
+CHEST PAINS",BRONCHITIS/ACUTE TONSILLITIS,,"IV CEFTRIAXONE OD FOR 3 DAYS
+OV DEXAMETHASONE 4M OD FOR 3 DAYS",,"{""spo2"": """", ""pulse"": ""80"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""95/78""}",1200.00,,2026-04-14 15:03:50.358022+00,2026-04-15 01:07:37.423+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1b19c840-e83c-4ab4-ad93-8fba2f4be410,33f2fb10-057e-491c-a34d-6ac813443ed4,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-829846,outpatient,in_progress,system,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-14 16:07:16.893516+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3a49709d-0eb2-4f4b-aa1a-5f419f78b916,83efe2a2-5fe9-4f7c-b72e-649de37211dc,fb144da5-0e5b-454a-bb5c-522b2cc995dc,CON-469803,outpatient,completed,1 YR 7 MONTHS,"DIB
+COUGH
+FAST BREATHING
+HOB","PNEUMONIA
+LARYNGOTRACHEOBRONCHITIS",,"NEBULIZATION WITH 2.5MG SALBUTAMOL IN 2MLS NS FOR 15 MINUTES THEN REASSES.REPEAT WITH COMBIVENT IF NO IMPROVEMENT.
+IV GENTAMICIN 80MG 0D FOR 3 DAYS
+IV DEXAMETHASONE 4MG FOR 3 DAYS
+P.O ACINET 156.5MG BD FOR 5 DAYS
+P.O SALBUTAMOL SYRUP 5MLS BD FOR 5 DAYS
+P.O IBUGESIC 5MLS TDS FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",1650.00,2026-04-13,2026-04-13 04:26:15.889232+00,2026-04-13 16:02:00.946+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+8998b8da-ded9-4bbb-b058-bad79528c120,33f2fb10-057e-491c-a34d-6ac813443ed4,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-681078,outpatient,in_progress,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-20 18:44:41.920174+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c7f6dde4-d654-4233-b018-dad11856fee7,86a60eb8-8b65-4833-9ef5-e8ab663e4dde,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-032950,outpatient,completed,4 YRS,CUT WOUND AT THE FRONTAL LOBE,SOFT TISSUE INJURY SECONDARY TO TRAUMA,,"WOUND CLEANING AND DRESSING
+IM TT O.3MLS STAT
+P.O AMPICLOX 5MLS TDS FOR 5 DAYS
+P.O FEVAPYN 5MLS TDS FOR 5 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-14 16:58:58.683478+00,2026-04-15 03:01:38.277+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+76cb2e2a-3a0b-41e3-91d5-c28bb36a1ab3,1b9f3e7e-183a-401e-bc6d-dadf841e3603,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-891411,outpatient,in_progress,"",,,,PDT URINE,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""74"", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-16 14:13:17.576009+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+53416297-7398-482e-8899-48a058c3b5d6,922ff8bb-d756-4b17-b6bb-abbf230ba697,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-355685,outpatient,completed,"","CHEST PAINS
+SHOULDER PAIN",PNEUMONIA,,"IV GENTA 160MG 0D FOR 3 DAYS
+IV DEXA 4MG OD FOR 3 DAYS
+P.O NELAC 100MG BD FOR 
+P.O OMEPRAZOLE 20MG BD FOR 5 DAYS",,"{""spo2"": """", ""pulse"": ""56"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""105/78""}",1000.00,,2026-04-14 18:11:01.939551+00,2026-04-15 04:14:42.035+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3cacaaf3-f8d7-44f5-8f00-2d36e828e49a,61234381-54cc-425a-9e9d-4815e4e035a5,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-296910,outpatient,completed,"",CUT WOUND ON THE ANTERIOR ASPECT OF THE LEFT FOREARM FOR 1 DAY,SOFT TISSUE INJURY SECONDARY TO PENETRATING TRAUMA,,"WOUND CLEANING AND DRESSING
+IM TETANUS 0.5MLS STAT
+IM TRAMADOL 100MG STAT
+P.O AMPICLOX 500MG TDS FOR 5 DAYS
+P.O IBUPROFEN 400MG TDS FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",800.00,,2026-04-15 05:50:02.961553+00,2026-04-15 15:54:21.772+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+eea2b4b4-0ad9-445a-be57-b39d923bc616,db2fdf96-eca7-4ef6-9002-c200aa8b5ad7,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-565390,outpatient,in_progress,"laps, backpain",laps,uti,,,,"{""spo2"": """", ""pulse"": ""72"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""130/88""}",0.00,,2026-04-15 15:37:51.194844+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c76a702c-6648-458a-825a-101d5508f6c8,138b3bb2-bf20-48de-8efe-5a2628715a24,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-760679,outpatient,in_progress,"joint pain, sore throat, cough",joint pain sore throat,,,,,"{""spo2"": """", ""pulse"": ""71"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""122/83""}",0.00,,2026-04-15 15:57:46.461702+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+665c9db4-95da-4c4f-b379-d232f26c6d41,b56bbfee-7675-4bbf-bec7-e95ed06d9a24,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-495213,outpatient,completed,SICK OFF SHEET,,GASTRITITS SECONDARY TO PUD,,SICK SHEET,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",300.00,,2026-04-16 08:50:00.71722+00,2026-04-16 18:55:05.418+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+30284260-17cf-4a05-9f68-89b9413a7d49,621a421f-6014-4483-93e4-ff9a94d2ed93,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-056370,outpatient,in_progress,"cough, hob","cough, hob",,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""37.7"", ""blood_pressure"": """"}",0.00,,2026-04-15 17:59:22.271697+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+cc5d792e-cf2d-4571-961c-e3fb7ee2caf8,9cf45925-c0a8-4042-a7a4-b396bfc7dc7d,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-140844,outpatient,completed,"","GBM
+",BACTEREMIA SECONDARY TO PNEUMONIA,,"IV RINGERS LACTATE 500MLS STAT
+IV GENTA 80 MG STAT
+P.O DICLOMOR 100MG BD FOR 5 DAYS
+CT WITH AMOXIL+CETRIZINE",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",750.00,,2026-04-16 22:37:27.229544+00,2026-04-17 08:44:03.505+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+659dc94f-72c4-455b-9dd9-a06cca4df8fd,105da488-417f-4716-8d73-508caec117c8,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-549092,outpatient,in_progress,cough,cough,urti,,,"","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-15 12:34:14.994005+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b8949ba6-f94a-44eb-ac8f-73cb3d3880fe,d0f8f48b-0918-413a-abb7-fb31677772e2,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-774306,outpatient,in_progress,headache,"headache, fever",,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""128/77""}",0.00,,2026-04-15 09:01:20.061256+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c4fdb25b-9c93-4586-961c-b62092885822,76c66084-1d40-4912-8d94-303005b6747d,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-384856,outpatient,in_progress,"chills, headache","chills, headache","bact, infxn",,,,"{""spo2"": """", ""pulse"": ""107"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""128/80""}",0.00,,2026-04-15 16:08:10.691318+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+56ad778b-0eac-4459-9d6a-88833c61fa57,34c35cd6-adfb-46da-a201-38fb2ddc0bba,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-652579,outpatient,completed,persistent cough,,URTI,,cadistin syrup 10ml tds x5/7,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-15 16:47:33.948959+00,2026-04-15 17:20:48.347+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6892d9df-7351-42cf-bfc3-dff1ef5eb3fb,cc35a35e-3fc9-4216-a7ba-95ad9740c14e,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-658816,outpatient,in_progress,3 YRS,"COUGH
+RUNNING NOSE",LARYNGOTRACHEOBRONCHITIS,,"IM GENTA 80MG OD FOR 3 DAYS
+IM DEXA 4MG OD FOR 3 DAYS
+P.O TRIMOXOL 10MLS BD FOR 5 DAYS
+P.O PREDNISOLONE 5MLS BD FOR 5 DAYS
+P.O TRIDEX 2.5 MLD TDS FOR 5 DAYS
+","","{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""37.3"", ""blood_pressure"": """"}",900.00,,2026-04-16 17:12:44.4684+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+bb27ea95-de92-446a-b4e1-634c9f351fa5,5d308273-2d06-4545-b4bc-5d66ad307e8e,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-939153,outpatient,completed,"",,,,"PITC- NEGATIVE
+URINALYSIS- NAD",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",300.00,,2026-04-16 13:40:45.279422+00,2026-04-16 23:42:38.377+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e0cbef31-caa0-4b71-9ff6-6190256691b5,d7e19406-3208-4801-9f54-028413f951f4,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-635616,outpatient,completed,"",HOB,ACUTE TONSILLITIS GRADE 1,,"IM PPF/DINAC/DEXA STAT
+IV GENTA/DEXA OD FOR 2 DAYS
+CT WITH CEPHALEXIN+FEVAPYN",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.8"", ""blood_pressure"": """"}",700.00,,2026-04-16 22:45:42.061118+00,2026-04-17 08:49:28.638+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+95268543-cc87-4110-a4d2-e2fb0f7ac6db,68b144b0-1985-4645-91bf-25e2c05f3c05,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-688365,outpatient,completed,"","ABDOMINAL DISCOMFORT
+LOOSE STOOL
+VOMITING","ACUTE BACTERIAL GASTROENTERITIS
+TYPHOID",,"IV RINGERS 500MLS STAT+TRAMADOL 100MG+BUSCOPAN 40MG+PLASIL 10MG STAT
+IV ESOMEPRAZOLE 40MG STAT
+IV CIPROFLOXACIN 200MG STAT
+P.O CIPROFLOXACIN 500MG BD FOR 5 DAYS
+P.O ESOMOD 20MG BD FOR 5 DAYS 
+P.O ALLUCID PLUS 10MLS TDS FOR 5 DAYS
+",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",2500.00,,2026-04-16 23:19:54.788744+00,2026-04-17 09:41:01.131+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e70c5144-6035-4402-a0db-ccbf967460a0,a7b2577e-4c8b-4547-989d-efb561ac77ac,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-353301,outpatient,in_progress,"dizziness,cough ,general body weaknesss",dizziness,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-17 16:10:59.007505+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3c54a05f-89dc-4251-9fa7-5a132a6049e9,a40808c7-6c8b-4b1f-af66-a3b07669301f,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-430140,outpatient,in_progress,"","HEADACHE
+",BACTEREMIA SECONDARY TO PHARYNGITIS,,"FBC- WBC(9.07),LYMPHOPENIA(16.8%),GRANULOCYTOSIS(71.0),HB(14.1G/DL),MCV(90.9),MCH(26.5),MCHC(29.1),PLT(223)
+IV PCM 1G STAT
+IV GENTA+DEXA OD FOR 3 DAYS
+P.O CEFUROXIME 500MG BD FOR 5 DAYS
+P.O MYOSPAZ 1 TAB BD FOR 3 DAYS
+P.O ESOMOD 20MG BD FOR 5 DAYS
+",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",2600.00,,2026-04-16 21:52:16.5012+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+42b6a00d-151a-4cb3-9b50-12350c6e893a,9c464e08-057d-49ec-8add-88951d0bee11,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-032319,outpatient,in_progress,"dizziness, fatigue","dizziness , fatigue",bacterial infection,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-17 15:32:17.932993+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0b4d8441-ade0-4622-8128-cc256570d709,dc92db4a-0c1c-4994-b60a-46d37672bf1a,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-801391,outpatient,waiting,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-23 17:51:47.862252+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+5c508a7e-0bcd-4431-a036-fd3a56b7f62f,2cbb60a8-970e-4f47-a5e9-9720e2c83d96,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-411511,outpatient,completed,"",BACK PAINS,LUMBAGO,,"IM DINAC75MG STAT
+P.O TAMEPYN 1 TAB BD FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",260.00,,2026-04-18 19:41:57.923527+00,2026-04-19 05:44:56.87+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d091d273-364f-408c-b8af-f39ea5b3aae3,138b3bb2-bf20-48de-8efe-5a2628715a24,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-546567,outpatient,completed,"headache, dizziness","headache, dizziness",,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-18 05:17:32.163103+00,2026-04-18 15:21:19.438+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+df53904d-ae49-45a8-91ac-9fdec87b5c36,bcdf1920-abb4-4baa-a608-861a259faeea,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-750146,outpatient,in_progress,"headache, abdominal pains","headache, abdominal pains",organophosphate poisoning,,"atropine iv in 1 litre of ringers lactate, iv tramadol, iv hyoscine,iv plasil,rbs 4.5 mmol, iv genta od 3/7, iv d5stat",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-17 19:54:15.940429+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6c6ccfcf-fc13-47fe-9940-084570b6ccdd,09ea9e73-9051-432d-bcde-1595d3110286,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-706125,outpatient,completed,"",BRUISE ON THE RIGHT EYE BROW AND RIGHT CHEEK,STI SECONDARY TO TRAUMA,,"IM TT 0.5MLS STAT
+P.O DICLOMOR 100MG BD FOR 5 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",200.00,,2026-04-18 12:00:12.38914+00,2026-04-18 22:02:48.076+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+9a32f061-5852-4c54-907d-dab9a5e8eaed,bc05d65d-1787-4024-b7bf-0f47123c219f,bac02682-b19f-4d66-aee1-e740753e36eb,CON-492314,outpatient,completed,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-19 12:41:32.676269+00,2026-04-27 12:58:53.806+00,6a1a35af-99a5-489a-882e-4896faca04f7
+06d88e98-9303-400c-825d-07e0ae4f41cc,c6bf9d16-a8e4-4bd5-bd1f-dc968df40d0a,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-153793,outpatient,completed,"",,,,IM DMPA 150MG STAT,,"{""spo2"": """", ""pulse"": ""68"", ""height"": """", ""weight"": ""84"", ""temperature"": """", ""blood_pressure"": ""125/95""}",150.00,2026-07-18,2026-04-18 15:10:59.928952+00,2026-04-19 01:13:20.809+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b2124c74-3e80-4982-a55e-69804cf34942,428002e2-fa74-4229-b5e2-4fca95e13a31,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-908325,outpatient,completed,Headache,Headache,Bacterial Infection with Pneumonia in known Hypertensive.,,"FBC
+IV CEFTRIAXONE 1 G OD FOR 3 DAYS
+P.O KOACT 625MG BD FOR 5 DAYS
+P.O PIROXICAM 20MG BD FOR 5 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""155/107""}",0.00,2026-04-18,2026-04-18 19:51:49.155118+00,2026-04-19 10:01:38.562+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+fcac846d-10cd-4aff-9e77-837951aab972,428002e2-fa74-4229-b5e2-4fca95e13a31,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-608846,outpatient,completed,Headache,Headache,  Bacteria infection with Pneumonia.                                                                                                                      Known Hyperntension,,"Iv cef 1g od x3/7,Tabs koact 625mg bd x5/7,piroxicam caps 20mg bd x5/7,",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""155/1o7""}",0.00,2026-04-18,2026-04-18 19:30:09.686881+00,2026-04-18 19:42:03.301+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+dffbe8c6-e272-45fe-b34e-f3c626e4f819,428002e2-fa74-4229-b5e2-4fca95e13a31,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-400853,outpatient,completed,Headache,Headache,Bacteria infection with Pneumonia in Hypertension,,"fbc
+iv ceftriaxone 1 g od for 3 days
+p.o koact 625 mg bd for 5 days
+p.o piroxicam 20mg bd for 5 days
+",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""155/107""}",0.00,,2026-04-18 20:00:01.703546+00,2026-04-18 20:42:35.367+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+37e7ea0e-c8d7-492d-adf5-29b8f48c5f7b,06588464-9bf7-4498-9760-a5c48e708bd5,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-445965,outpatient,completed,CHILLS,"CHILLS
+THIS PATIENT HAD BEEN TREATED AT OUR FACILITY 5 DAYS AGO.WAS PUT ON GENTA/DEXA FOR 3 DAYS.COTRIMOXAZOLE,DEXAMAR AND ACE-P WITH NO IMPROVEMENT.",BACTEREMIA SECONADARY TO PNEUMONIA,,"IM DINAC 75MG STAT
+IV CEFRTIAXONE 1 G OD FOR 3 DAYS
+",,"{""spo2"": """", ""pulse"": ""81"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""137/88""}",500.00,,2026-04-20 06:42:32.398729+00,2026-04-20 16:53:20.215+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b7c53f7d-2a5d-4d91-9e18-703a7fe2a56c,8a23b9c1-ae54-4f65-a0be-2a8261330917,bac02682-b19f-4d66-aee1-e740753e36eb,CON-663010,outpatient,in_progress,abd discomfort,,gastritis,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-19 15:31:04.145107+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+9be0f171-6b6c-4972-8f71-e6f7a410c024,2bb11ead-9575-4a4e-8f3b-cbbc121b4ecb,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-749577,outpatient,in_progress,"","DARK URINE
+MID-LOWER BACK PAINS
+VOMITING
+EPIGASTRIC PAINS",CYSTITIS/GASTRITIS,,"URINALYSIS
+HPAG
+IV RL 500MLS+100MG TRAMADOL+10MG PLASIL+20MG BUSCOPAN
+IV ESOMEPRAZOLE 40MG STAT
+IV CEFTRIAXONE 1G OD FOR 3 DAYS
+P.O CIPROFLOXACIN 500MG BD FOR 5 DAYS
+P.O SECNIDAZOLE 2G STAT
+P.O ESOMOD 20MG BD FOR 5 DAYS
+P.O ALLUGEL 10MLS TDS FOR 5 DAYS
+",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""87/64""}",3500.00,2026-04-18,2026-04-18 20:37:35.689931+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+05f4d312-8f9f-489e-bd5d-4bec6c095382,f53448cc-e0d6-4d5e-8cfb-29fa6fce653c,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-306192,outpatient,in_progress,laps,laps,uti,,"iv gentamicin 160mg od 3/7, po ciprofloxacin bd 5/7 , po secnidazole 1 g stat , po fluconazole 150 mg stat",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-19 17:20:12.125153+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b30be2d6-3087-449c-91bc-a4c0303d820d,e5e6dd6c-31e4-40be-baae-b0928d4df458,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-368284,outpatient,in_progress,painful urination,"painful urination, yellowish pv discharge",uti,,"iv gentamicin, ciprofloxacin 500mg bd 5/7, secnidazole 1g stat, fluconazole 150mg stat , clotrimazole 200mg pessarie nocte",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-19 17:04:34.191355+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0908622d-7521-4d6c-921c-6cec384f57a8,2b6707f5-a604-42f1-a0e6-bac43b9b03db,bac02682-b19f-4d66-aee1-e740753e36eb,CON-735149,outpatient,in_progress,headache,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""52"", ""temperature"": """", ""blood_pressure"": ""45""}",0.00,2026-04-20,2026-04-20 08:12:16.00991+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+e147948b-4462-4a11-a195-d17da3490ea5,085f9d5b-e2cd-40c9-be23-502e59b66426,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-262957,outpatient,completed,"",,,,IM DMPA 150MG STAT ,,"{""spo2"": """", ""pulse"": ""81"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""115/84""}",150.00,,2026-04-20 10:01:04.62578+00,2026-04-20 10:01:25.917+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+6c8a5607-b943-4145-b6b0-ed07e620981b,524f9b25-100b-4db3-8627-bd3c842b05e3,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-200249,outpatient,completed,"",CUT WOUND AT THE RIGHT FRONTAL LOBE,SOFT TISSUE INJURY SECONDARY RO TRAUMA,,"WOUND STITCHING,CLEANING AND DRESSING
+IM T.T 0.5MLS STAT
+P.O AMPICLOX 5MLS TDS FOR 5 DAYS
+P.O FEVAPYN 7.5MLS TDS FOR 3 DAYS
+TCA ON WEDNESDAY FOR COD",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",1350.00,,2026-04-20 14:41:46.197849+00,2026-04-21 01:04:13.313+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b6753abf-28d5-48d9-9b10-c9fddbffcb58,bd909a26-41ac-48bc-ac13-981d771c1e4c,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-740761,outpatient,completed,"",,,,STOOL ANALYSIS,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",200.00,,2026-04-20 15:24:06.68777+00,2026-04-21 01:28:49.679+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b46f1727-e570-4b1c-a13c-227fe5e8e19a,cda8fe65-f768-44bc-8bbf-032f5aa0d399,32d865e3-0ae4-4f05-8a5d-80177299045b,CON-195110,outpatient,completed,Headache,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""155/107""}",0.00,2026-04-18,2026-04-18 20:29:53.782972+00,2026-04-19 10:09:59.65+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+31f1c8af-3bd3-4bb2-89b5-690403f2c30d,9074d1df-4ae0-4138-bd9c-19a507d695ac,bac02682-b19f-4d66-aee1-e740753e36eb,CON-031224,outpatient,completed,headache,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-19 10:03:51.876196+00,2026-04-27 12:58:39.544+00,6a1a35af-99a5-489a-882e-4896faca04f7
+d08e1d52-5ba8-4986-9ba5-fc401036172d,dc92db4a-0c1c-4994-b60a-46d37672bf1a,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-545161,outpatient,waiting,urine incontinence,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,42026-02-03,2026-04-23 17:47:32.057763+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ee6df6a5-12a9-4b66-bcba-5cea742a0c2a,dde738fd-69df-4c17-b402-c9525a6c94a3,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-226587,outpatient,in_progress,"hob, loss of appetite",hob,tonsilitis,,"im ppf 3/7, im dexa 3/7 ct other meds",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.1"", ""blood_pressure"": """"}",0.00,,2026-04-27 10:52:13.374075+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+8d40463f-a0ef-4c05-aedf-bf49f8653325,2b6707f5-a604-42f1-a0e6-bac43b9b03db,bac02682-b19f-4d66-aee1-e740753e36eb,CON-174131,outpatient,completed,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-19 14:32:50.859761+00,2026-04-24 18:02:04.693+00,6a1a35af-99a5-489a-882e-4896faca04f7
+8d3a9240-4c89-4d4a-b873-2fc75b482dfc,29dc0be3-5dde-4c20-bf39-d90cfa66b978,e36f1471-f777-497a-a06f-f2798b8bc3a6,CON-051875,outpatient,completed,"","ABDOMINAL DICOMFORT
+HEADACHE","HYPERACIDITY
+?BACTEREMIA",,"FBC
+IV ESOMEPRAZOLE 40MG STAT
+P.O CIPROFLOXACIN 500MG BD FOR 5 DAYS
+P.O ESOMOD 20MG BD FOR 5 DAYS
+P.O SECNIDAZOLE 2G STAT",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",1200.00,,2026-04-24 16:42:38.689944+00,2026-04-25 02:53:12.771+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+69f5f839-590d-4292-a727-7761bd136a7b,5443e4c6-6090-4d3f-bec8-28570bfdeda1,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-616902,outpatient,waiting,"",,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-26 21:05:23.722366+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+81781aab-913e-4782-acb7-3a1d1358d657,5be9a3c8-7af0-41e3-9fc3-9e6146427d9c,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-399818,outpatient,in_progress,ANC VISIT,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-25 08:40:00.381483+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b68bf96c-fb40-42a5-a662-400adcb5ed0b,dde738fd-69df-4c17-b402-c9525a6c94a3,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-651199,outpatient,waiting,hob,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.1"", ""blood_pressure"": """"}",0.00,,2026-04-25 22:19:22.324021+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7aa7cd7b-b2c1-4b30-9742-d4658cba43df,4fd39979-0b04-497c-b3e2-ac695768dfec,8875d0d0-3c6e-486e-bf27-d24a23e22bf0,CON-913676,outpatient,in_progress,pain while passing uribne,,uti,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-27 13:01:53.899469+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+136ff96b-394a-48f0-b870-56ef08b9f9cf,dde738fd-69df-4c17-b402-c9525a6c94a3,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-655063,outpatient,in_progress,hob,"hob, tonsils red and inflamed",tonsilitis,,"im ppf 3/7. im dinac 3/7, im dexa 3/7, po cetamol syrup tds /7 ct other med",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.1"", ""blood_pressure"": """"}",0.00,,2026-04-25 22:19:22.322157+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+585a9042-6ab8-4a69-8346-c5669e4a9023,f4717a79-430a-4faa-a9cc-eb49b17eb7fd,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-512716,outpatient,in_progress,Painful micturation,painful micturation,uti,,"clotrimazole pessaries od x 6/7,cotrimoxazole 960mg BD x5/7,omez caps",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-23 17:15:14.974948+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+653727c3-475f-4a9c-9129-97f778e2c710,6af10c90-2a3e-4794-976f-bf61d59cdc7e,e36f1471-f777-497a-a06f-f2798b8bc3a6,CON-790874,outpatient,in_progress,"","CHEST PAIN
+LEFT ARM PAIN
+MID BACK PAINS",PNEUMONIA/GASTRITIS,,"IM TRAMADOL 100MG STAT
+IV ESOMEPRAZOLE 40MG STAT
+IV GENTA/DEXA 0D FOR 3 DAYS
+P.O ESOMOD 20MG FOR 5 DAYS
+P.O MYOSPAZ 1 TAB BD FOR 3 DAYS
+CT WITH AMOXYCLAV",,"{""spo2"": """", ""pulse"": ""90"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""105/80""}",1650.00,,2026-04-27 04:54:57.939716+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+95dc1684-9627-4727-9223-17770ebf1c8f,26502710-bd09-4d1b-b918-f1e546c59ae6,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-691775,outpatient,completed,"",,,,PDT URINE,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",100.00,,2026-04-26 08:36:38.791768+00,2026-04-26 18:38:35.263+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+dcf7c512-58c4-4d01-acbd-f7af654bed58,5443e4c6-6090-4d3f-bec8-28570bfdeda1,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-202836,outpatient,waiting,"",,,,PDT URINE,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",100.00,,2026-04-26 15:58:29.84969+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+defc5823-5ceb-4eec-a76b-4c2acbdee7ec,e30c625e-714b-440b-a43c-1a386954ff8a,8875d0d0-3c6e-486e-bf27-d24a23e22bf0,CON-291155,outpatient,waiting,anc ,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-27 12:51:31.365827+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+daf699ec-dcf6-4efc-8157-8987e3982d5d,9010a479-96f3-47d4-8194-bea64b903d31,8875d0d0-3c6e-486e-bf27-d24a23e22bf0,CON-614811,outpatient,in_progress,loose stools * 5.7 abd pain * 5.7 ,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-27 12:40:14.98445+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+c018ca80-95eb-4d2a-9b31-ba21fdfcbcc9,5b3f25ff-3db1-4cae-b7db-89f5feff9838,77d7aabf-4b3e-4362-a88b-fc101a78b1b6,CON-251038,outpatient,completed,"","DIZZINESS
+HEADACHE",HYPERTENSION EMERGENCY IN KNOWN HTN/DM,,IV NORMAL SALINE 500MLS+FUROSEMIDE 20MG TO RUN FOR 1 HOUR,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",800.00,,2026-04-26 16:49:18.151884+00,2026-04-27 02:52:58.924+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+8d714408-0dec-4bb6-b255-3f2583ff43dd,e30c625e-714b-440b-a43c-1a386954ff8a,8875d0d0-3c6e-486e-bf27-d24a23e22bf0,CON-321019,outpatient,waiting,anc ,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-27 12:52:01.157153+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+471d59b1-8c9d-44ba-8e9f-76199010257e,af9de6e2-238d-4652-8076-1c8dab3d1303,8875d0d0-3c6e-486e-bf27-d24a23e22bf0,CON-498669,outpatient,in_progress,anc visit,"",,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-27 12:38:18.909156+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+50793d7b-d2f5-4721-8565-106a40c7136c,e30c625e-714b-440b-a43c-1a386954ff8a,8875d0d0-3c6e-486e-bf27-d24a23e22bf0,CON-382986,outpatient,in_progress,anc visit,,,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-27 12:53:03.197947+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+e573c319-706d-4e62-8eb1-49e3aa279faf,a3bd472a-37bb-4177-8e95-a87327d2a800,bac02682-b19f-4d66-aee1-e740753e36eb,CON-031654,outpatient,in_progress,"headache, vomiting , general body weakness , chest pain , episodes of sob ",,RTI,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-22 05:50:31.883356+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+a9836b09-1748-4045-a4c9-f781184973dc,836b939e-b584-47db-80ad-5f3795e6dd0d,bac02682-b19f-4d66-aee1-e740753e36eb,CON-832146,outpatient,completed,painful swallowing,painful swallowing,"tosillitis
+pre med azithromycin, brufen ,cipladon",,"iv ceftriaxone 1g od 3 days
+iv dexamethasone 4 mg od 3days",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": ""28"", ""temperature"": ""36.2"", ""blood_pressure"": """"}",500.00,2026-04-28,2026-04-28 13:27:13.023169+00,2026-04-28 13:32:33.957+00,6a1a35af-99a5-489a-882e-4896faca04f7
+170938bb-d4a0-4535-a7b0-bb68171607c0,e9db359d-1a9f-450e-89cc-fc7e0fabedb2,bac02682-b19f-4d66-aee1-e740753e36eb,CON-557210,outpatient,in_progress,"",,,,,,"{""spo2"": ""21"", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""12""}",500.00,,2026-04-28 13:05:58.63286+00,,6a1a35af-99a5-489a-882e-4896faca04f7
+af5aa56b-241d-449b-9ac2-1d4ff11edfa1,13a6db03-016a-4f45-a897-d73978118b64,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-773159,outpatient,completed,"",,,,URINALYSIS,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-28 15:21:19.824357+00,2026-04-29 01:25:34.686+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+458ed60f-3ce0-4a20-9bcb-8d2239ce5647,c5b9e015-0642-415b-a46c-55caa3be6236,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-297282,outpatient,completed,"","DIZZINESS
+HEADACHE
+GBM",IDA/BACTEREMIA/GASTRITIS,,"FBC- GRANULOCYTOSIS,HB-10.7G/DL
+IV RL 500MLS+IV TRAMADOL 100MG+IV BUSCOPAN 20MG
+IV CEFTRIAXONE 1G OD FOR 3 DAYS
+P.O CEFIXIME 400MG BD FOR 5 DAYS
+P.O TINIDAZOLE 1G OD FOR 5 DAYS
+P.O HYOSCINE 10MG BD FOR 3 DAYS
+P.O HAEMATINIC SYRUP 10MLS TDS FOR 1 MONTH",,"{""spo2"": """", ""pulse"": ""111"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""131/89""}",1000.00,,2026-04-28 16:53:24.032855+00,2026-04-29 02:57:24.584+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4e86929d-f368-4585-ad44-54f70f4e4b8a,b499dbd0-7685-454a-835b-1ec9400c0f1b,bac02682-b19f-4d66-aee1-e740753e36eb,CON-825133,outpatient,completed,"headache,feversjoint painsgbw",gbp,rti,,"iv ns 500ml
+iv tramadol 100mg
+ivdexa 4 mg",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,2026-04-28,2026-04-28 17:20:25.907373+00,2026-04-28 17:22:21.827+00,6a1a35af-99a5-489a-882e-4896faca04f7
+80d6018c-e756-4630-9786-3cb46a3f81db,2098efcd-d25e-44ca-b195-2de94362c08f,bac02682-b19f-4d66-aee1-e740753e36eb,CON-587432,outpatient,completed,back pains,back pains,lumbargo,,"im diclofenac 75 mg od 3days
+p,o loback 1 bd 5.days
+p,o pdl 10 mg bd 5days",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,2026-04-29,2026-04-29 05:29:48.821584+00,2026-04-29 05:32:58.904+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9e7db535-a39b-4976-8aba-699afe1f457b,93cd1a62-5d3d-416d-add6-f4f6cbad2165,bac02682-b19f-4d66-aee1-e740753e36eb,CON-755715,outpatient,completed,"cough, h.o.b, vomiting",cough,pneumonia,,"cef 500mgs bd 4/7
+dexamethasone 4mgs stat
+gentamycin 40mgs bd 4/7
+plasil 2.5mgs stat then od if vomiting persists
+then switch to per oral- cefalexin 125mgs bd 5/7
+sy prednisolone on tappered dose",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-29 09:42:35.808899+00,2026-04-29 13:31:14.281+00,6a1a35af-99a5-489a-882e-4896faca04f7
+339e3b0f-2ee0-4ec4-ab94-80ccbe40dae2,12efadc6-35d4-483d-9e22-22bf5234518f,bac02682-b19f-4d66-aee1-e740753e36eb,CON-414075,outpatient,completed,"abdominal pains, loosestools for 2days",,gastroenteritis,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,2026-04-29,2026-04-29 07:23:35.248153+00,2026-04-29 07:29:04.743+00,6a1a35af-99a5-489a-882e-4896faca04f7
+33d3f247-0810-4fba-a878-4bb29610ea38,a82af414-80ce-4c68-bf31-31fce386f958,bac02682-b19f-4d66-aee1-e740753e36eb,CON-085787,outpatient,completed,headache,,headache disorder,,"p.o pcm 1g tds 3/7
+p.o azithromycin 500mgs od 3/7",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-29 10:21:25.673623+00,2026-04-29 10:22:41.443+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9dd8619e-7dfd-4b00-885d-981765aac103,6f33933c-a38a-46ae-8929-8d790d145e93,bac02682-b19f-4d66-aee1-e740753e36eb,CON-276600,outpatient,completed,"cough productive of thick white sputum ,chest pains","cough productive of thick white sputum ,chest pains",pneumonia,,"ceftriaxone 1g od 3 days
+dexamethasone 4mgs od 3 days",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-29 12:21:17.36512+00,2026-04-29 12:23:35.358+00,6a1a35af-99a5-489a-882e-4896faca04f7
+3648e00c-ebfc-4d29-8797-245006a8e04b,e73adb0e-e23b-4374-a419-6dd42c35dfc3,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-169286,outpatient,in_progress,"diarrhea , abdominal pains","diarrhea , abdominal pains",gastroentritis,,"iv gentamycin 3/7, iv dexa 3/7, po zinc sulphate 20mg bd 5/7 , ors after every loose stool",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""35.9"", ""blood_pressure"": """"}",0.00,,2026-04-29 08:57:56.091691+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e3d0f24e-3966-49b0-86df-34bc2b395d08,7eb00922-885c-45a8-bc30-95991c465b0f,bac02682-b19f-4d66-aee1-e740753e36eb,CON-773909,outpatient,completed,"Painful swallowing,headache,fevers,vomiting of one episode",painful swallowing,tonsilitis,,,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""36.2"", ""blood_pressure"": """"}",500.00,2026-04-30,2026-04-30 16:49:33.74262+00,2026-04-30 16:52:55.923+00,6a1a35af-99a5-489a-882e-4896faca04f7
+f9520dbb-2fdb-4be1-831c-f187da3af433,31db004c-1200-4211-896b-d9cef049cfa6,bac02682-b19f-4d66-aee1-e740753e36eb,CON-068030,outpatient,completed,"purulent per urethral discharge, painful micturition, urethral itchness post unexposed coitus",in keeping with urethritis,gonococcal urethritis,,"cef 1g stat, dexamethasone 4mgs stat, gentamycin 160mgs od 3/7, doxy 100mgs bd 5/7. metronidazole 400mgs tds 5/7",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",500.00,,2026-04-30 04:57:48.000911+00,2026-04-30 05:01:25.152+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9f1f0713-b79c-418a-9e4d-85ddf0514c24,a27361d6-c1de-4a17-ba64-535921fb84bc,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-537221,outpatient,completed,"",,,,PDT URINE,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",100.00,,2026-04-30 08:40:43.958136+00,2026-04-30 18:42:42.053+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+853ae136-9fe7-4e5b-a49f-f6a61bd4ecda,47cb4cd3-1a91-4dfd-a7ad-f7d45c95eb18,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-874243,outpatient,in_progress,"headache, pallor",pallor,mild anaemia,,biofer xt syrup,,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-29 15:49:41.352315+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c57dd411-e9ab-43db-ae72-54d5e299ce27,b554f2a4-7e7e-4797-b7d6-8c4a8c59ac71,bac02682-b19f-4d66-aee1-e740753e36eb,CON-528621,outpatient,completed,chronic productive cough ass with chest pains in a chronic smoker,,possible bronchitis,,"i.v gentamycin 160mgs od 3/7
+i.v dexamethasone 4mgs od 3/7",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": """"}",0.00,,2026-04-29 10:12:08.773761+00,2026-04-29 10:14:02.613+00,6a1a35af-99a5-489a-882e-4896faca04f7
+7b60fe7e-9dfa-470f-bd4e-9fa3154d770f,ac5a53de-776b-41f8-b132-edbcd32ff09c,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-504406,outpatient,completed,52 YRS,"CHEST CONGESTION
+DIB
+COUGH",ACUTE ASTHMATIC ATTACK SECONDARY TO PNEUMONIA,,"NEBULIZATION WITH 5MG WITH 2 MLS NS FOR 20 MINUTES THEN REASSESS
+IV GENTA/DEXA STAT
+P.O CLAXY 625MG BD FOR 5 DAYS
+P.O PREDNISOLONE 10MG TDS FOR 3 DAYS
+P.O ACEP 1 TAB BD FOR 3 DAYS
+P.O TRICHOHIST 10MLS TDS FOR 5 DAYS",,"{""spo2"": """", ""pulse"": ""102"", ""height"": """", ""weight"": """", ""temperature"": """", ""blood_pressure"": ""117/84""}",1650.00,,2026-04-30 07:16:51.076296+00,2026-04-30 17:53:13.25+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+bdf63a10-ce4f-4817-a7ab-cc00fed67b52,de8b3444-11e4-45fc-ab9b-d3e9af083fb6,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-764297,outpatient,completed,"","HOB
+REFUSAL TO FEED",ACUTE TONSILITTIS GRADE 1,,"PR GACET 125MG STAT
+IM PPF/DINAC STAT 
+THEN GENTA/DEXA OD FOR 2 DAYS
+P.O CEFIXIME 5MLS BD FOR 5 DAYS
+P.O ENTAMAXIN 5MLS TDS FOR 5 DAYS
+P.O ZINC SULPHATE 20MG OD FOR 10 DAYS
+P.O ORS 1 SATCHET OD FOR 3 DAYS",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""38.7"", ""blood_pressure"": """"}",1000.00,,2026-04-30 10:24:31.203893+00,2026-04-30 20:28:57.231+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+13721a86-f0f6-4023-9561-a756e27e11e0,ce280d9e-24ff-4b7f-8fb7-b4f2c163bf19,545fc21b-21fa-46c1-8715-2e5d5adc2800,CON-376412,outpatient,in_progress,loss of appetite,red and inflamed tonsils,tonsilitis,,"im ppf 3/7, im dexa 3/7, po cotricel 5/7, multivitamin syrup, piriton syrup , normal saline nasal drops",,"{""spo2"": """", ""pulse"": """", ""height"": """", ""weight"": """", ""temperature"": ""36.5"", ""blood_pressure"": """"}",0.00,,2026-04-29 16:14:43.538517+00,,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5

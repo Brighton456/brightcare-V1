@@ -1,0 +1,7 @@
+id,title,message,target_roles,priority,is_active,background_color,icon,hospital_id,created_by,created_at,expires_at,created_by_name,created_by_role
+131bc4f9-0218-4f28-b0ff-2f05b0633884, 🔔New Update: Streamlined Prescription Billing,"Doctors no longer need to create a separate bill in the Billing page for each patient. They can now simply add medicines AND services (consultation, lab tests, procedures) directly within the prescription form. When they Send to Pharmacy, the pharmacist will see the complete list (medicines + services + lab fees) for that patient and can bill everything from the POS in one go. 
+To all Pharmacists: A Process Payment quick-link is now available in the POS ""I want to"" section.",{all},high,t,orange,bell,,,2026-04-20 18:31:12.000681+00,2026-05-04 18:31:12.000681+00,Brightcare Platform Team,Platform Administrator 
+98ed715b-8418-45c4-8e52-5ebfb094131e,🔔 IMPORTANT SYSTEM UPDATE (to how prescriptions are now handled.)," ✅ Prescriptions now match medicines by exact ID — no more ""not found"" errors while dispensing medicines.
+✅ Pharmacy staff can now mark prescriptions as dispensed directly from the POS queue.
+✅ Admins can delete prescriptions of any status from the Prescriptions page. This changes are as a result of the recent reported issues concerning the dispensing of medicines from the prescription que. 
+💪Thank you for your patience as we improve the system! ",{all},normal,f,green,megaphone,,,2026-04-09 18:36:32.456689+00,2026-04-23 18:36:32.456689+00,Brighton.,Brightcare CEO

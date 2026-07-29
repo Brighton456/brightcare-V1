@@ -1,0 +1,1 @@
+id,admission_no,patient_id,bed_id,doctor_id,admission_type,reason,diagnosis,status,admitted_at,discharged_at,discharge_summary,notes,created_at,hospital_id

@@ -1,0 +1,1 @@
+id,hospital_id,sale_id,bill_id,buyer_name,buyer_phone,amount_credited,amount_paid,due_date,status,notes,created_at,updated_at

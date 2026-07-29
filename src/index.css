@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 217 71% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 217 71% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 217 71% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 217 71% 45%;
+    --sidebar-foreground: 217 30% 92%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 217 71% 45%;
+    --sidebar-accent: 217 71% 38%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 60% 40%;
+    --sidebar-ring: 0 0% 100%;
+
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 10%;
+    --info: 210 70% 50%;
+    --info-foreground: 0 0% 100%;
+
+    --chart-1: 217 71% 45%;
+    --chart-2: 142 60% 40%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 262 60% 50%;
+
+    --pos-header: 220 25% 18%;
+    --pos-header-foreground: 0 0% 100%;
+    --pos-row-even: 220 14% 97%;
+    --pos-row-hover: 217 40% 94%;
+    --pos-selected: 120 40% 92%;
+    --amount-due: 0 72% 51%;
+
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 210 15% 90%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 15% 90%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 15% 90%;
+    --primary: 217 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 15% 85%;
+    --muted: 220 15% 16%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 217 60% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 217 60% 55%;
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 210 15% 70%;
+    --sidebar-primary: 217 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 18% 14%;
+    --sidebar-accent-foreground: 210 15% 85%;
+    --sidebar-border: 220 15% 14%;
+    --sidebar-ring: 217 60% 55%;
+    --pos-header: 220 20% 12%;
+    --pos-header-foreground: 210 15% 90%;
+    --pos-row-even: 220 18% 11%;
+    --pos-row-hover: 220 18% 14%;
+    --pos-selected: 142 30% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* POS-specific styles */
+@layer components {
+  .pos-table-row:nth-child(even) {
+    background: hsl(var(--pos-row-even));
+  }
+  .pos-table-row:hover {
+    background: hsl(var(--pos-row-hover)) !important;
+  }
+  .pos-table-row.selected {
+    background: hsl(var(--pos-selected)) !important;
+  }
+
+  .payment-btn {
+    @apply flex-1 py-3 px-4 text-sm font-semibold rounded-lg border-2 transition-all duration-150;
+    @apply bg-primary text-primary-foreground border-primary/80;
+    @apply hover:brightness-110 active:scale-[0.97];
+    @apply disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .payment-btn.active {
+    @apply ring-2 ring-offset-2 ring-primary;
+  }
+
+  .action-btn-sidebar {
+    @apply w-full py-3 px-4 text-sm font-semibold rounded-lg transition-all duration-150;
+    @apply bg-primary text-primary-foreground shadow-sm;
+    @apply hover:brightness-110 active:scale-[0.97];
+    @apply disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .pos-search-dropdown {
+    @apply absolute top-full left-0 right-0 z-50 bg-card border rounded-b-lg shadow-xl max-h-72 overflow-auto;
+  }
+
+  .kbd {
+    @apply inline-flex items-center justify-center h-5 min-w-[20px] px-1 rounded text-[10px] font-mono font-medium;
+    @apply bg-muted text-muted-foreground border;
+  }
+}
+
+/* Hide Lovable branding widget */
+#lovable-badge,
+#lovable-badge *,
+#lovable-badge > * {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+}

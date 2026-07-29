@@ -1,0 +1,37 @@
+id,sender_department,recipient_department,sender_staff_id,subject,message,is_read,read_at,expires_at,created_at,hospital_id
+f6d1354c-0de2-45a2-ad59-caf7e244b50e,Laboratory,Pharmacy,,Lab Result: mrdt,Results for antony ombogo (LAB-138235) - mrdt: positive [ABNORMAL]. Please review and prescribe accordingly.,f,,2026-04-05 12:40:50.445633+00,2026-04-05 06:40:50.445633+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+06e2d5fd-c156-41c3-9802-bde28c9c903c,Laboratory,Pharmacy,,Lab Result: URINALYSIS,"Results for virginia wanjiru (LAB-128676) - URINALYSIS: LEUC +++
+PROTEIN ++
+. Please review and prescribe accordingly.",f,,2026-04-05 17:08:28.349118+00,2026-04-05 11:08:28.349118+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4e2d694a-5635-45dd-b7d4-fa20640b9245,Laboratory,Pharmacy,,Lab Result: URINALYSIS,"Results for virginia wanjiru (LAB-128676) - URINALYSIS: LEUC +++
+PROTEIN ++
+. Please review and prescribe accordingly.",f,,2026-04-05 17:08:28.976523+00,2026-04-05 11:08:28.976523+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+cf3dfb6a-f1cb-40f9-b1eb-3b482feff9f1,Laboratory,Pharmacy,,Lab Result: fhg,"Results for Trial 1 (LAB-976039) - fhg: WBC 9.12 N
+Hb 11.0 l
+mch/mchc L
+PLT335. Please review and prescribe accordingly.",f,,2026-04-05 18:56:42.752835+00,2026-04-05 12:56:42.752835+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e13fab6a-4a16-4084-a58b-9b43679cd31c,Laboratory,Pharmacy,,Lab Result: HIV TEST,Results for LAURINE IGIRANEZA (LAB-771698) - HIV TEST: NEGATIVE. Please review and prescribe accordingly.,f,,2026-04-07 18:02:01.18992+00,2026-04-07 12:02:01.18992+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+5e71e9d3-2bf0-4b47-853b-cec3eb469b91,Laboratory,Pharmacy,,Lab Result: PDT TEST,Results for LAURINE IGIRANEZA (LAB-789521) - PDT TEST: NEGATIVE. Please review and prescribe accordingly.,f,,2026-04-07 18:02:11.937157+00,2026-04-07 12:02:11.937157+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7ce4b399-9bb7-4ead-be58-65ed9bbe100c,Laboratory,Pharmacy,,Lab Result: urinalysis,"Results for bascal murangaa (LAB-009675) - urinalysis: Leuc ++
+Blood +++ [ABNORMAL]. Please review and prescribe accordingly.",f,,2026-04-07 23:15:55.594993+00,2026-04-07 17:15:55.594993+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+586bad11-0aca-4907-ab6a-d675587b2276,Laboratory,Medical,,Lab Result: Urinalysis,"Results for dorcas mutemi (LAB-645561) - Urinalysis: leuc +++
+protein ++ [ABNORMAL]. Please review and prescribe accordingly.",f,,2026-04-09 15:00:21.956512+00,2026-04-09 09:00:21.956512+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7db8ba53-1339-4a12-88c6-5238435f4948,Laboratory,Medical,,Lab Result: PDT,Results for dorcas mutemi (LAB-659816) - PDT: Negative. Please review and prescribe accordingly.,f,,2026-04-09 15:00:38.110513+00,2026-04-09 09:00:38.110513+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+a31e8f42-23d6-4938-a66c-0569f9bdf998,Laboratory,Pharmacy,,Lab Result: complete blood count,Results for travis njenga (LAB-898003) - complete blood count: Given hard copy. Please review and prescribe accordingly.,f,,2026-04-09 15:00:56.800783+00,2026-04-09 09:00:56.800783+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+e304bd96-0403-4fd1-9c7c-40a6633559eb,Laboratory,Pharmacy,,Lab Result: complete blood count,Results for travis njenga (LAB-898003) - complete blood count: Given hard copy. Please review and prescribe accordingly.,f,,2026-04-09 15:00:57.400085+00,2026-04-09 09:00:57.400085+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+00d39702-f2ac-4057-9a81-4c9b35638856,Laboratory,Pharmacy,,Lab Result: RBS,Results for margret wanjiku (LAB-262554) - RBS: 8.8. Please review and prescribe accordingly.,f,,2026-04-09 15:01:05.86911+00,2026-04-09 09:01:05.86911+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d5bcc74d-cdcf-4608-b17e-1a05d586a714,Laboratory,Medical,,Lab Result: U/A,Results for Florence Mwihaki (LAB-407772) - U/A: NORMAL. Please review and prescribe accordingly.,f,,2026-04-09 21:37:16.195315+00,2026-04-09 15:37:16.195315+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+03108823-445f-499f-bd8b-9172ba1ad502,Laboratory,Medical,,Lab Result: PDT URINE,Results for FRACUS ALIANA (LAB-666195) - PDT URINE: NEGATIVE. Please review and prescribe accordingly.,f,,2026-04-10 17:51:33.692427+00,2026-04-10 11:51:33.692427+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+cfb9940f-09da-4e2f-9bc9-c54fe7edfc08,Laboratory,Medical,,Lab Result: PDT,Results for MAXMILLER CHEPNYANGO (LAB-309777) - PDT: POSITIVE. Please review and prescribe accordingly.,f,,2026-04-12 18:07:22.008446+00,2026-04-12 12:07:22.008446+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0c13dd53-e8f1-44e0-9c76-f91d1a8e8428,Laboratory,Pharmacy,,Lab Result:  RANDOM BLOOD SUGAR,Results for MARY WAMBUI (LAB-780697) -  RANDOM BLOOD SUGAR: 9.3MMOL. Please review and prescribe accordingly.,f,,2026-04-14 20:26:53.072075+00,2026-04-14 14:26:53.072075+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+67b10b8d-c5e0-4f46-834c-d723728548a4,Laboratory,Pharmacy,,Lab Result: PITC,Results for JAMAL OMAR (LAB-360293) - PITC: NEGATIVE. Please review and prescribe accordingly.,f,,2026-04-16 19:31:41.548109+00,2026-04-16 13:31:41.548109+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ab129766-86bd-4b95-af46-0c0fa142a4dd,Laboratory,Pharmacy,,Lab Result: URINALYSIS,Results for JAMAL OMAR (LAB-318317) - URINALYSIS: NO ABNORMALITY DETECTED. Please review and prescribe accordingly.,f,,2026-04-16 19:31:57.58919+00,2026-04-16 13:31:57.58919+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+46ec74f6-396b-49f8-8873-f9e095203e14,Laboratory,Pharmacy,,Lab Result: PDT URINE,Results for ESTHER MATEO (LAB-915467) - PDT URINE: NEGATIVE. Please review and prescribe accordingly.,f,,2026-04-16 20:14:18.483543+00,2026-04-16 14:14:18.483543+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+683e1eed-68d2-4082-a6bd-d3678a019922,Laboratory,Medical,,Lab Result: blood,Results for demo  patient (LAB-209174) - blood: abcde. Please review and prescribe accordingly.,f,,2026-04-19 20:34:12.455568+00,2026-04-19 14:34:12.455568+00,6a1a35af-99a5-489a-882e-4896faca04f7
+b0ae4121-c03f-42bd-8421-2e20c86bef25,Laboratory,Pharmacy,,Lab Result: STOOL FOR O/C,"Results for ANITA UMIZA (LAB-769217) - STOOL FOR O/C: PUS CELLS SEEN
+CYSTS OF E.HYSTOLYTICA. Please review and prescribe accordingly.",f,,2026-04-20 21:28:52.761238+00,2026-04-20 15:28:52.761238+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1e17bda8-d8ef-4fcf-9282-106689f9dab3,Laboratory,Medical,,Lab Result: PDT URINE,Results for MARGARET  NYARURANGA (LAB-199148) - PDT URINE: NEGATIVE. Please review and prescribe accordingly.,f,,2026-04-26 14:34:43.353168+00,2026-04-26 08:34:43.353168+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+dae7e983-70c6-455b-8e81-6941e345466c,Laboratory,Medical,,Lab Result: URINALYSIS,"Results for VINCENT  THEURI (LAB-796119) - URINALYSIS: LEUKOCYTES+
+NITRITE+
+BILIRUBIN-TRACE. Please review and prescribe accordingly.",f,,2026-04-28 21:22:53.114793+00,2026-04-28 15:22:53.114793+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+5b301586-a958-4905-ab30-6e93ba8d4e94,Laboratory,Medical,,Lab Result: PDT URINE,Results for JANET  ZILAJI (LAB-404671) - PDT URINE: POSITIVE. Please review and prescribe accordingly.,f,,2026-04-30 14:38:59.559224+00,2026-04-30 08:38:59.559224+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5

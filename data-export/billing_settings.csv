@@ -1,0 +1,9 @@
+id,billing_mode,cumulative_threshold,auto_bill_on_discharge,auto_verify_insurance,require_payment_confirmation,checkin_required,notification_expiry_hours,updated_at,hospital_id
+6ff8718e-43fa-4a6b-9312-a8a41a61b8e4,realtime,50000,t,t,t,f,3,2026-03-29 16:12:52.444376+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+66e9a174-981c-441c-a419-e373a1a4b323,hybrid,50000,t,t,t,f,3,2026-03-26 16:18:37.825985+00,
+010f1dc4-cf0c-4f12-a9f3-180460f6a5eb,realtime,50000,t,t,t,f,3,2026-03-30 07:24:49.516363+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+b9f66c2b-1aaf-4f37-85b5-0c4aab0b3c5d,realtime,50000,t,t,t,f,3,2026-03-31 10:09:28.393689+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+81014643-74f7-4195-82fb-141979d8aa0b,realtime,50000,t,t,t,f,3,2026-03-31 15:01:38.727278+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+a8b7f4dc-7dfc-4b40-a098-37b125ad6d77,realtime,50000,t,t,t,f,3,2026-04-09 16:54:28.224306+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+1819c267-11a6-453a-ac91-520a683800ac,realtime,50000,t,t,t,f,3,2026-04-13 15:20:39.316346+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+ed0cd504-8cc6-4d17-bd07-7d75266d4750,realtime,50000,t,t,t,f,3,2026-04-16 13:07:13.177923+00,6a1a35af-99a5-489a-882e-4896faca04f7

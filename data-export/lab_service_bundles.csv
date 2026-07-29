@@ -1,0 +1,24 @@
+id,hospital_id,service_name,service_code,price,category,description,is_active,created_at,updated_at
+5e15fd44-eba1-4db8-a727-d7739e7c2163,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Minor Dressing,SVC-001,150,procedure,Minor wound dressing - price varies by complexity,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+606d9b48-855c-4456-b53f-f624bd94cc2e,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Medical Report,SVC-002,200,documentation,Medical report issuance - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+f0aad891-3968-4a95-99a2-7f098cdb86f5,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Pregnancy Test,SVC-003,100,lab_test,Urine pregnancy test - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+7a419e27-c768-4f12-8a97-66924fba1594,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Urinalysis,SVC-004,100,lab_test,Complete urinalysis - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+24769aa9-b282-4667-93f0-6bbcf30c3d97,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Malaria Test,SVC-005,100,lab_test,Rapid malaria antigen test - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+e791d834-6bec-4ee5-9edd-ab34d81bf097,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,HIV Test,SVC-006,200,lab_test,HIV rapid test - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+3ff48245-42a4-48d3-9449-e228e7e7b597,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Nebulization,SVC-007,500,procedure,Nebulizer therapy session - fixed price,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+381319d6-afbf-4af3-8622-65242ba9c1eb,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Complete Blood Count (CBC),SVC-008,300,lab_test,Full blood count analysis - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+41ae339d-18f6-48d9-af04-2702a2966831,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Liver Function Test (LFT),SVC-010,500,lab_test,Liver enzyme panel - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+f17231dd-b88c-46a8-8675-d3e64d8ec8db,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Renal Function Test (RFT),SVC-011,500,lab_test,Kidney function panel - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+8cabb644-1d73-468b-92bf-977752502207,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Lipid Profile,SVC-012,600,lab_test,Cholesterol and triglycerides panel - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+fffad79c-2612-41bb-9e23-50b924d12d51,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Chest X-Ray,SVC-013,800,radiology,Standard chest radiograph - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+354f8461-1a60-4b04-9501-bb830a90bd7b,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,ECG / Electrocardiogram,SVC-014,500,procedure,Standard 12-lead ECG - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+3396743d-8267-4398-b447-075b3ccb649e,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Wound Suturing,SVC-015,500,procedure,Simple wound suturing - price varies by complexity,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+58a0dc5e-4346-4178-a144-7ef4125a1fc2,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Circumcision,SVC-016,3000,procedure,Male circumcision procedure - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+7db62b97-b09a-4fd0-9974-2e6357d29357,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Widal Test,SVC-017,200,lab_test,Typhoid screening test - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+d4f9f8f5-1b09-4f17-aa3e-8cdd8be35b09,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Stool Analysis,SVC-018,150,lab_test,Stool microscopy and culture - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+60d337a6-d8c5-4cea-86a0-a9288b8fee18,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Injection Administration,SVC-019,100,procedure,IM/IV injection administration - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+c8fe06f6-9b7e-4281-be0c-23d300f5710d,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Blood Glucose Test,SVC-009,100,lab_test,Fasting or random blood sugar - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+31eb721e-ce25-43e6-8386-76b301ca8b3e,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Blood Grouping & Rh,SVC-020,200,lab_test,ABO and Rh factor typing - price varies,t,2026-04-06 09:24:43.898452+00,2026-04-06 09:24:43.898452+00
+f1130e2d-9e3d-4236-9b09-da24e8e9a6ae,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Syphillis,SVC-19300,250,general,,t,2026-04-06 09:29:19.159363+00,2026-04-06 09:29:19.159363+00
+5b9e52c5-0e34-4e5d-91dc-993fa3a2cce9,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Demo,SVC-431589,10,general,,t,2026-04-21 14:07:10.716094+00,2026-04-21 14:07:10.716094+00
+6773a0ab-1961-4063-834c-713a8faa20b6,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5,Test,SVC-825503,1,general,,t,2026-04-24 18:53:46.180106+00,2026-04-24 18:53:46.180106+00

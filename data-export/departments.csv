@@ -1,0 +1,361 @@
+id,name,description,head_name,is_active,created_at,hospital_id
+a636acad-7974-4b69-8985-d464f14e997f,General Medicine,General outpatient and inpatient care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5c7706a1-4143-4214-9881-e3c8aa9013a7,Surgery,Surgical procedures and post-op care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+99db886c-52cd-4824-922d-4b9056c74dc7,Pediatrics,Children and adolescent health,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+767ca40a-3628-4e6e-8a04-0f7533e366c4,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+0a40d715-9e58-40a7-963a-d700eafe3ecd,Emergency,Emergency and trauma services,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+08f8af4a-7ad8-47a7-b76e-75d533d187d0,Laboratory,Diagnostic lab services,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+ba42fb53-66c9-44b2-8cde-b68f19c82c55,Radiology,Imaging and diagnostic radiology,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+562c3bac-2781-4efa-8ff8-97568b7804a9,Pharmacy,Drug dispensing and management,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+27724377-713b-4735-b23a-ea609d8ec08d,Physiotherapy,Physical therapy and rehabilitation,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+75b57b2c-2217-4a66-9a55-1c162bc6c16e,ICU,Intensive care unit,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+7358cb58-a260-4f19-98d6-67ad087db2e0,Orthopedics,Bone and joint care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+45379cee-9e44-4eed-8a66-10be1de8433e,Cardiology,Heart and cardiovascular care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+c8e0cb7a-98bc-480f-a36a-9c419cacef7e,Dermatology,Skin-related conditions,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a3e5e838-0871-4dba-b139-cde5ec5f8d7c,ENT,"Ear, nose, and throat",,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+2314987c-e2fa-468b-8efb-3d317ee68c95,Ophthalmology,Eye care and surgery,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+eb4d59e6-946c-4989-add4-7d771b33cb9c,Dental,Oral health and dental care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+0d8e29b5-555a-40a4-b3da-9515bf937083,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+ac0d2b2a-58ee-4e29-89db-c6ec40e61cdc,Nursing,Nursing and patient care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+17f1aa1d-8215-4e6e-bb06-434d322f09ab,Finance & Billing,"Billing, insurance, and accounting",,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+054ee75d-366e-4c0f-bbe0-aa2c2663a84f,Administration,Hospital administration and HR,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+43154f00-74d7-4100-a6ea-9b908d84c679,Records,Medical records management,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+f2fe5a93-318c-4c5d-9c2d-ab63042cb462,Blood Bank,Blood collection and transfusion,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+02aecbd6-7c63-45f2-bbd6-3e64cec35344,Oncology,Cancer treatment and care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a8a6ccae-50bd-4c86-bfd8-2d2b1db20e84,Nephrology,Kidney diseases and dialysis,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+5f30c3c7-4a00-4dbe-8828-2f10d6405e9f,Neurology,Brain and nervous system,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+7831cf7b-c245-4aa9-8ce2-9dcbdcc1b724,Psychiatry,Mental health services,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+22cfbea7-3bd0-42ee-bdf0-9fb1ce18e359,Urology,Urinary tract and male reproductive health,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+89f4e241-3c83-4c85-a8a2-44aacf92bdf0,Gastroenterology,Digestive system disorders,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+cfa84290-64fc-4984-8196-ddcdac858ade,Pulmonology,Lung and respiratory diseases,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d0204ff3-0411-427c-a513-767d7ebec672,Endocrinology,Hormonal and metabolic disorders,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+93756901-1a77-412d-8052-7c4ac92939c1,Rheumatology,Autoimmune and joint diseases,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+d2d9f414-908b-4449-a7ac-f80e13b373b1,Neonatology,Newborn intensive care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+679307d2-2c0d-4c56-9ce4-a6f8fedeadc4,Anesthesiology,Anesthesia and pain management,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+89c3a28d-1aa2-4b12-b728-ea48fd386a08,Pathology,Disease diagnosis through lab analysis,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+e2efc08b-fc31-46a7-a4f2-655c70c5056c,Palliative Care,End-of-life and comfort care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+b436ba01-565c-4ecd-a9eb-a2f69fd39d95,Rehabilitation,Physical and occupational rehabilitation,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+bc610e69-f1f8-4775-9ea0-c85888745b13,Social Work,Patient social support services,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+fc37e8fb-7b0e-483f-9ccc-749b00f02688,Infection Control,Hospital infection prevention,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+adc8c5fc-deb8-4faf-ab67-105ce148e642,Quality Assurance,Healthcare quality monitoring,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a50b6508-4b52-4042-9523-230345c8f756,Supply Chain,Procurement and logistics,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+1448eec8-462d-4046-86c4-f1e865d0723a,Hematology,Blood disorders and treatments,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+29b05d23-2f52-44f7-be40-c49401e9d721,Geriatrics,Elderly patient care,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+a0d79bbf-9870-4d33-9741-74460607f491,Pain Management,Chronic pain treatment,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+72ce8fb6-2a85-4613-9828-7f27a1bbeb91,Occupational Therapy,Functional rehabilitation,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+99dae9df-6ab8-4b08-8f34-ed9d76d2fbc5,Speech Therapy,Communication disorders,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+4b1c1c03-0895-4b65-8cd8-f3d285acb04d,Medical Genetics,Genetic testing and counseling,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+f400933b-3603-438d-bd53-2bbaf770197e,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3a7b1a0d-15e6-4dea-825e-ef01d27bfa4a,Organ Transplant,Transplant surgery coordination,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+833222b5-e03e-4041-b231-093bd6bcde2e,Burn Unit,Burn injury treatment,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+32259cf9-28c7-4ca4-b828-4671e2192fa5,Forensic Medicine,Medico-legal services,,t,2026-03-29 16:12:42.647055+00,23c72a30-2d42-442e-abcf-67009d5e51cd
+3699fcd0-a705-4f2a-8c3b-b8c7af631d0b,General Medicine,General outpatient consultations,,t,2026-03-26 10:14:24.10182+00,
+23acefd7-b644-404e-927f-e9e9457d2da3,Pediatrics,Child healthcare services,,t,2026-03-26 10:14:24.10182+00,
+9ecb6775-e9ef-41fc-9c43-d7c13a92f370,Surgery,Surgical procedures and care,,t,2026-03-26 10:14:24.10182+00,
+d6a88a6f-8395-4e9a-a856-0ee9fa870f21,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-03-26 10:14:24.10182+00,
+212d5783-eb58-48f5-bf84-73afdec13959,Pharmacy,Medicine dispensing and management,,t,2026-03-26 10:14:24.10182+00,
+34deb2a1-4e28-4e22-a0d0-0d5ad99d7bc7,Laboratory,Diagnostic testing services,,t,2026-03-26 10:14:24.10182+00,
+c047238d-6443-4a19-8397-9ac93f865eb6,Radiology,Imaging and diagnostics,,t,2026-03-26 10:14:24.10182+00,
+583d3189-9575-44d2-9eb9-2ccdb7e59acd,Emergency,Emergency medical services,,t,2026-03-26 10:14:24.10182+00,
+5488370b-d720-4877-8da0-03383a12618a,Dental,Dental care services,,t,2026-03-26 10:14:24.10182+00,
+72419c15-66ab-4a19-bcd7-b7ed33a8671b,Ophthalmology,Eye care services,,t,2026-03-26 10:14:24.10182+00,
+c10cd51e-9626-4178-9a6d-c4c1996bfa54,General Medicine,General outpatient and inpatient care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+91332546-6932-4d60-aa42-2e6976a24a5e,Surgery,Surgical procedures and post-op care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+e436bce7-14ae-4dc8-8830-24b182795543,Pediatrics,Children and adolescent health,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+374f329d-b39b-4389-bf71-9e2ec833c993,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+13370272-5413-4b6b-be01-3b002bd311cf,Emergency,Emergency and trauma services,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+1dc0ef15-3ae5-4737-867b-872408fc1c24,Laboratory,Diagnostic lab services,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+e9eb2c39-b7b7-4d99-89ec-594bd792050e,Radiology,Imaging and diagnostic radiology,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+ae5db61d-db9a-4b49-b8a4-61a8cb80bad1,Pharmacy,Drug dispensing and management,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+722cf682-0fba-49cb-a4ab-ac941ff7fd16,Physiotherapy,Physical therapy and rehabilitation,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+c54a5df6-d3ff-440c-b905-071bd9d1a375,ICU,Intensive care unit,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+b3bd54e4-b141-4678-8e85-f4b47d73e462,Orthopedics,Bone and joint care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+8a12b7a5-46a3-41bc-bbc8-d992e587f3f0,Cardiology,Heart and cardiovascular care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+2df68bba-1b06-4c1e-9324-f3f92c807608,Dermatology,Skin-related conditions,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+cdeb3163-04e4-45e4-ac8f-d61f6939b047,ENT,"Ear, nose, and throat",,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+c0298c56-c4bb-4246-b86c-2271f3fd4238,Ophthalmology,Eye care and surgery,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+3656d525-ea8b-412b-9ddf-3183cb13d9d3,Dental,Oral health and dental care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+f96e0e44-418c-44f2-a56c-24a7a62599ca,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+3db157f5-1b2f-4f6e-801f-8c8b393f1c9c,Nursing,Nursing and patient care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+98ed30a7-5ca7-401a-bb04-41ec271f9f69,Finance & Billing,"Billing, insurance, and accounting",,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+ffdaf49d-e574-4763-ad79-ecdd3fd073e0,Administration,Hospital administration and HR,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+ce1c622d-dbf0-448e-bfea-72905f954837,Records,Medical records management,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+8c07b5f8-9a79-4b60-a75b-33417ec55333,Blood Bank,Blood collection and transfusion,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+64e41eef-a218-48a0-8cf2-d05996d94199,Oncology,Cancer treatment and care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+f727c744-b096-4bc0-8da4-b5e2d91a530d,Nephrology,Kidney diseases and dialysis,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+f2d0e1b6-c153-42f5-8c36-9cc9fa4e8312,Neurology,Brain and nervous system,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+211ce641-3b04-4b89-a318-7507ab98a92b,Psychiatry,Mental health services,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+46a8a3a2-f7d4-42dc-ba03-04c9e9617718,Urology,Urinary tract and male reproductive health,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+90837593-a335-4806-8c48-e6fda010aa94,Gastroenterology,Digestive system disorders,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+03668e36-22ad-454c-82c4-44e0e1f84fce,Pulmonology,Lung and respiratory diseases,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+ae203f60-723f-4094-ba36-7ee7cc3a40d8,Endocrinology,Hormonal and metabolic disorders,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+40f38a89-e13b-4fbc-957e-c78bd9fa61f8,Rheumatology,Autoimmune and joint diseases,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+6607695c-9702-41e0-be50-f606a7c11d85,Neonatology,Newborn intensive care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+9ba30adf-01e1-4916-aef4-74e171ad0778,Anesthesiology,Anesthesia and pain management,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+a8b5fbfd-4abd-4474-a56c-a93b52a79cda,Pathology,Disease diagnosis through lab analysis,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+82f87e08-a34e-44ab-b160-20f94b88aeeb,Palliative Care,End-of-life and comfort care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+08bb9e27-23b4-4a07-8a16-53b75356eb78,Rehabilitation,Physical and occupational rehabilitation,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+b335ac61-aa71-4f0a-afa9-f101670456fd,Social Work,Patient social support services,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+531e3087-18b1-42b5-8b65-5da976e658b2,Infection Control,Hospital infection prevention,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+8a7509eb-5ebe-4c16-8a40-9d307ebab2bd,Quality Assurance,Healthcare quality monitoring,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+3a819538-0553-458b-a88d-ffa9dfcdd981,Supply Chain,Procurement and logistics,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+27320544-379e-4e43-b08b-dda60a8c35bc,Hematology,Blood disorders and treatments,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+c45e17ba-5853-45b0-b056-9d620200bbcd,Geriatrics,Elderly patient care,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+e6221580-cdf5-4c39-b71d-b61ba7d471bf,Pain Management,Chronic pain treatment,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+10111093-2408-4d2d-9b96-648221cbb522,Occupational Therapy,Functional rehabilitation,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+c8c7917f-41ed-4a18-b487-b27201592e9e,Speech Therapy,Communication disorders,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+e9ff7591-a978-449c-a65d-05e8c5ff6800,Medical Genetics,Genetic testing and counseling,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+318663f6-67a9-44c6-afba-fe217d4effbb,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+63f948d5-9951-4c14-9413-6b1b2b25934b,Organ Transplant,Transplant surgery coordination,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+66bce4a5-5e1c-450c-8468-faa10b9932c2,Burn Unit,Burn injury treatment,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+7e022efc-5100-4797-b66b-80e7811d9998,Forensic Medicine,Medico-legal services,,t,2026-03-30 07:24:43.239091+00,fd807998-af33-4ee1-96f8-3a5dc713cf07
+ed744f7a-0538-46d6-bdf7-b2ee59b3c2db,General Medicine,General outpatient and inpatient care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+ef18a68e-e875-4fac-8184-7db6aa60b2f6,Surgery,Surgical procedures and post-op care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+ab2bd39e-3c62-439e-b746-03e2d91fd35d,Pediatrics,Children and adolescent health,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+f448464b-6695-4041-a8e7-70849aabef49,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+50eca3dc-f4e0-41fa-a54b-2497a60c6ff9,Emergency,Emergency and trauma services,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+d90b6935-a9b4-47ee-ac01-503d12152c36,Laboratory,Diagnostic lab services,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+27f04001-dec6-43f4-bb41-3971cfb41ac6,Radiology,Imaging and diagnostic radiology,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+cedd4ca4-8f05-4be6-ac68-21008493732d,Pharmacy,Drug dispensing and management,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+85a3e2fd-0fef-4dc7-99c6-ee97097e28d8,Physiotherapy,Physical therapy and rehabilitation,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+0beb1ad3-da4f-4103-9d08-db8bf290bfb1,ICU,Intensive care unit,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+16538487-00c2-4836-8031-66793f32b3a4,Orthopedics,Bone and joint care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+b17e8f74-4918-418c-b52a-33326094d6f9,Cardiology,Heart and cardiovascular care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+b13eb97b-a14f-439f-b34e-d164cdb8e3de,Dermatology,Skin-related conditions,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+3a4d7ce1-49dd-4271-8c93-1a31a80e6990,ENT,"Ear, nose, and throat",,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+cab6d49c-e54c-421e-8663-9f66690be021,Ophthalmology,Eye care and surgery,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+3fd72801-969b-44ee-8ae3-3db82c86fd6b,Dental,Oral health and dental care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+77f60c51-1e9e-401e-86a7-b706e82fafc3,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+7989c73c-98b6-4d03-bd63-56759720e99f,Nursing,Nursing and patient care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+194325c0-ecf2-4e98-93c4-5388272f393e,Finance & Billing,"Billing, insurance, and accounting",,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+a0661e00-7234-4622-bb01-585b5daf030b,Administration,Hospital administration and HR,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+5f5901e7-2d87-4f72-8112-0bfaaa7473b3,Records,Medical records management,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+1526268c-a328-4d32-8326-2c359ef1a7f0,Blood Bank,Blood collection and transfusion,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+a07e8998-d156-4775-8777-446aff1c009b,Oncology,Cancer treatment and care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+a2ff4bc4-6c07-468b-a58b-7c346a92801e,Nephrology,Kidney diseases and dialysis,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+82b20603-3dc0-4914-a8b9-9d9f6969cca1,Neurology,Brain and nervous system,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+28ae8dd5-1b4d-441c-a4b8-6bf6f5ec3103,Psychiatry,Mental health services,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+27122eb1-1462-4e2b-b9b5-c5a810c040d0,Urology,Urinary tract and male reproductive health,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+14aaffd7-7e1b-42ad-bdc7-3956cd599a38,Gastroenterology,Digestive system disorders,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+705e4f9a-52a3-4f3d-8468-5adf3424c9b1,Pulmonology,Lung and respiratory diseases,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+f14f2723-3288-46c4-972c-102de4db3b09,Endocrinology,Hormonal and metabolic disorders,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+bc6e409f-75c4-472c-984f-8f711129e049,Rheumatology,Autoimmune and joint diseases,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+9f25a826-724f-45eb-82a1-5dd16b2d71af,Neonatology,Newborn intensive care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+a8be8a36-13bc-4dd0-9488-e25a1a401952,Anesthesiology,Anesthesia and pain management,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+8fb68e1c-0acf-4e68-aae2-0e191d4c7934,Pathology,Disease diagnosis through lab analysis,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+0bc4b1b9-804d-4365-ade2-fd41e467a1c9,Palliative Care,End-of-life and comfort care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+67bbe7cd-21b6-4fd6-aeef-766494853150,Rehabilitation,Physical and occupational rehabilitation,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+35a031d3-0ff3-4730-9a3f-62e348f52f67,Social Work,Patient social support services,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+86bbd174-699e-4443-a814-d5ec52eebd5f,Infection Control,Hospital infection prevention,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+d848ff55-3e3b-4e6a-aa39-d3262c627113,Quality Assurance,Healthcare quality monitoring,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+8bbbd0d3-5b0d-4117-8b43-c4e4edf75960,Supply Chain,Procurement and logistics,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+64523db5-fa97-4c30-bd47-c9f53aab1b8f,Hematology,Blood disorders and treatments,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+53599fd9-77c5-49af-9622-2743e5b045ba,Geriatrics,Elderly patient care,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+97152982-24b2-43ca-b3fc-51ca83f70752,Pain Management,Chronic pain treatment,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+68be7b94-301b-4044-b11f-611a5322148a,Occupational Therapy,Functional rehabilitation,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+c3817b21-6418-4ad1-8562-e6bc36313f8f,Speech Therapy,Communication disorders,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+8e3f68e1-b9c5-42e0-88cb-ece7679ad8de,Medical Genetics,Genetic testing and counseling,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+47231567-ce8a-4312-b8af-d54d254f2918,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+2c28d3bf-1b61-419d-8a71-05bd6d036896,Organ Transplant,Transplant surgery coordination,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+cccb6416-e49c-4651-948d-c887e165a809,Burn Unit,Burn injury treatment,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+aa48de24-af89-4a16-892a-a986c7cd3c2c,Forensic Medicine,Medico-legal services,,t,2026-03-31 10:09:13.385672+00,baf5632a-3fd4-4b20-bb62-d3e60a78c613
+fed81cec-cf88-4c20-8331-aa26758a6949,General Medicine,General outpatient and inpatient care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0d2d6ac7-656c-46f9-9332-2059fc0723b5,Surgery,Surgical procedures and post-op care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+f9311a53-4ce3-4182-ae26-e0540ae608a9,Pediatrics,Children and adolescent health,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+de179e85-59e1-4ccb-9360-05c5559bef48,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ac1e1f22-a92d-413e-bd79-c4aed15c08e8,Emergency,Emergency and trauma services,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c19edc5e-19a2-4167-8a8c-b0975deb183a,Laboratory,Diagnostic lab services,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ed315d48-e506-4046-9904-9aa7e6bc23d8,Radiology,Imaging and diagnostic radiology,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+82595ed7-5d70-4e68-902b-7d056488c016,Pharmacy,Drug dispensing and management,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+dfdc6dcd-c20b-4f66-b539-f15e26c964ea,Physiotherapy,Physical therapy and rehabilitation,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0f149e18-5aa6-4a46-ac02-178d435d909a,ICU,Intensive care unit,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+a0fb8cff-4d30-4ef3-9220-c790b9fa4939,Orthopedics,Bone and joint care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+0b394603-66c2-4e22-b338-284645c4c66f,Cardiology,Heart and cardiovascular care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+414fde55-fe6c-4471-8b9d-01d1d528dca9,Dermatology,Skin-related conditions,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b2ac2e06-95c2-4ae9-82a3-0da9a22fe582,ENT,"Ear, nose, and throat",,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+39f6701d-af46-4aef-b49d-3a05eccbfa34,Ophthalmology,Eye care and surgery,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+68acd429-23be-4d1c-83c3-69c1d2170193,Dental,Oral health and dental care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+41b0a0d9-6482-4be9-ab8e-0d588102248d,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7e2df5dd-0e80-4cd5-92c6-bb5b71c3167e,Nursing,Nursing and patient care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1b699e19-b5c1-4664-8f6d-e19da6b34a2d,Finance & Billing,"Billing, insurance, and accounting",,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+28147f24-9718-4164-9107-b5ef3197e722,Administration,Hospital administration and HR,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c00aa3d5-9c79-4041-858d-7a143ad6c13f,Records,Medical records management,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c0d44822-6453-48d4-ba50-ed248e3947b8,Blood Bank,Blood collection and transfusion,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+be052f01-e1f0-421b-82ca-dfed7c2124bb,Oncology,Cancer treatment and care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+db367f81-9e2e-4c6a-9498-972a5533c0a4,Nephrology,Kidney diseases and dialysis,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c009a7ef-dc0e-4f5d-8cc5-f20ea711fe17,Neurology,Brain and nervous system,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+8a918cc8-4648-44a6-880c-9d91275fa1d3,Psychiatry,Mental health services,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+2b07dc03-f6cf-4235-9e20-1ea5050f1543,Urology,Urinary tract and male reproductive health,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ebef1dd9-5550-4c12-be49-923a99cdfe5b,Gastroenterology,Digestive system disorders,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+70ba18ab-6e9e-46fd-ba2b-db1c2ad2eb86,Pulmonology,Lung and respiratory diseases,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c79a0c5b-9c7d-4081-bc98-952bde34321c,Endocrinology,Hormonal and metabolic disorders,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b141c432-a4d5-49f0-833a-453adb0d03aa,Rheumatology,Autoimmune and joint diseases,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+2127843c-56ba-44aa-aa29-ff8dfab23392,Neonatology,Newborn intensive care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+b787f8ad-56dd-4e99-b09f-23a4fff834d0,Anesthesiology,Anesthesia and pain management,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+48b78e36-1cf0-4f14-a0ec-c628a46e063a,Pathology,Disease diagnosis through lab analysis,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+51f150e3-c702-47ae-839b-3ddf52ce92a7,Palliative Care,End-of-life and comfort care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c940acff-a8b5-496e-b6b0-2799ca305bce,Rehabilitation,Physical and occupational rehabilitation,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+ef7913c9-28df-440f-a83f-b2b3e919b099,Social Work,Patient social support services,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+00bdac28-9c48-4e3e-8604-7647e58f1752,Infection Control,Hospital infection prevention,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+7272848e-0ee5-4993-b7e0-f23c447b61a3,Quality Assurance,Healthcare quality monitoring,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+018a2323-97b9-43c1-b610-80a7e8d43416,Supply Chain,Procurement and logistics,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c6097b43-ba21-49e1-98b8-6ce1aa61bcc7,Hematology,Blood disorders and treatments,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+40fd3b8e-d5fe-4387-a0fe-add77eed553b,Geriatrics,Elderly patient care,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1f184aad-80d4-480c-af6e-3a5fdc4abe6f,Pain Management,Chronic pain treatment,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+3b60aa5f-f79d-4d4f-9102-bbef7e790681,Occupational Therapy,Functional rehabilitation,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+a1b74411-110f-4c0c-bed8-1ab590bdfe95,Speech Therapy,Communication disorders,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+d4f55b61-a170-4dad-b5c7-2feb73a31623,Medical Genetics,Genetic testing and counseling,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+c734a041-d2c3-4961-b600-402f89322636,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+62733fb1-f3ea-44a8-9420-1a1b4b0357e5,Organ Transplant,Transplant surgery coordination,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+1f9e5227-6f4b-4ff2-a85b-dd22d68650e6,Burn Unit,Burn injury treatment,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+2ff86cf5-95f8-414a-8f79-d192ced2f526,Forensic Medicine,Medico-legal services,,t,2026-03-31 15:01:35.085642+00,ae77a6e7-9755-4cf1-9782-128a7dcdbcb5
+4a46fd9b-d544-4c31-82ec-d03ffadfd670,General Medicine,General outpatient and inpatient care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+efbbd1a0-f034-4641-9e6e-a8d2cb51f33e,Surgery,Surgical procedures and post-op care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+88668f0f-fc5e-48fe-a143-405948f8621d,Pediatrics,Children and adolescent health,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+a5fb2789-cef7-4694-a41b-fb13e4f24242,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+bf60cca4-4ea1-43dd-97b4-550c2d6b9eae,Emergency,Emergency and trauma services,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+a3296af7-97ab-4838-bc4b-9bc3e4095cb2,Laboratory,Diagnostic lab services,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+8c40f1cf-503a-428e-8ef0-d0cdc9fa1d18,Radiology,Imaging and diagnostic radiology,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+abc17b90-6d0e-4f1a-8dc0-7f82f17bd9b2,Pharmacy,Drug dispensing and management,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+10fe1192-50fc-46d1-a313-92594eb19f5e,Physiotherapy,Physical therapy and rehabilitation,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+7e502240-fe2a-4a38-8335-8eff08ace9d5,ICU,Intensive care unit,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+900dbf9d-9268-48af-9d33-83ab7f520bb2,Orthopedics,Bone and joint care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+2a323735-255b-4b74-8aa0-5ee3a68424ba,Cardiology,Heart and cardiovascular care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+a827a38b-37ed-4d9c-acfe-3935eeb66fb2,Dermatology,Skin-related conditions,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+fe23d821-7a59-429f-9c12-0700a300bcc0,ENT,"Ear, nose, and throat",,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+d6c36827-295c-4fa0-a680-509f46c30e6b,Ophthalmology,Eye care and surgery,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+e872140c-0756-435b-9f12-7dbd62b9e38a,Dental,Oral health and dental care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+99436756-0248-4f0a-81c4-dd6c318c2d42,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+bf00e588-1a13-4c0e-886e-5d08d1647c9c,Nursing,Nursing and patient care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+babdc971-29e7-4573-9979-5f049484e15c,Finance & Billing,"Billing, insurance, and accounting",,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+7e629fc9-50c8-4670-8d7a-2df816ff294c,Administration,Hospital administration and HR,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+4d4d4f11-687e-409b-b43a-3c6b83d2424e,Records,Medical records management,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+fb18f389-65f6-4519-a814-97cbe057dcc9,Blood Bank,Blood collection and transfusion,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+abcd2202-33c3-4611-927c-f048f01eb553,Oncology,Cancer treatment and care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+c8dd243e-141b-494a-8c5a-31cd3d7eb2b0,Nephrology,Kidney diseases and dialysis,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+50300b54-2552-4ebd-ade8-49af9ed76cf8,Neurology,Brain and nervous system,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+e2f6730e-3711-49f1-a7b0-fd8bc86cc58a,Psychiatry,Mental health services,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+032c51fe-81b8-4a20-b280-c346906b58fa,Urology,Urinary tract and male reproductive health,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+a6710da6-5819-47a4-948f-2aef71f5208b,Gastroenterology,Digestive system disorders,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+3f0ea285-16b4-46bb-955e-2ee27f84d1f4,Pulmonology,Lung and respiratory diseases,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+b5afc89b-42e4-4f70-a8e6-d95786ecf0ba,Endocrinology,Hormonal and metabolic disorders,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+f3c07005-00f5-4cf8-bce2-e9be1885b3f1,Rheumatology,Autoimmune and joint diseases,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+5717f649-9381-4772-8064-68ddd4bc2287,Neonatology,Newborn intensive care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+62a37499-b0b3-4807-bc65-1221944faeae,Anesthesiology,Anesthesia and pain management,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+eef24d2b-dc4e-4d67-81fb-b9aba73f5432,Pathology,Disease diagnosis through lab analysis,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+0cde2afa-5d54-4914-9741-04dcdfd617cc,Palliative Care,End-of-life and comfort care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+20fb8986-7c65-4d48-94ff-98eb44399ace,Rehabilitation,Physical and occupational rehabilitation,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+60bebc06-bef7-43bd-973f-c0a633831a93,Social Work,Patient social support services,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+466ee0ff-53d6-463a-a826-e8f8c3fe1e29,Infection Control,Hospital infection prevention,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+aee2df7e-cadb-4bf9-be57-2fef8810aab3,Quality Assurance,Healthcare quality monitoring,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+fc95bba1-2f7d-42d8-9a78-98d2a5ee7987,Supply Chain,Procurement and logistics,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+cbc3dc8e-89f8-40b1-b9d1-f802735ed615,Hematology,Blood disorders and treatments,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+450a3c04-24fc-4e13-81c2-0ce9f74b7bd8,Geriatrics,Elderly patient care,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+e3f0f5cc-30a3-4534-a646-5bf9da09918b,Pain Management,Chronic pain treatment,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+51b93cf6-1d63-47f5-97c4-8a7717124250,Occupational Therapy,Functional rehabilitation,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+deb13e85-b35f-43f1-b38b-1eec7def32c3,Speech Therapy,Communication disorders,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+27619ded-98bc-4107-b333-9406d0f9bf48,Medical Genetics,Genetic testing and counseling,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+cb19f439-7b1b-44fb-b0ba-443f46c68c29,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+0a364673-b867-4f91-afb3-91309f2f1781,Organ Transplant,Transplant surgery coordination,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+2e01cf73-deef-4e6e-9397-400e89d77732,Burn Unit,Burn injury treatment,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+71afb103-48f2-417f-aacf-91e4fb0b3c31,Forensic Medicine,Medico-legal services,,t,2026-04-09 16:54:17.301956+00,f90dd92f-59e0-49e1-875f-8e3c9fd4ac2f
+20816423-2011-4ebf-b8db-818f758c40a6,General Medicine,General outpatient and inpatient care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+27fac41b-3fbc-45b2-8f9e-4daa96ff478e,Surgery,Surgical procedures and post-op care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+3eaf3937-7594-4e56-814e-66896711d5fd,Pediatrics,Children and adolescent health,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+269ba5c0-f270-46de-be38-9bb6e073eb3a,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+1875a836-be47-4052-9e12-248b757c3355,Emergency,Emergency and trauma services,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+041cd11a-d808-4e41-96d7-905fd98a6581,Laboratory,Diagnostic lab services,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+dc056d05-7915-4518-a359-95c87af33687,Radiology,Imaging and diagnostic radiology,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+0a55f9ed-3d09-4796-ad5a-02f6cd4635e1,Pharmacy,Drug dispensing and management,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+84e441b5-d375-4d3c-82b7-ea89ea1a8850,Physiotherapy,Physical therapy and rehabilitation,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+e27d5ac7-4740-47b0-ae59-41fa09d93b84,ICU,Intensive care unit,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+8ead096d-730e-4042-a918-4c856edfa89d,Orthopedics,Bone and joint care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+5a2414fd-b975-48bb-8b9b-26380b091b9b,Cardiology,Heart and cardiovascular care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+48bd5cc7-26c5-4c72-8e2d-c982d0b38cbc,Dermatology,Skin-related conditions,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+f3d25430-ebb4-4c72-b452-6fd8d106105d,ENT,"Ear, nose, and throat",,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+9e181c29-2cae-4b43-8a85-5e35f54f9069,Ophthalmology,Eye care and surgery,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+e0b4d244-ecff-412d-8349-5552af4c4bf9,Dental,Oral health and dental care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+b491a208-c2b6-4a14-be03-b268f0f25ce2,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+a3446d1a-bb0e-49bf-b862-e473355fb7b0,Nursing,Nursing and patient care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+2952b6e5-e3fc-4abf-b7b8-c48ec89026de,Finance & Billing,"Billing, insurance, and accounting",,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+c398b8e2-5863-40c6-af28-9374047b1082,Administration,Hospital administration and HR,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+a4a431c0-c715-4899-9e63-7bee61da9066,Records,Medical records management,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+e7d83f8b-a0fa-472b-8825-ccd22c766301,Blood Bank,Blood collection and transfusion,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+3155d425-6e19-4cfb-b96f-f39884d0ab31,Oncology,Cancer treatment and care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+70449d57-7955-4bae-b9c4-2332d63a97e0,Nephrology,Kidney diseases and dialysis,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+c2c91e49-c741-4a65-be3f-0e24fec2beeb,Neurology,Brain and nervous system,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+0d5e3ca2-c022-4cae-b5db-a153de6e5023,Psychiatry,Mental health services,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+45d3b2a7-ec05-4f1d-a9cb-784466196209,Urology,Urinary tract and male reproductive health,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+5c5434eb-ddbc-479c-8cbe-7267509230b5,Gastroenterology,Digestive system disorders,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+63de1814-620c-4ae1-998e-26af7dcff596,Pulmonology,Lung and respiratory diseases,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+d8a5e03e-8168-4d7a-940c-4518c738b4eb,Endocrinology,Hormonal and metabolic disorders,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+2c53129d-40e5-47f0-974d-ce9adab99283,Rheumatology,Autoimmune and joint diseases,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+ed1b8993-32c0-4589-938a-87c5bdbf39c9,Neonatology,Newborn intensive care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+e33e0dee-cb22-43aa-b82e-5a798339eb76,Anesthesiology,Anesthesia and pain management,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+edf8f690-eccd-4b03-8ff8-4c2647ac008d,Pathology,Disease diagnosis through lab analysis,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+f723311b-cd2e-46f0-b5f1-14e8bb324a4e,Palliative Care,End-of-life and comfort care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+3b6ac9a1-8c02-4093-ae3c-4a65ad2cb070,Rehabilitation,Physical and occupational rehabilitation,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+286d384c-2753-4980-8b88-032c4b4c5c8b,Social Work,Patient social support services,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+8cfda8cc-175b-448c-adb3-a540a3c9dbd9,Infection Control,Hospital infection prevention,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+84a68001-bd46-4f71-84c7-474102452784,Quality Assurance,Healthcare quality monitoring,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+d1f80426-2aa4-4c6a-bd98-8fde7cd16fbb,Supply Chain,Procurement and logistics,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+b4380b55-3ff1-461f-941f-72c21caefd13,Hematology,Blood disorders and treatments,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+a0e7a849-f67d-411a-a2bf-fd59915ee5f4,Geriatrics,Elderly patient care,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+abba6c6b-1029-4505-ab08-a19fed25ca08,Pain Management,Chronic pain treatment,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+642c824f-e4f6-4c08-bc41-b6514b83e98b,Occupational Therapy,Functional rehabilitation,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+c693bb6e-1e34-40bf-a7db-830741f455d5,Speech Therapy,Communication disorders,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+45a08e5f-76af-4782-a244-6f5c502f306b,Medical Genetics,Genetic testing and counseling,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+54624198-66b2-48c3-aa88-fa2bb9da770e,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+096c7f32-f041-4205-94bd-50d510b27b26,Organ Transplant,Transplant surgery coordination,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+5a88f859-712b-4f1c-ad4f-b2a5c3a9bf4c,Burn Unit,Burn injury treatment,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+447d8624-482f-4250-8de5-f57974d30edd,Forensic Medicine,Medico-legal services,,t,2026-04-13 15:20:33.877403+00,be7bb7c1-2ab6-4cbf-a678-3c790a7e2f56
+68353277-f162-46d8-9086-ab02faf50841,General Medicine,General outpatient and inpatient care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+3d68bfb4-3733-4634-a40c-c2c9ddb42067,Surgery,Surgical procedures and post-op care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+2a32a248-10ad-4073-8a8a-a98e2f5968d9,Pediatrics,Children and adolescent health,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+89e90ab2-c633-4af3-b3f5-8d020a04ed56,Obstetrics & Gynecology,Maternal and reproductive health,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+e3139dcf-b0b7-4123-8c84-5a2b0e78857a,Emergency,Emergency and trauma services,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+f292e9d9-d019-4c75-b7b2-73415dc3bb0e,Laboratory,Diagnostic lab services,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+b1a95c3d-0318-4e97-91b8-3ff15cf0f76d,Radiology,Imaging and diagnostic radiology,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+4fde46a3-f269-4375-ba7c-cfa83dcb32a2,Pharmacy,Drug dispensing and management,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+8f4eaa54-9603-45f4-83fe-4154bcc1ef40,Physiotherapy,Physical therapy and rehabilitation,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+158b9781-33ff-408a-bfca-dc9124952b87,ICU,Intensive care unit,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+cbaa3859-d44b-424d-a091-a335a017f605,Orthopedics,Bone and joint care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+489dae80-4f08-4232-a7cd-9f61a98345e6,Cardiology,Heart and cardiovascular care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+e4b79230-0188-4aa3-9e98-4006c4c68b5f,Dermatology,Skin-related conditions,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9991d082-49c5-4815-bb01-15c636e53de3,ENT,"Ear, nose, and throat",,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+67fb075a-6d70-48b4-b741-a0ec34cdac59,Ophthalmology,Eye care and surgery,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+8e4374c1-0c72-4229-bd55-4539be2c3699,Dental,Oral health and dental care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+2848ba69-b2c3-4faf-8ef3-e5ac2c1ff79a,Nutrition & Dietetics,Nutritional counseling and meal planning,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+f956b7d1-5019-4965-b270-de4bc187af38,Nursing,Nursing and patient care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+b7e3699f-ff1a-4eba-bd2e-cf60bf99d616,Finance & Billing,"Billing, insurance, and accounting",,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+439a7a26-8321-4308-abdd-617922c525f2,Administration,Hospital administration and HR,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+f9c500bc-bad8-4819-87a0-cfd462fc43bb,Records,Medical records management,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9df77c09-b991-4fe1-9b3b-6efc9d231e1d,Blood Bank,Blood collection and transfusion,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+e74ffbed-12ed-481e-a655-cc7eb68d4785,Oncology,Cancer treatment and care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+b0b2382f-557e-4f51-9f1c-e8cc10678232,Nephrology,Kidney diseases and dialysis,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+4f58fea9-4f97-4f5c-bbca-dae23056314c,Neurology,Brain and nervous system,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+596eca38-c42e-4945-8028-0c226ed3b5c4,Psychiatry,Mental health services,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+413a0c2a-e691-405f-9f4f-7c74446d853d,Urology,Urinary tract and male reproductive health,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+b7b7a603-a29c-4184-8224-054143651a81,Gastroenterology,Digestive system disorders,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+21362cf7-617d-477b-936c-4829cb93d4e8,Pulmonology,Lung and respiratory diseases,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+fd45acfc-4331-4bb5-be05-a2ec9523f966,Endocrinology,Hormonal and metabolic disorders,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+7957f0ef-dd5e-4bf6-89b7-35f8bc36b416,Rheumatology,Autoimmune and joint diseases,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+02b994c3-1875-4b48-a4cd-6de719b9197e,Neonatology,Newborn intensive care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9cedb2a2-5e40-4536-913e-0f674359462e,Anesthesiology,Anesthesia and pain management,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+3fd28107-ebe3-496b-b810-e572130936d9,Pathology,Disease diagnosis through lab analysis,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+f98f87bd-5433-4cd6-b2dd-2022bc4c72c6,Palliative Care,End-of-life and comfort care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+dc0005f5-eea6-41a0-b26e-d0dc7276aa84,Rehabilitation,Physical and occupational rehabilitation,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+ceda375d-19e9-403c-b9bc-c0465bcfd5d6,Social Work,Patient social support services,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+85394cd2-94be-4f6c-8e92-feb97d4c3037,Infection Control,Hospital infection prevention,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+13b3ae1d-0ade-40cb-ab22-0f90c006f783,Quality Assurance,Healthcare quality monitoring,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+c4b2df82-9c4a-48b4-b674-a4b024765010,Supply Chain,Procurement and logistics,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+58e56ef7-a03c-4047-8e3c-b4135127e1b9,Hematology,Blood disorders and treatments,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+5632ac3e-19f3-4d48-a84a-5c48029ab083,Geriatrics,Elderly patient care,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+5973da1d-3a21-4167-b8cb-b804d2345214,Pain Management,Chronic pain treatment,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+7e3aa725-3dd8-47ca-8927-e4e57595d52f,Occupational Therapy,Functional rehabilitation,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+76078e5f-933f-48ee-b44f-cebcdc866ad5,Speech Therapy,Communication disorders,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+1ec26eca-9c75-4add-b25f-cb05aa3d220d,Medical Genetics,Genetic testing and counseling,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+9fca7b35-1d3f-48d0-a3f7-f4f7d4645ff3,Nuclear Medicine,Radioactive diagnostics and therapy,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+4ac9bdb8-c0ec-4a48-91b4-9b16f18ef8f2,Organ Transplant,Transplant surgery coordination,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+ffa712d8-9cc3-42ad-ae9e-51b0c5be944c,Burn Unit,Burn injury treatment,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
+e0a56cdd-63b1-40b5-917a-c55024df8081,Forensic Medicine,Medico-legal services,,t,2026-04-16 13:07:04.69037+00,6a1a35af-99a5-489a-882e-4896faca04f7
