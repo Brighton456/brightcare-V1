@@ -1,5 +1,5 @@
-const DEFAULT_ENDPOINT = "https://ftwbfezbikovfzfbxvnn.supabase.co/functions/v1/endpoint-pay";
-const DEFAULT_STATUS = "https://ftwbfezbikovfzfbxvnn.supabase.co/functions/v1/endpoint-status";
+const DEFAULT_ENDPOINT = "https://smpszpwzwbrzmplwydjj.supabase.co/functions/v1/endpoint-pay";
+const DEFAULT_STATUS = "https://smpszpwzwbrzmplwydjj.supabase.co/functions/v1/endpoint-status";
 const DEFAULT_API_KEY = "bp_ep_d2d888b5778b06b8";
 
 // Allow overriding endpoint and key per-hospital

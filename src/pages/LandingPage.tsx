@@ -92,13 +92,13 @@ export default function LandingPage() {
               {/* Desktop Download Row */}
               <div className="flex flex-wrap items-center gap-3 mb-10">
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Desktop App:</span>
-                <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
                   <Monitor className="h-3.5 w-3.5" /> Windows
                 </a>
-                <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
                   <Apple className="h-3.5 w-3.5" /> macOS
                 </a>
-                <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
                   <Laptop className="h-3.5 w-3.5" /> Linux
                 </a>
               </div>
@@ -230,13 +230,13 @@ export default function LandingPage() {
                 <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                 {'hasDownload' in item && item.hasDownload && (
                   <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
-                    <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                       <Monitor className="h-3 w-3" /> Windows
                     </a>
-                    <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                       <Apple className="h-3 w-3" /> macOS
                     </a>
-                    <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                       <Laptop className="h-3 w-3" /> Linux
                     </a>
                   </div>
@@ -283,13 +283,13 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             <span className="text-blue-300 text-xs font-semibold self-center mr-1">Download Desktop:</span>
-            <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-white/10 text-white rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
+            <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-white/10 text-white rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
               <Monitor className="h-3.5 w-3.5" /> Windows
             </a>
-            <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-white/10 text-white rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
+            <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-white/10 text-white rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
               <Apple className="h-3.5 w-3.5" /> macOS
             </a>
-            <a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-white/10 text-white rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
+            <a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-white/10 text-white rounded-lg border border-white/20 hover:bg-white/20 transition-colors">
               <Laptop className="h-3.5 w-3.5" /> Linux
             </a>
           </div>
@@ -337,9 +337,9 @@ export default function LandingPage() {
               </ul>
               <h4 className="text-white font-semibold mb-3 mt-6 text-sm flex items-center gap-1.5"><Download className="h-3.5 w-3.5" /> Desktop App</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="flex items-center gap-1.5 hover:text-white transition-colors"><Monitor className="h-3 w-3" /> Windows (x64)</a></li>
-                <li><a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="flex items-center gap-1.5 hover:text-white transition-colors"><Apple className="h-3 w-3" /> macOS (x64)</a></li>
-                <li><a href="https://dcihnhwmkqxyfwefekpy.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="flex items-center gap-1.5 hover:text-white transition-colors"><Laptop className="h-3 w-3" /> Linux (x64)</a></li>
+                <li><a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-win32-x64.zip" download className="flex items-center gap-1.5 hover:text-white transition-colors"><Monitor className="h-3 w-3" /> Windows (x64)</a></li>
+                <li><a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-darwin-x64.zip" download className="flex items-center gap-1.5 hover:text-white transition-colors"><Apple className="h-3 w-3" /> macOS (x64)</a></li>
+                <li><a href="https://smpszpwzwbrzmplwydjj.supabase.co/storage/v1/object/public/downloads/BrightechSmartCare-linux-x64.zip" download className="flex items-center gap-1.5 hover:text-white transition-colors"><Laptop className="h-3 w-3" /> Linux (x64)</a></li>
               </ul>
             </div>
           </div>

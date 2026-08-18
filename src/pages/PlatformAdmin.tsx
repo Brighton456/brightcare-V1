@@ -193,8 +193,8 @@ export default function PlatformAdmin() {
     const { error } = await supabase.from("hospitals").update({
       settings: {
         ...currentSettings,
-        mpesa_endpoint: "https://ftwbfezbikovfzfbxvnn.supabase.co/functions/v1/endpoint-pay",
-        mpesa_status_endpoint: "https://ftwbfezbikovfzfbxvnn.supabase.co/functions/v1/endpoint-status",
+        mpesa_endpoint: "https://smpszpwzwbrzmplwydjj.supabase.co/functions/v1/endpoint-pay",
+        mpesa_status_endpoint: "https://smpszpwzwbrzmplwydjj.supabase.co/functions/v1/endpoint-status",
         mpesa_api_key: mpesaApiKey,
         mpesa_shortcode: mpesaShortcode,
       },
@@ -1452,11 +1452,11 @@ export default function PlatformAdmin() {
                   <div className="grid lg:grid-cols-2 gap-3">
                     <div>
                       <Label className="text-slate-300">Payment Endpoint</Label>
-                      <Input className="bg-slate-800 border-white/10 text-white font-mono text-xs" value="https://ftwbfezbikovfzfbxvnn.supabase.co/functions/v1/endpoint-pay" readOnly />
+                      <Input className="bg-slate-800 border-white/10 text-white font-mono text-xs" value="https://smpszpwzwbrzmplwydjj.supabase.co/functions/v1/endpoint-pay" readOnly />
                     </div>
                     <div>
                       <Label className="text-slate-300">Status Endpoint</Label>
-                      <Input className="bg-slate-800 border-white/10 text-white font-mono text-xs" value="https://ftwbfezbikovfzfbxvnn.supabase.co/functions/v1/endpoint-status" readOnly />
+                      <Input className="bg-slate-800 border-white/10 text-white font-mono text-xs" value="https://smpszpwzwbrzmplwydjj.supabase.co/functions/v1/endpoint-status" readOnly />
                     </div>
                   </div>
                   <p className="text-[10px] text-slate-600">These are global defaults. Each hospital needs an API key configured below.</p>
