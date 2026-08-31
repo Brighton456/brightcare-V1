@@ -100,7 +100,11 @@ export default function Medicines() {
   };
 
   const { staff } = useAuth();
+  const { can } = usePermissions();
   const isAdmin = ["hospital_admin", "super_admin", "platform_admin"].includes(staff?.role || "");
+  const canEditMedicine = isAdmin || !can("admin_only_medicine_edit");
+  const canEditQuantity = isAdmin || !can("admin_only_medicine_quantity");
+  const canEditPrice = isAdmin || !can("admin_only_price_edit");
   const [deleteTarget, setDeleteTarget] = useState<{ id: string; name: string } | null>(null);
 
   const confirmDelete = async () => {
@@ -189,7 +193,7 @@ export default function Medicines() {
                     <td className="p-3 text-center">{m.requires_prescription && <FileText className="h-4 w-4 text-info mx-auto" />}</td>
                     <td className="p-3 text-center">
                       <div className="flex items-center justify-center gap-1">
-                        <button onClick={() => openEdit(m)} className="p-1.5 rounded hover:bg-muted"><Edit2 className="h-3.5 w-3.5 text-muted-foreground" /></button>
+                        {canEditMedicine && <button onClick={() => openEdit(m)} className="p-1.5 rounded hover:bg-muted"><Edit2 className="h-3.5 w-3.5 text-muted-foreground" /></button>}
                         {isAdmin && <button onClick={() => setDeleteTarget({ id: m.id, name: m.name })} className="p-1.5 rounded hover:bg-destructive/10"><Trash2 className="h-3.5 w-3.5 text-destructive" /></button>}
                       </div>
                     </td>
@@ -216,9 +220,9 @@ export default function Medicines() {
                 <SelectContent>{categories.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
               </Select>
             </div>
-            <div><Label>Price (KES)</Label><Input type="number" value={form.price} onChange={e => setForm(f => ({ ...f, price: e.target.value }))} /></div>
-            <div><Label>Cost Price (KES)</Label><Input type="number" value={form.cost_price} onChange={e => setForm(f => ({ ...f, cost_price: e.target.value }))} /></div>
-            <div><Label>Stock</Label><Input type="number" value={form.stock} onChange={e => setForm(f => ({ ...f, stock: e.target.value }))} /></div>
+            <div><Label>Price (KES)</Label><Input type="number" value={form.price} onChange={e => setForm(f => ({ ...f, price: e.target.value }))} disabled={!canEditPrice} /></div>
+            <div><Label>Cost Price (KES)</Label><Input type="number" value={form.cost_price} onChange={e => setForm(f => ({ ...f, cost_price: e.target.value }))} disabled={!canEditPrice} /></div>
+            <div><Label>Stock</Label><Input type="number" value={form.stock} onChange={e => setForm(f => ({ ...f, stock: e.target.value }))} disabled={!canEditQuantity} /></div>
             <div><Label>Reorder Level</Label><Input type="number" value={form.reorder_level} onChange={e => setForm(f => ({ ...f, reorder_level: e.target.value }))} /></div>
             <div><Label>Batch No.</Label><Input value={form.batch_no} onChange={e => setForm(f => ({ ...f, batch_no: e.target.value }))} /></div>
             <div><Label>Expiry Date</Label><Input type="date" value={form.expiry_date} onChange={e => setForm(f => ({ ...f, expiry_date: e.target.value }))} /></div>

@@ -117,86 +117,17 @@ export const ROUTE_PERMISSIONS: Record<string, string> = {
 };
 
 /**
- * Default role → allowed permission keys.
- * Uses the same feature keys as FEATURE_CATEGORIES in RolePermissions.tsx.
- * super_admin and hospital_admin bypass all checks.
+ * Critical settings — admin-only operations.
+ * These keys are saved into role_permissions like feature keys.
+ * Enforced in the respective pages.
  */
-export const ROLE_DEFAULTS: Record<string, string[]> = {
-  doctor: [
-    "view_patient_list", "search_patients", "view_patient_history", "view_appointments",
-    "book_appointment", "start_consultation", "write_clinical_notes", "create_prescription",
-    "request_lab_test", "view_lab_results", "write_diagnosis", "create_treatment_plan",
-    "schedule_follow_up", "view_drug_interactions", "refer_to_specialist", "view_patient_vitals",
-    "consultation_analytics", "digital_signature", "telemedicine_consultation",
-    "view_patient_queue", "view_medical_records", "consent_management", "patient_feedback",
-    "order_radiology", "manage_consultation_fees",
-  ],
-  nurse: [
-    "view_patient_list", "search_patients", "view_patient_history", "view_appointments",
-    "view_medical_records", "admit_patient", "allocate_bed", "add_nursing_notes",
-    "view_nursing_notes", "record_vitals", "schedule_ward_rounds", "manage_diet_plans",
-    "view_bed_occupancy", "discharge_patient", "print_discharge_papers",
-    "prescription_dispensing", "attendance_tracking", "view_patient_queue",
-    "view_ward_status", "manage_ward_inventory", "nurse_shift_management",
-  ],
-  lab_technician: [
-    "view_lab_pending", "start_lab_test", "enter_lab_results", "validate_lab_results",
-    "print_lab_report", "lab_quality_control", "manage_lab_inventory",
-    "upload_result_files", "mark_abnormal_results", "request_retest",
-    "view_patient_list", "attendance_tracking",
-  ],
-  pharmacist: [
-    "access_pos", "process_sale", "apply_discount", "view_sales_history",
-    "add_medicine", "edit_medicine", "manage_stock", "receive_stock",
-    "stock_adjustment", "view_expiry_alerts", "manage_controlled_drugs",
-    "csv_import_medicines", "view_purchase_orders", "create_purchase_order",
-    "stock_reconciliation", "manage_suppliers", "batch_tracking",
-    "prescription_dispensing", "allergy_cross_check", "barcode_scanning",
-    "view_patient_list", "create_prescription", "attendance_tracking",
-    "submit_settlement", "view_inventory_report",
-  ],
-  cashier: [
-    "access_pos", "process_sale", "view_sales_history",
-    "view_billing_history", "create_bill", "process_payment",
-    "print_receipt", "view_outstanding_balances",
-    "accept_cash", "accept_mpesa", "accept_card", "accept_credit",
-    "partial_payment", "send_stk_push", "verify_mpesa_payment",
-    "credit_sale", "attendance_tracking", "submit_settlement",
-  ],
-  receptionist: [
-    "view_patient_list", "register_patient", "search_patients",
-    "book_appointment", "cancel_appointment", "reschedule_appointment",
-    "view_appointments", "walk_in_registration", "view_patient_queue",
-    "attendance_tracking",
-  ],
-  accountant: [
-    "view_billing_history", "billing_analytics", "view_outstanding_balances",
-    "manage_insurance_claims", "refund_management", "credit_notes",
-    "view_financial_reports", "export_financial_data",
-    "view_financial_reconciliation", "submit_settlement", "verify_settlement",
-    "view_collection_reports", "view_daily_report", "view_monthly_report",
-    "audit_logs", "attendance_tracking", "profit_calculation",
-  ],
-  radiologist: [
-    "request_radiology", "view_radiology_results", "upload_radiology_images",
-    "view_patient_list", "view_patient_history", "view_medical_records",
-    "attendance_tracking",
-  ],
-  physiotherapist: [
-    "physiotherapy_scheduling", "therapy_progress_notes", "exercise_prescription",
-    "view_patient_list", "view_patient_history", "view_medical_records",
-    "attendance_tracking",
-  ],
-  records_officer: [
-    "view_medical_records", "edit_medical_records", "archive_records",
-    "export_records", "manage_document_templates", "icd_coding",
-    "view_patient_list", "search_patients", "view_patient_history",
-    "attendance_tracking",
-  ],
+export const CRITICAL_SETTINGS: Record<string, string> = {
+  "/medicines": "admin_only_medicine_edit",
 };
 
 /**
- * Check if a given role can access a route, using explicit permissions or defaults.
+ * Check if a given role can access a route, using DB permissions.
+ * super_admin and hospital_admin bypass all checks.
  */
 export function canAccessRoute(
   route: string,
@@ -218,12 +149,6 @@ export function canAccessRoute(
     return resolvedPermission;
   }
 
-  // Fall back to role defaults
-  const defaults = ROLE_DEFAULTS[role];
-  if (defaults) {
-    return defaults.includes(requiredPermission);
-  }
-
-  // Unknown role with no permissions → deny
+  // No DB permission found and no default → deny
   return false;
 }

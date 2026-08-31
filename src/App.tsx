@@ -144,7 +144,7 @@ const Loader = () => (
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { staff, loading } = useAuth();
   if (loading) return <Loader />;
-  if (!staff) return <Navigate to="/welcome" replace />;
+  if (!staff) return <Navigate to="/login" replace />;
   return <>{children}</>;
 }
 

@@ -13,8 +13,9 @@ import { toast } from "@/hooks/use-toast";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import {
   DollarSign, Receipt, CreditCard, Search, Plus, Trash2,
-  Smartphone, CheckCircle, Clock, FileText, Printer, AlertTriangle,
+  Smartphone, CheckCircle, Clock, FileText, Printer, AlertTriangle, Download,
 } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 import { MpesaPaymentModal } from "@/components/payments/MpesaPaymentModal";
 
 interface Bill {
@@ -115,6 +116,72 @@ export default function Billing() {
   };
 
   const [showConfirm, setShowConfirm] = useState(false);
+  const [printBill, setPrintBill] = useState<Bill | null>(null);
+  const { staff } = useAuth();
+
+  const printReceipt = (bill: Bill) => {
+    const patientName = `${bill.patients?.first_name || ""} ${bill.patients?.last_name || ""}`.trim();
+    const hospitalName = hospital?.name || "Hospital";
+    const hospitalAddress = hospital?.address || "";
+    const hospitalPhone = hospital?.phone || "";
+    const cashierName = staff ? `${staff.first_name} ${staff.last_name}` : "";
+    const now = new Date();
+    const dateStr = now.toLocaleDateString("en-KE", { year: "numeric", month: "long", day: "numeric" });
+    const timeStr = now.toLocaleTimeString("en-KE", { hour: "2-digit", minute: "2-digit" });
+
+    const receiptHtml = `
+      <!DOCTYPE html>
+      <html><head><title>Receipt - ${bill.bill_no}</title>
+      <style>
+        body { font-family: 'Courier New', monospace; max-width: 350px; margin: 0 auto; padding: 10px; font-size: 12px; }
+        .center { text-align: center; }
+        .bold { font-weight: bold; }
+        .line { border-top: 1px dashed #000; margin: 8px 0; }
+        .row { display: flex; justify-content: space-between; margin: 3px 0; }
+        h2 { margin: 5px 0; font-size: 16px; }
+        h3 { margin: 3px 0; font-size: 13px; font-weight: normal; }
+      </style></head><body>
+        <div class="center">
+          <h2>${hospitalName}</h2>
+          ${hospitalAddress ? `<h3>${hospitalAddress}</h3>` : ""}
+          ${hospitalPhone ? `<h3>Tel: ${hospitalPhone}</h3>` : ""}
+        </div>
+        <div class="line"></div>
+        <div class="center bold">PAYMENT RECEIPT</div>
+        <div class="line"></div>
+        <div class="row"><span>Receipt No:</span><span class="bold">${bill.bill_no}</span></div>
+        <div class="row"><span>Date:</span><span>${dateStr}</span></div>
+        <div class="row"><span>Time:</span><span>${timeStr}</span></div>
+        <div class="row"><span>Patient:</span><span>${patientName}</span></div>
+        <div class="row"><span>Patient No:</span><span>${bill.patients?.patient_no || "—"}</span></div>
+        <div class="line"></div>
+        <div class="row"><span>Subtotal:</span><span>KES ${(bill.subtotal || 0).toLocaleString()}</span></div>
+        ${bill.discount ? `<div class="row"><span>Discount:</span><span>-KES ${bill.discount.toLocaleString()}</span></div>` : ""}
+        <div class="row"><span>Tax:</span><span>KES ${(bill.tax || 0).toLocaleString()}</span></div>
+        <div class="line"></div>
+        <div class="row bold"><span>TOTAL:</span><span>KES ${bill.total.toLocaleString()}</span></div>
+        <div class="row bold"><span>Amount Paid:</span><span>KES ${(bill.amount_paid || bill.total).toLocaleString()}</span></div>
+        <div class="row"><span>Payment Method:</span><span>${(bill.payment_method || "Cash").toUpperCase()}</span></div>
+        <div class="line"></div>
+        <div class="center" style="margin-top: 8px;">
+          <p style="font-size: 10px;">Paid on ${dateStr} at ${timeStr}</p>
+          ${cashierName ? `<p style="font-size: 10px;">Cashier: ${cashierName}</p>` : ""}
+          <p style="font-size: 10px; margin-top: 10px;">Thank you for your payment!</p>
+          <p style="font-size: 10px;">Get well soon.</p>
+        </div>
+      </body></html>
+    `;
+
+    const printWindow = window.open("", "_blank");
+    if (printWindow) {
+      printWindow.document.write(receiptHtml);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+    } else {
+      toast({ title: "Popup blocked", description: "Please allow popups to print receipts.", variant: "destructive" });
+    }
+  };
 
   const confirmAndPay = () => {
     if (payForm.method === "mpesa") {
@@ -140,6 +207,11 @@ export default function Billing() {
         paid_at: new Date().toISOString(),
       } as any).eq("id", showPay.id);
       toast({ title: "Payment Recorded" });
+    }
+    // Offer to print receipt after payment
+    if (showPay) {
+      const updatedBill = { ...showPay, status: "paid", payment_method: payForm.method, amount_paid: parseFloat(payForm.amount) || showPay.total };
+      setPrintBill(updatedBill);
     }
     setShowPay(null);
     fetchBills();
@@ -250,6 +322,11 @@ export default function Billing() {
                     <td className="p-3 text-xs hidden lg:table-cell">{new Date(b.created_at).toLocaleDateString()}</td>
                     <td className="p-3 text-right">
                       <div className="flex items-center justify-end gap-1">
+                        {(b.status === "paid" || b.status === "partial") && (
+                          <Button size="sm" variant="outline" className="text-xs h-7 gap-1" onClick={() => printReceipt(b)}>
+                            <Printer className="h-3 w-3" /> Print
+                          </Button>
+                        )}
                         {b.status === "pending" && (
                           <Button size="sm" className="text-xs h-7 gap-1" onClick={() => { setShowPay(b); setPayForm({ method: "cash", amount: String(b.total), phone: "" }); }}>
                             <CreditCard className="h-3 w-3" /> Pay
@@ -412,6 +489,10 @@ export default function Billing() {
             } as any).eq("id", showPay.id);
             toast({ title: "M-Pesa Payment Confirmed", description: `Receipt: ${receipt}` });
             setShowMpesaModal(false);
+            if (showPay) {
+              const updatedBill = { ...showPay, status: "paid", payment_method: "mpesa", amount_paid: showPay.total, mpesa_transaction_id: receipt };
+              setPrintBill(updatedBill);
+            }
             setShowPay(null);
             fetchBills();
           }}
@@ -419,6 +500,34 @@ export default function Billing() {
             toast({ title: "M-Pesa Failed", description: err, variant: "destructive" });
           }}
         />
+      )}
+
+      {/* Print Receipt Dialog after payment */}
+      {printBill && (
+        <Dialog open={!!printBill} onOpenChange={() => setPrintBill(null)}>
+          <DialogContent className="max-w-sm">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-2">
+                <Receipt className="h-5 w-5" /> Payment Successful
+              </DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div className="p-4 rounded-lg bg-success/5 border border-success/20 text-center">
+                <CheckCircle className="h-8 w-8 text-success mx-auto mb-2" />
+                <p className="font-bold">KES {printBill.total.toLocaleString()} Paid</p>
+                <p className="text-xs text-muted-foreground">Bill {printBill.bill_no}</p>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="outline" onClick={() => setPrintBill(null)} className="flex-1">
+                  Close
+                </Button>
+                <Button onClick={() => { printReceipt(printBill); setPrintBill(null); }} className="flex-1 gap-1">
+                  <Printer className="h-4 w-4" /> Print Receipt
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       )}
     </AppLayout>
   );

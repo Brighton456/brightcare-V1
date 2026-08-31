@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Banknote, CreditCard, Smartphone, Wallet, Gift, UserCircle, AlertTriangle, CheckCircle2, FileText, UserPlus } from "lucide-react";
+import { Banknote, CreditCard, Smartphone, Wallet, Gift, UserCircle, AlertTriangle, CheckCircle2, FileText, UserPlus, Receipt } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { MpesaPaymentModal } from "@/components/payments/MpesaPaymentModal";
 import { useNavigate } from "react-router-dom";
@@ -58,6 +59,7 @@ export function POSPaymentBar({
   linkedPatient,
   onWalkinBillRequest,
 }: Props) {
+  const [includePendingBills, setIncludePendingBills] = useState(false);
   const navigate = useNavigate();
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
   const [amountPaid, setAmountPaid] = useState("");
@@ -67,6 +69,8 @@ export function POSPaymentBar({
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [pendingAction, setPendingAction] = useState<ConfirmAction>("save");
   const [showBillPopup, setShowBillPopup] = useState(false);
+
+  const effectiveTotal = total + (includePendingBills && linkedPatient ? linkedPatient.cumulativeTotal : 0);
 
   const handlePayment = (method: string) => {
     setSelectedMethod(method);
@@ -96,15 +100,17 @@ export function POSPaymentBar({
 
   const handleMpesaSuccess = (receipt: string) => {
     setShowMpesaSTK(false);
-    onCompleteSale("mpesa", total);
+    onCompleteSale("mpesa", effectiveTotal);
+    if (includePendingBills && linkedPatient) settlePendingBills();
     toast({ title: "M-Pesa Payment Confirmed", description: `Receipt: ${receipt}` });
     setSelectedMethod(null);
+    setIncludePendingBills(false);
   };
 
   const handleCashComplete = () => {
-    const paid = parseFloat(amountPaid) || total;
-    if (paid < total) {
-      toast({ title: "Insufficient Payment", description: `Amount received (KES ${paid.toLocaleString()}) is less than total (KES ${total.toLocaleString()}).`, variant: "destructive" });
+    const paid = parseFloat(amountPaid) || effectiveTotal;
+    if (paid < effectiveTotal) {
+      toast({ title: "Insufficient Payment", description: `Amount received (KES ${paid.toLocaleString()}) is less than total (KES ${effectiveTotal.toLocaleString()}).`, variant: "destructive" });
       return;
     }
     setShowCashModal(false);
@@ -115,7 +121,7 @@ export function POSPaymentBar({
 
   const confirmPayment = () => {
     const method = selectedMethod || "cash";
-    const paid = parseFloat(amountPaid) || total;
+    const paid = parseFloat(amountPaid) || effectiveTotal;
     if (pendingAction === "save_print") {
       if (onSaveAndPrint) onSaveAndPrint(method, paid);
       else onCompleteSale(method, paid);
@@ -125,9 +131,14 @@ export function POSPaymentBar({
     } else {
       onCompleteSale(method, paid);
     }
+    // Settle pending bills if included
+    if (includePendingBills && linkedPatient) {
+      settlePendingBills();
+    }
     setShowConfirmation(false);
     setSelectedMethod(null);
     setAmountPaid("");
+    setIncludePendingBills(false);
   };
 
   const handleSaveOnly = () => {
@@ -174,7 +185,30 @@ export function POSPaymentBar({
     }
   };
 
-  const changeDue = amountPaid ? Math.max(0, parseFloat(amountPaid) - total) : 0;
+  const settlePendingBills = async () => {
+    if (!linkedPatient) return;
+    try {
+      // Mark all pending bills as paid
+      await supabase
+        .from("bills")
+        .update({
+          status: "paid",
+          amount_paid: linkedPatient.cumulativeTotal,
+          paid_at: new Date().toISOString(),
+        } as any)
+        .eq("patient_id", linkedPatient.patientId)
+        .eq("status", "pending");
+
+      toast({
+        title: "✅ Pending Bills Settled",
+        description: `${linkedPatient.pendingBills} pending bill(s) for KES ${linkedPatient.cumulativeTotal.toLocaleString()} marked as paid.`,
+      });
+    } catch (e: any) {
+      toast({ title: "Bill Settlement Error", description: e.message, variant: "destructive" });
+    }
+  };
+
+  const changeDue = amountPaid ? Math.max(0, parseFloat(amountPaid) - effectiveTotal) : 0;
 
   return (
     <>
@@ -199,9 +233,15 @@ export function POSPaymentBar({
 
         {/* Total line */}
         <div className="flex items-center justify-end gap-4 px-6 py-1 border-t">
+          {linkedPatient && linkedPatient.pendingBills > 0 && includePendingBills && (
+            <div className="flex items-center gap-2 mr-4">
+              <span className="text-xs text-muted-foreground">+ Pending Bills</span>
+              <span className="text-sm font-bold text-destructive">KES {linkedPatient.cumulativeTotal.toLocaleString()}</span>
+            </div>
+          )}
           <span className="text-xl font-bold">Total</span>
           <span className="text-2xl font-black font-mono tracking-tight min-w-[140px] text-right">
-            {total.toLocaleString()}.00
+            {(total + (includePendingBills && linkedPatient ? linkedPatient.cumulativeTotal : 0)).toLocaleString()}.00
           </span>
         </div>
 
@@ -236,10 +276,23 @@ export function POSPaymentBar({
             Bill
           </button>
 
+          {/* Include Pending Bills toggle */}
+          {linkedPatient && linkedPatient.pendingBills > 0 && (
+            <button
+              onClick={() => setIncludePendingBills(p => !p)}
+              className={`payment-btn flex items-center justify-center gap-2 border-2 ${includePendingBills ? "border-success bg-success/10 text-success" : "border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-600 dark:bg-amber-900/20 dark:text-amber-400"} font-bold`}
+              title="Include pending bills in this payment"
+            >
+              <Receipt className="h-4 w-4" />
+              {includePendingBills ? "✓ Bills" : "+ Bills"}
+              <span className="text-[10px] opacity-70">({linkedPatient.pendingBills})</span>
+            </button>
+          )}
+
           <div className="ml-auto flex items-center gap-3">
             <span className="text-lg font-bold text-destructive">Amount Due</span>
             <span className="text-2xl font-black font-mono text-destructive min-w-[120px] text-right">
-              {cartLength > 0 ? `${total.toLocaleString()}.00` : "0.00"}
+              {cartLength > 0 ? `${(total + (includePendingBills && linkedPatient ? linkedPatient.cumulativeTotal : 0)).toLocaleString()}.00` : "0.00"}
             </span>
           </div>
         </div>
@@ -302,7 +355,7 @@ export function POSPaymentBar({
             <div className="space-y-4">
               <div>
                 <label className="text-sm text-muted-foreground mb-1 block">Amount Due</label>
-                <div className="text-3xl font-black font-mono text-primary">KES {total.toLocaleString()}</div>
+                <div className="text-3xl font-black font-mono text-primary">KES {effectiveTotal.toLocaleString()}</div>
               </div>
               <div>
                 <label className="text-sm text-muted-foreground mb-1 block">Amount Received</label>
@@ -310,7 +363,7 @@ export function POSPaymentBar({
                   type="number"
                   value={amountPaid}
                   onChange={(e) => setAmountPaid(e.target.value)}
-                  placeholder={total.toString()}
+                  placeholder={effectiveTotal.toString()}
                   className="w-full text-2xl font-bold font-mono border-2 border-border rounded-lg p-3 outline-none focus:border-primary bg-background text-foreground"
                   autoFocus
                   onKeyDown={(e) => e.key === "Enter" && handleCashComplete()}
@@ -333,7 +386,7 @@ export function POSPaymentBar({
                   </button>
                 ))}
                 <button
-                  onClick={() => setAmountPaid(String(total))}
+                  onClick={() => setAmountPaid(String(effectiveTotal))}
                   className="py-2 text-sm font-semibold rounded-lg border bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   Exact
@@ -369,7 +422,7 @@ export function POSPaymentBar({
               <Smartphone className="h-5 w-5 text-success" /> M-Pesa Payment
             </h3>
             <p className="text-sm text-muted-foreground mb-4">How would you like to process this M-Pesa payment?</p>
-            <div className="text-2xl font-black text-center text-primary mb-6">KES {total.toLocaleString()}</div>
+            <div className="text-2xl font-black text-center text-primary mb-6">KES {effectiveTotal.toLocaleString()}</div>
             <div className="space-y-3">
               <button
                 onClick={handleMpesaAlreadyPaid}
@@ -410,7 +463,7 @@ export function POSPaymentBar({
       <MpesaPaymentModal
         open={showMpesaSTK}
         onClose={() => setShowMpesaSTK(false)}
-        amount={total}
+        amount={effectiveTotal}
         onSuccess={handleMpesaSuccess}
         onFail={(err) => toast({ title: "M-Pesa Failed", description: err, variant: "destructive" })}
       />
@@ -427,15 +480,20 @@ export function POSPaymentBar({
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Method</span>
                 <span className="font-semibold capitalize">{selectedMethod || "cash"}</span>
-              </div>
-              <div className="flex justify-between text-sm">
+              </div>                <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Amount</span>
-                <span className="font-bold text-lg">KES {total.toLocaleString()}</span>
+                <span className="font-bold text-lg">KES {effectiveTotal.toLocaleString()}</span>
               </div>
               {currentCustomer && (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Customer</span>
                   <span className="font-semibold">{currentCustomer}</span>
+                </div>
+              )}
+              {includePendingBills && linkedPatient && linkedPatient.pendingBills > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">Pending Bills ({linkedPatient.pendingBills})</span>
+                  <span className="font-semibold text-destructive">+ KES {linkedPatient.cumulativeTotal.toLocaleString()}</span>
                 </div>
               )}
               <div className="flex justify-between text-sm">
@@ -446,7 +504,7 @@ export function POSPaymentBar({
               </div>
             </div>
             <p className="text-sm text-center text-muted-foreground mb-4">
-              Are you sure the customer has paid <strong>KES {total.toLocaleString()}</strong> via{" "}
+              Are you sure the customer has paid <strong>KES {effectiveTotal.toLocaleString()}</strong> via{" "}
               <strong className="capitalize">{selectedMethod || "cash"}</strong>?
             </p>
             <div className="flex gap-2">

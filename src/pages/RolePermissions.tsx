@@ -8,7 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { safeSupabase as supabase } from "@/lib/safeSupabase";
 import { toast } from "@/hooks/use-toast";
-import { Shield, Search, Save, MapPin } from "lucide-react";
+import { Shield, Search, Save, MapPin, AlertTriangle } from "lucide-react";
 import { useHospital } from "@/contexts/HospitalContext";
 import { resolvePermissionValue } from "@/lib/permissionResolver";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -272,6 +272,21 @@ const PAGE_ACCESS_CATEGORIES: Record<string, { title: string; route: string; per
   ],
 };
 
+/**
+ * CRITICAL SETTINGS — admin-only operations that can be restricted per role.
+ * When enabled for a role, ONLY that role (plus admins) can perform the action.
+ * When disabled, anyone with the underlying feature permission can do it.
+ */
+const CRITICAL_SETTINGS_LIST = [
+  { key: "admin_only_medicine_edit", label: "Only Admin Can Edit Medicine Details", description: "Restricts adding, editing, and deleting medicines to admin roles only" },
+  { key: "admin_only_medicine_quantity", label: "Only Admin Can Edit Medicine Quantity/Stock", description: "Only admins can change stock levels, reorder quantities, and adjust inventory" },
+  { key: "admin_only_price_edit", label: "Only Admin Can Edit Medicine Prices", description: "Restricts price and cost price changes to admin roles only" },
+  { key: "admin_only_billing_override", label: "Only Admin Can Override Bills & Refunds", description: "Only admins can cancel bills, process refunds, and adjust billing" },
+  { key: "admin_only_staff_deactivate", label: "Only Admin Can Deactivate Staff", description: "Only admins can deactivate or delete staff accounts" },
+  { key: "admin_only_settings_change", label: "Only Admin Can Change System Settings", description: "Only admins can modify hospital settings, branding, and configuration" },
+  { key: "admin_only_role_change", label: "Only Admin Can Change Staff Roles", description: "Only admins can modify role assignments and permissions" },
+];
+
 // Flatten all page permKeys for saving
 const allPagePermKeys = Object.values(PAGE_ACCESS_CATEGORIES).flat().map(p => p.permKey);
 const uniquePagePermKeys = [...new Set(allPagePermKeys)];
@@ -314,7 +329,7 @@ export default function RolePermissions() {
 
       const permMap: Record<string, boolean> = {};
       // Default: super_admin gets everything enabled
-      const allKeys = [...allFeatures.map(f => f.key), ...uniquePagePermKeys];
+      const allKeys = [...allFeatures.map(f => f.key), ...uniquePagePermKeys, ...CRITICAL_SETTINGS_LIST.map(s => s.key)];
       const uniqueKeys = [...new Set(allKeys)];
       uniqueKeys.forEach(key => {
         permMap[key] = selectedRole === "super_admin"
@@ -356,17 +371,32 @@ export default function RolePermissions() {
     }
 
     setSaving(true);
+
+    // Step 1: Delete all existing permissions for this hospital + role
+    const { error: deleteErr } = await supabase
+      .from("role_permissions")
+      .delete()
+      .eq("hospital_id", hospitalId)
+      .eq("role_name", selectedRole);
+
+    if (deleteErr) {
+      toast({ title: "Error Saving", description: deleteErr.message, variant: "destructive" });
+      setSaving(false);
+      return;
+    }
+
+    // Step 2: Insert all permissions in chunks
     const rows = Object.entries(permissions).map(([feature_key, is_enabled]) => ({
       hospital_id: hospitalId,
       role_name: selectedRole,
       feature_key,
       is_enabled,
     }));
-    const chunkSize = 50;
+    const chunkSize = 100;
     let errorOccurred = false;
     for (let i = 0; i < rows.length; i += chunkSize) {
       const chunk = rows.slice(i, i + chunkSize);
-      const { error } = await supabase.from("role_permissions").upsert(chunk as any[], { onConflict: "hospital_id,role_name,feature_key" });
+      const { error } = await supabase.from("role_permissions").insert(chunk as any[]);
       if (error) {
         errorOccurred = true;
         toast({ title: "Error Saving", description: error.message, variant: "destructive" });
@@ -429,6 +459,7 @@ export default function RolePermissions() {
           <TabsList>
             <TabsTrigger value="features" className="gap-1"><Shield className="h-3.5 w-3.5" /> Feature Permissions</TabsTrigger>
             <TabsTrigger value="pages" className="gap-1"><MapPin className="h-3.5 w-3.5" /> Page Access</TabsTrigger>
+            <TabsTrigger value="critical" className="gap-1"><AlertTriangle className="h-3.5 w-3.5" /> Critical Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="features" className="space-y-4 mt-4">
@@ -501,6 +532,33 @@ export default function RolePermissions() {
                 </Card>
               );
             })}
+          </TabsContent>
+
+          <TabsContent value="critical" className="space-y-4 mt-4">
+            <p className="text-xs text-muted-foreground bg-muted/50 border rounded-lg p-3">
+              ⚠️ <strong>Critical Settings</strong> — Restrict sensitive operations to admin-only. When enabled, only hospital_admin, super_admin, and platform_admin can perform these actions for this role. Other roles will be blocked even if they have the underlying feature permission.
+            </p>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4 text-amber-500" />
+                  Admin-Only Restrictions
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {CRITICAL_SETTINGS_LIST.map(setting => (
+                    <div key={setting.key} className="flex items-center justify-between p-3 rounded border">
+                      <div className="flex-1 min-w-0 mr-4">
+                        <p className="text-sm font-medium">{setting.label}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{setting.description}</p>
+                      </div>
+                      <Switch checked={permissions[setting.key] || false} onCheckedChange={() => toggleFeature(setting.key)} />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
       </div>
