@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:pages": "vitest run src/test/page-smoke.test.tsx"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

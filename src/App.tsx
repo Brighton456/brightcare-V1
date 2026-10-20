@@ -11,6 +11,7 @@ import { lazy, Suspense, useState } from "react";
 import { AppShell } from "@/components/AppLayout";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { usePermissions } from "@/hooks/usePermissions";
+import { useFacility } from "@/hooks/useFacility";
 import { canAccessRoute } from "@/lib/routePermissions";
 import { MpesaPaymentModal } from "@/components/payments/MpesaPaymentModal";
 import { safeSupabase as supabase } from "@/lib/safeSupabase";
@@ -20,7 +21,11 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const POS = lazy(() => import("./pages/POS"));
 const Medicines = lazy(() => import("./pages/Medicines"));
 const Inventory = lazy(() => import("./pages/Inventory"));
+const StockControl = lazy(() => import("./pages/StockControl"));
+const StockTransfers = lazy(() => import("./pages/StockTransfers"));
 const Reports = lazy(() => import("./pages/Reports"));
+const ClinicReports = lazy(() => import("./pages/ClinicReports"));
+const Branches = lazy(() => import("./pages/Branches"));
 const AdminPanel = lazy(() => import("./pages/AdminPanel"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const SalesHistory = lazy(() => import("./pages/SalesHistory"));
@@ -232,6 +237,7 @@ function PermissionGate({ children }: { children: React.ReactNode }) {
   const { staff } = useAuth();
   const { permissions, loading } = usePermissions();
   const { isModuleAllowed, isLicenseActive, isInGracePeriod, graceDaysLeft, expiryReason, hospital, licensePackage, isMaintenanceLocked, maintenanceDaysLeft, hospitalId, refreshHospital } = useHospital();
+  const { isModuleEnabled } = useFacility();
   const location = useLocation();
 
   if (loading) return <Loader />;
@@ -364,6 +370,12 @@ function PermissionGate({ children }: { children: React.ReactNode }) {
     );
   }
 
+  // Facility package gate — blocks deep-links into modules that are not part
+  // of this installation's facility type (hospital / clinic / herbal).
+  if (!isModuleEnabled(location.pathname)) {
+    return <FacilityModuleScreen pathname={location.pathname} />;
+  }
+
   const role = staff?.role ?? "";
   const hasAccess = canAccessRoute(location.pathname, role, permissions);
 
@@ -408,6 +420,36 @@ function PermissionGate({ children }: { children: React.ReactNode }) {
   }
 
   return <>{children}</>;
+}
+
+function PackageAwareReports() {
+  const { facilityType } = useFacility();
+  return facilityType === "clinic" || facilityType === "herbal" ? <ClinicReports /> : <Reports />;
+}
+
+/** Shown when a route belongs to a module outside the active facility package. */
+function FacilityModuleScreen({ pathname }: { pathname: string }) {
+  const { pkg } = useFacility();
+  return (
+    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8">
+      <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-500 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+        </svg>
+      </div>
+      <h2 className="text-xl font-bold text-foreground mb-2">Not Part of Your {pkg.label} Setup</h2>
+      <p className="text-muted-foreground max-w-md">
+        The <span className="font-semibold text-foreground">{pathname}</span> module is not enabled for this facility type.
+        Your administrator can enable it under Admin → Modules, or contact Brightcare support to change your facility setup.
+      </p>
+      <button
+        onClick={() => window.history.back()}
+        className="mt-5 px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all shadow-md"
+      >
+        ← Go Back
+      </button>
+    </div>
+  );
 }
 
 function P({ children }: { children: React.ReactNode }) {
@@ -671,6 +713,22 @@ function AppRoutes() {
             element={
               <PG>
                 <Inventory />
+              </PG>
+            }
+          />
+          <Route
+            path="/stock"
+            element={
+              <PG>
+                <StockControl />
+              </PG>
+            }
+          />
+          <Route
+            path="/transfers"
+            element={
+              <PG>
+                <StockTransfers />
               </PG>
             }
           />
@@ -953,7 +1011,15 @@ function AppRoutes() {
             path="/reports"
             element={
               <PG>
-                <Reports />
+                <PackageAwareReports />
+              </PG>
+            }
+          />
+          <Route
+            path="/branches"
+            element={
+              <PG>
+                <Branches />
               </PG>
             }
           />

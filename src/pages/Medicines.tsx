@@ -19,6 +19,7 @@ import {
 import { DeleteConfirmDialog } from "@/components/DeleteConfirmDialog";
 import { usePermissions } from "@/hooks/usePermissions";
 import { useAuth } from "@/contexts/AuthContext";
+import { useFacility } from "@/hooks/useFacility";
 
 interface MedicineRow {
   id: string; name: string; generic_name: string | null; brand: string | null;
@@ -49,6 +50,14 @@ export default function Medicines() {
   const [loading, setLoading] = useState(true);
 
   const { hospitalId } = useHospital();
+  const { facilityType } = useFacility();
+  const isHerbal = facilityType === "herbal";
+  const productCategories = isHerbal
+    ? ["Dried Herb", "Herbal Blend", "Tea", "Tincture", "Oil", "Powder", "Topical", "Capsule", "Supplement", "Other"]
+    : categories;
+  const productUnits = isHerbal
+    ? ["g", "kg", "oz", "ml", "bottle", "bag", "sachet", "unit", "pack", "capsule", "tablet"]
+    : ["tablet", "capsule", "bottle", "tube", "inhaler", "pack", "vial", "sachet", "box"];
 
   const fetchMedicines = async () => {
     if (!hospitalId) return;
@@ -141,7 +150,7 @@ export default function Medicines() {
   const expiring = medicines.filter(m => isExpiringSoon(m.expiry_date)).length;
 
   return (
-    <AppLayout title="Medicine Catalog">
+    <AppLayout title={isHerbal ? "Herbal Products" : "Medicine Catalog"}>
       <div className="space-y-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <Card className="cursor-pointer" onClick={() => setFilter("all")}><CardContent className="p-4 flex items-center gap-3"><div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center"><Package className="h-5 w-5 text-primary" /></div><div><p className="text-2xl font-bold">{medicines.length}</p><p className="text-xs text-muted-foreground">Total</p></div></CardContent></Card>
@@ -157,7 +166,7 @@ export default function Medicines() {
           </div>
           <Button size="sm" variant="outline" onClick={() => setShowImport(true)}><Upload className="h-4 w-4 mr-1" />Import</Button>
           <Button size="sm" variant="outline" onClick={handleExport}><Download className="h-4 w-4 mr-1" />Export</Button>
-          <Button size="sm" onClick={() => { setForm(emptyForm); setEditingId(null); setShowForm(true); }}><Plus className="h-4 w-4 mr-1" />Add Medicine</Button>
+          <Button size="sm" onClick={() => { setForm({ ...emptyForm, category: isHerbal ? "Dried Herb" : "Pain Relief", unit: isHerbal ? "g" : "tablet" }); setEditingId(null); setShowForm(true); }}><Plus className="h-4 w-4 mr-1" />{isHerbal ? "Add Herbal Product" : "Add Medicine"}</Button>
         </div>
 
         {filter !== "all" && (
@@ -217,7 +226,7 @@ export default function Medicines() {
             <div><Label>Category</Label>
               <Select value={form.category} onValueChange={v => setForm(f => ({ ...f, category: v }))}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>{categories.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
+                <SelectContent>{productCategories.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
               </Select>
             </div>
             <div><Label>Price (KES)</Label><Input type="number" value={form.price} onChange={e => setForm(f => ({ ...f, price: e.target.value }))} disabled={!canEditPrice} /></div>
@@ -229,7 +238,7 @@ export default function Medicines() {
             <div><Label>Unit</Label>
               <Select value={form.unit} onValueChange={v => setForm(f => ({ ...f, unit: v }))}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>{["tablet","capsule","bottle","tube","inhaler","pack","vial","sachet","box"].map(u => <SelectItem key={u} value={u}>{u}</SelectItem>)}</SelectContent>
+                <SelectContent>{productUnits.map(u => <SelectItem key={u} value={u}>{u}</SelectItem>)}</SelectContent>
               </Select>
             </div>
             <div><Label>Barcode</Label><Input value={form.barcode} onChange={e => setForm(f => ({ ...f, barcode: e.target.value }))} /></div>

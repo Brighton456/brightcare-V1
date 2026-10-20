@@ -10,13 +10,14 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.4"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
       activity_log: {
         Row: {
           action: string
+          branch_id: string | null
           created_at: string | null
           details: string | null
           hospital_id: string | null
@@ -27,6 +28,7 @@ export type Database = {
         }
         Insert: {
           action: string
+          branch_id?: string | null
           created_at?: string | null
           details?: string | null
           hospital_id?: string | null
@@ -37,6 +39,7 @@ export type Database = {
         }
         Update: {
           action?: string
+          branch_id?: string | null
           created_at?: string | null
           details?: string | null
           hospital_id?: string | null
@@ -46,6 +49,13 @@ export type Database = {
           staff_id?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "activity_log_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "activity_log_hospital_id_fkey"
             columns: ["hospital_id"]
@@ -200,6 +210,7 @@ export type Database = {
         Row: {
           appointment_date: string
           appointment_time: string
+          branch_id: string | null
           created_at: string | null
           doctor_id: string
           hospital_id: string | null
@@ -212,6 +223,7 @@ export type Database = {
         Insert: {
           appointment_date: string
           appointment_time: string
+          branch_id?: string | null
           created_at?: string | null
           doctor_id: string
           hospital_id?: string | null
@@ -224,6 +236,7 @@ export type Database = {
         Update: {
           appointment_date?: string
           appointment_time?: string
+          branch_id?: string | null
           created_at?: string | null
           doctor_id?: string
           hospital_id?: string | null
@@ -234,6 +247,13 @@ export type Database = {
           status?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "appointments_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "appointments_doctor_id_fkey"
             columns: ["doctor_id"]
@@ -311,6 +331,7 @@ export type Database = {
       bill_items: {
         Row: {
           bill_id: string
+          branch_id: string | null
           description: string
           hospital_id: string | null
           id: string
@@ -321,6 +342,7 @@ export type Database = {
         }
         Insert: {
           bill_id: string
+          branch_id?: string | null
           description: string
           hospital_id?: string | null
           id?: string
@@ -331,6 +353,7 @@ export type Database = {
         }
         Update: {
           bill_id?: string
+          branch_id?: string | null
           description?: string
           hospital_id?: string | null
           id?: string
@@ -345,6 +368,13 @@ export type Database = {
             columns: ["bill_id"]
             isOneToOne: false
             referencedRelation: "bills"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bill_items_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
             referencedColumns: ["id"]
           },
           {
@@ -407,6 +437,7 @@ export type Database = {
         Row: {
           amount_paid: number | null
           bill_no: string
+          branch_id: string | null
           cashier_id: string | null
           consultation_id: string | null
           created_at: string | null
@@ -426,6 +457,7 @@ export type Database = {
         Insert: {
           amount_paid?: number | null
           bill_no: string
+          branch_id?: string | null
           cashier_id?: string | null
           consultation_id?: string | null
           created_at?: string | null
@@ -445,6 +477,7 @@ export type Database = {
         Update: {
           amount_paid?: number | null
           bill_no?: string
+          branch_id?: string | null
           cashier_id?: string | null
           consultation_id?: string | null
           created_at?: string | null
@@ -462,6 +495,13 @@ export type Database = {
           total?: number | null
         }
         Relationships: [
+          {
+            foreignKeyName: "bills_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "bills_cashier_id_fkey"
             columns: ["cashier_id"]
@@ -488,6 +528,63 @@ export type Database = {
             columns: ["patient_id"]
             isOneToOne: false
             referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      branches: {
+        Row: {
+          address: string | null
+          branch_code: string
+          created_at: string
+          created_by: string | null
+          hospital_id: string
+          id: string
+          is_active: boolean
+          is_main: boolean
+          name: string
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          branch_code: string
+          created_at?: string
+          created_by?: string | null
+          hospital_id: string
+          id?: string
+          is_active?: boolean
+          is_main?: boolean
+          name: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          branch_code?: string
+          created_at?: string
+          created_by?: string | null
+          hospital_id?: string
+          id?: string
+          is_active?: boolean
+          is_main?: boolean
+          name?: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "branches_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "branches_hospital_id_fkey"
+            columns: ["hospital_id"]
+            isOneToOne: false
+            referencedRelation: "hospitals"
             referencedColumns: ["id"]
           },
         ]
@@ -532,6 +629,7 @@ export type Database = {
       }
       consultations: {
         Row: {
+          branch_id: string | null
           chief_complaint: string | null
           completed_at: string | null
           consultation_fee: number | null
@@ -552,6 +650,7 @@ export type Database = {
           vitals: Json | null
         }
         Insert: {
+          branch_id?: string | null
           chief_complaint?: string | null
           completed_at?: string | null
           consultation_fee?: number | null
@@ -572,6 +671,7 @@ export type Database = {
           vitals?: Json | null
         }
         Update: {
+          branch_id?: string | null
           chief_complaint?: string | null
           completed_at?: string | null
           consultation_fee?: number | null
@@ -592,6 +692,13 @@ export type Database = {
           vitals?: Json | null
         }
         Relationships: [
+          {
+            foreignKeyName: "consultations_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "consultations_doctor_id_fkey"
             columns: ["doctor_id"]
@@ -894,6 +1001,7 @@ export type Database = {
           default_emergency_fee: number | null
           default_followup_fee: number | null
           email: string | null
+          facility_type: string
           grace_period_days: number | null
           id: string
           invoice_prefix: string | null
@@ -931,6 +1039,7 @@ export type Database = {
           default_emergency_fee?: number | null
           default_followup_fee?: number | null
           email?: string | null
+          facility_type?: string
           grace_period_days?: number | null
           id?: string
           invoice_prefix?: string | null
@@ -968,6 +1077,7 @@ export type Database = {
           default_emergency_fee?: number | null
           default_followup_fee?: number | null
           email?: string | null
+          facility_type?: string
           grace_period_days?: number | null
           id?: string
           invoice_prefix?: string | null
@@ -1106,6 +1216,7 @@ export type Database = {
       invoice_items: {
         Row: {
           batch_no: string | null
+          branch_id: string | null
           discount: number | null
           expiry_date: string | null
           hospital_id: string | null
@@ -1119,6 +1230,7 @@ export type Database = {
         }
         Insert: {
           batch_no?: string | null
+          branch_id?: string | null
           discount?: number | null
           expiry_date?: string | null
           hospital_id?: string | null
@@ -1132,6 +1244,7 @@ export type Database = {
         }
         Update: {
           batch_no?: string | null
+          branch_id?: string | null
           discount?: number | null
           expiry_date?: string | null
           hospital_id?: string | null
@@ -1144,6 +1257,13 @@ export type Database = {
           unit_price?: number
         }
         Relationships: [
+          {
+            foreignKeyName: "invoice_items_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "invoice_items_hospital_id_fkey"
             columns: ["hospital_id"]
@@ -1169,6 +1289,7 @@ export type Database = {
       }
       invoices: {
         Row: {
+          branch_id: string | null
           created_at: string | null
           created_by: string | null
           discount: number | null
@@ -1185,6 +1306,7 @@ export type Database = {
           updated_at: string | null
         }
         Insert: {
+          branch_id?: string | null
           created_at?: string | null
           created_by?: string | null
           discount?: number | null
@@ -1201,6 +1323,7 @@ export type Database = {
           updated_at?: string | null
         }
         Update: {
+          branch_id?: string | null
           created_at?: string | null
           created_by?: string | null
           discount?: number | null
@@ -1217,6 +1340,13 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "invoices_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "invoices_created_by_fkey"
             columns: ["created_by"]
@@ -1926,6 +2056,7 @@ export type Database = {
           address: string | null
           allergies: string[] | null
           blood_type: string | null
+          branch_id: string | null
           chronic_conditions: string[] | null
           created_at: string | null
           date_of_birth: string | null
@@ -1951,6 +2082,7 @@ export type Database = {
           address?: string | null
           allergies?: string[] | null
           blood_type?: string | null
+          branch_id?: string | null
           chronic_conditions?: string[] | null
           created_at?: string | null
           date_of_birth?: string | null
@@ -1976,6 +2108,7 @@ export type Database = {
           address?: string | null
           allergies?: string[] | null
           blood_type?: string | null
+          branch_id?: string | null
           chronic_conditions?: string[] | null
           created_at?: string | null
           date_of_birth?: string | null
@@ -1998,6 +2131,13 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "patients_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "patients_hospital_id_fkey"
             columns: ["hospital_id"]
@@ -2041,6 +2181,7 @@ export type Database = {
       }
       pharmacy_sale_items: {
         Row: {
+          branch_id: string | null
           discount: number | null
           hospital_id: string | null
           id: string
@@ -2052,6 +2193,7 @@ export type Database = {
           unit_price: number
         }
         Insert: {
+          branch_id?: string | null
           discount?: number | null
           hospital_id?: string | null
           id?: string
@@ -2063,6 +2205,7 @@ export type Database = {
           unit_price: number
         }
         Update: {
+          branch_id?: string | null
           discount?: number | null
           hospital_id?: string | null
           id?: string
@@ -2074,6 +2217,13 @@ export type Database = {
           unit_price?: number
         }
         Relationships: [
+          {
+            foreignKeyName: "pharmacy_sale_items_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "pharmacy_sale_items_hospital_id_fkey"
             columns: ["hospital_id"]
@@ -2100,6 +2250,7 @@ export type Database = {
       pharmacy_sales: {
         Row: {
           amount_paid: number | null
+          branch_id: string | null
           cashier_id: string | null
           change_amount: number | null
           created_at: string | null
@@ -2119,6 +2270,7 @@ export type Database = {
         }
         Insert: {
           amount_paid?: number | null
+          branch_id?: string | null
           cashier_id?: string | null
           change_amount?: number | null
           created_at?: string | null
@@ -2138,6 +2290,7 @@ export type Database = {
         }
         Update: {
           amount_paid?: number | null
+          branch_id?: string | null
           cashier_id?: string | null
           change_amount?: number | null
           created_at?: string | null
@@ -2156,6 +2309,13 @@ export type Database = {
           total?: number | null
         }
         Relationships: [
+          {
+            foreignKeyName: "pharmacy_sales_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "pharmacy_sales_cashier_id_fkey"
             columns: ["cashier_id"]
@@ -2209,6 +2369,7 @@ export type Database = {
       }
       prescription_items: {
         Row: {
+          branch_id: string | null
           dispensed_qty: number | null
           dosage: string
           duration: string
@@ -2225,6 +2386,7 @@ export type Database = {
           unit_price: number | null
         }
         Insert: {
+          branch_id?: string | null
           dispensed_qty?: number | null
           dosage: string
           duration: string
@@ -2241,6 +2403,7 @@ export type Database = {
           unit_price?: number | null
         }
         Update: {
+          branch_id?: string | null
           dispensed_qty?: number | null
           dosage?: string
           duration?: string
@@ -2257,6 +2420,13 @@ export type Database = {
           unit_price?: number | null
         }
         Relationships: [
+          {
+            foreignKeyName: "prescription_items_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "prescription_items_hospital_id_fkey"
             columns: ["hospital_id"]
@@ -2282,6 +2452,7 @@ export type Database = {
       }
       prescriptions: {
         Row: {
+          branch_id: string | null
           consultation_id: string
           created_at: string | null
           doctor_id: string
@@ -2293,6 +2464,7 @@ export type Database = {
           status: string | null
         }
         Insert: {
+          branch_id?: string | null
           consultation_id: string
           created_at?: string | null
           doctor_id: string
@@ -2304,6 +2476,7 @@ export type Database = {
           status?: string | null
         }
         Update: {
+          branch_id?: string | null
           consultation_id?: string
           created_at?: string | null
           doctor_id?: string
@@ -2315,6 +2488,13 @@ export type Database = {
           status?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "prescriptions_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "prescriptions_consultation_id_fkey"
             columns: ["consultation_id"]
@@ -2382,6 +2562,7 @@ export type Database = {
       }
       staff: {
         Row: {
+          branch_id: string | null
           created_at: string | null
           department_id: string | null
           email: string | null
@@ -2407,6 +2588,7 @@ export type Database = {
           username: string
         }
         Insert: {
+          branch_id?: string | null
           created_at?: string | null
           department_id?: string | null
           email?: string | null
@@ -2432,6 +2614,7 @@ export type Database = {
           username: string
         }
         Update: {
+          branch_id?: string | null
           created_at?: string | null
           department_id?: string | null
           email?: string | null
@@ -2457,6 +2640,13 @@ export type Database = {
           username?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "staff_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "staff_department_id_fkey"
             columns: ["department_id"]
@@ -2571,6 +2761,359 @@ export type Database = {
             columns: ["staff_id"]
             isOneToOne: true
             referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stock_batches: {
+        Row: {
+          batch_no: string
+          branch_id: string
+          cost_price: number
+          created_at: string
+          created_by: string | null
+          expiry_date: string | null
+          hospital_id: string
+          id: string
+          medicine_id: string
+          qty_received: number
+          qty_remaining: number
+          received_at: string
+          supplier_name: string | null
+        }
+        Insert: {
+          batch_no: string
+          branch_id: string
+          cost_price?: number
+          created_at?: string
+          created_by?: string | null
+          expiry_date?: string | null
+          hospital_id: string
+          id?: string
+          medicine_id: string
+          qty_received?: number
+          qty_remaining?: number
+          received_at?: string
+          supplier_name?: string | null
+        }
+        Update: {
+          batch_no?: string
+          branch_id?: string
+          cost_price?: number
+          created_at?: string
+          created_by?: string | null
+          expiry_date?: string | null
+          hospital_id?: string
+          id?: string
+          medicine_id?: string
+          qty_received?: number
+          qty_remaining?: number
+          received_at?: string
+          supplier_name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stock_batches_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_batches_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_batches_hospital_id_fkey"
+            columns: ["hospital_id"]
+            isOneToOne: false
+            referencedRelation: "hospitals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_batches_medicine_id_fkey"
+            columns: ["medicine_id"]
+            isOneToOne: false
+            referencedRelation: "medicines"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stock_movements: {
+        Row: {
+          batch_id: string | null
+          branch_id: string
+          created_at: string
+          destination_branch_id: string | null
+          hospital_id: string
+          id: string
+          medicine_id: string
+          movement_type: string
+          new_quantity: number
+          performed_by: string | null
+          previous_quantity: number
+          quantity: number
+          reason: string
+          reference_id: string | null
+          reference_type: string | null
+          source_branch_id: string | null
+        }
+        Insert: {
+          batch_id?: string | null
+          branch_id: string
+          created_at?: string
+          destination_branch_id?: string | null
+          hospital_id: string
+          id?: string
+          medicine_id: string
+          movement_type: string
+          new_quantity: number
+          performed_by?: string | null
+          previous_quantity: number
+          quantity: number
+          reason: string
+          reference_id?: string | null
+          reference_type?: string | null
+          source_branch_id?: string | null
+        }
+        Update: {
+          batch_id?: string | null
+          branch_id?: string
+          created_at?: string
+          destination_branch_id?: string | null
+          hospital_id?: string
+          id?: string
+          medicine_id?: string
+          movement_type?: string
+          new_quantity?: number
+          performed_by?: string | null
+          previous_quantity?: number
+          quantity?: number
+          reason?: string
+          reference_id?: string | null
+          reference_type?: string | null
+          source_branch_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stock_movements_batch_id_fkey"
+            columns: ["batch_id"]
+            isOneToOne: false
+            referencedRelation: "stock_batches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_movements_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_movements_destination_branch_id_fkey"
+            columns: ["destination_branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_movements_hospital_id_fkey"
+            columns: ["hospital_id"]
+            isOneToOne: false
+            referencedRelation: "hospitals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_movements_medicine_id_fkey"
+            columns: ["medicine_id"]
+            isOneToOne: false
+            referencedRelation: "medicines"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_movements_performed_by_fkey"
+            columns: ["performed_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_movements_source_branch_id_fkey"
+            columns: ["source_branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stock_transfer_items: {
+        Row: {
+          batch_id: string | null
+          created_at: string
+          hospital_id: string
+          id: string
+          medicine_id: string
+          quantity: number
+          transfer_id: string
+        }
+        Insert: {
+          batch_id?: string | null
+          created_at?: string
+          hospital_id: string
+          id?: string
+          medicine_id: string
+          quantity: number
+          transfer_id: string
+        }
+        Update: {
+          batch_id?: string | null
+          created_at?: string
+          hospital_id?: string
+          id?: string
+          medicine_id?: string
+          quantity?: number
+          transfer_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stock_transfer_items_batch_id_fkey"
+            columns: ["batch_id"]
+            isOneToOne: false
+            referencedRelation: "stock_batches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfer_items_hospital_id_fkey"
+            columns: ["hospital_id"]
+            isOneToOne: false
+            referencedRelation: "hospitals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfer_items_medicine_id_fkey"
+            columns: ["medicine_id"]
+            isOneToOne: false
+            referencedRelation: "medicines"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfer_items_transfer_id_fkey"
+            columns: ["transfer_id"]
+            isOneToOne: false
+            referencedRelation: "stock_transfers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stock_transfers: {
+        Row: {
+          approved_at: string | null
+          approved_by: string | null
+          created_at: string
+          destination_branch_id: string
+          dispatched_at: string | null
+          dispatched_by: string | null
+          hospital_id: string
+          id: string
+          notes: string | null
+          received_at: string | null
+          received_by: string | null
+          requested_at: string
+          requested_by: string
+          source_branch_id: string
+          status: string
+          transfer_no: string
+          updated_at: string
+        }
+        Insert: {
+          approved_at?: string | null
+          approved_by?: string | null
+          created_at?: string
+          destination_branch_id: string
+          dispatched_at?: string | null
+          dispatched_by?: string | null
+          hospital_id: string
+          id?: string
+          notes?: string | null
+          received_at?: string | null
+          received_by?: string | null
+          requested_at?: string
+          requested_by: string
+          source_branch_id: string
+          status?: string
+          transfer_no: string
+          updated_at?: string
+        }
+        Update: {
+          approved_at?: string | null
+          approved_by?: string | null
+          created_at?: string
+          destination_branch_id?: string
+          dispatched_at?: string | null
+          dispatched_by?: string | null
+          hospital_id?: string
+          id?: string
+          notes?: string | null
+          received_at?: string | null
+          received_by?: string | null
+          requested_at?: string
+          requested_by?: string
+          source_branch_id?: string
+          status?: string
+          transfer_no?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stock_transfers_approved_by_fkey"
+            columns: ["approved_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfers_destination_branch_id_fkey"
+            columns: ["destination_branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfers_dispatched_by_fkey"
+            columns: ["dispatched_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfers_hospital_id_fkey"
+            columns: ["hospital_id"]
+            isOneToOne: false
+            referencedRelation: "hospitals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfers_received_by_fkey"
+            columns: ["received_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfers_requested_by_fkey"
+            columns: ["requested_by"]
+            isOneToOne: false
+            referencedRelation: "staff"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stock_transfers_source_branch_id_fkey"
+            columns: ["source_branch_id"]
+            isOneToOne: false
+            referencedRelation: "branches"
             referencedColumns: ["id"]
           },
         ]
@@ -2730,12 +3273,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2759,11 +3302,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2784,11 +3327,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2809,11 +3352,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2826,11 +3369,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }

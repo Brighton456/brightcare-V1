@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -9,9 +9,10 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "@/hooks/use-toast";
 import {
   Building2, Check, ArrowRight, ArrowLeft, Sparkles, Shield, Zap, Phone, Loader2,
-  CheckCircle2, XCircle, Clock, Crown, Heart, FlaskConical, Pill, CreditCard,
+  CheckCircle2, XCircle, Clock, Crown, FlaskConical, Pill, CreditCard,
   Stethoscope, Bed, BarChart3, Users, Lock, KeyRound, Rocket, Star, ChevronRight,
 } from "lucide-react";
+import { FACILITY_ORDER, FACILITY_PACKAGES, type FacilityKey } from "@/config/facilityPackages";
 import { initiateMpesaPayment, pollMpesaStatus, generateReference } from "@/utils/mpesa";
 import { seedPlatformDefaults } from "@/lib/platformDefaults";
 import heroImg from "@/assets/onboarding-hero.jpg";
@@ -27,6 +28,12 @@ const TIER_COLORS: Record<string, string> = {
   basic: "from-emerald-500 to-teal-600",
   standard: "from-blue-500 to-indigo-600",
   premium: "from-purple-500 to-pink-600",
+};
+
+const FACILITY_COLORS: Record<FacilityKey, string> = {
+  hospital: "from-yellow-500 to-orange-600",
+  clinic: "from-blue-500 to-indigo-600",
+  herbal: "from-emerald-500 to-teal-600",
 };
 
 const TIER_ICONS: Record<string, React.ReactNode> = {
@@ -104,7 +111,9 @@ export default function HospitalOnboarding() {
   const navigate = useNavigate();
   const [step, setStep] = useState(0); // 0 = welcome splash
   const [packages, setPackages] = useState<Package[]>([]);
+  const [selectedFacilityType, setSelectedFacilityType] = useState<FacilityKey | "">("");
   const [selectedPkg, setSelectedPkg] = useState<string>("");
+  useEffect(() => { console.log("DEBUG selectedPkg changed to:", selectedPkg); }, [selectedPkg]);
   const [loading, setLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
@@ -152,6 +161,11 @@ export default function HospitalOnboarding() {
 
   const generateSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + Date.now().toString(36);
   const selectedPackage = packages.find(p => p.id === selectedPkg);
+  // Facility type controls the product configuration; selectedPkg is strictly the
+  // billing/license tier ID. Keep these independent throughout onboarding.
+  const selectedFacilityProfile = selectedFacilityType
+    ? FACILITY_PACKAGES[selectedFacilityType]
+    : null;
 
   const handleMpesaPayment = async () => {
     if (!paymentPhone || paymentPhone.length < 9) { toast({ title: "Error", description: "Enter a valid M-Pesa phone number.", variant: "destructive" }); return; }
@@ -193,6 +207,7 @@ export default function HospitalOnboarding() {
   };
 
   const handleSubmit = async (asTrial: boolean) => {
+    console.log("DEBUG handleSubmit", { hospitalName, email, adminFirst, adminLast, adminUsername, adminPassword });
     if (!hospitalName || !email || !adminFirst || !adminLast || !adminUsername || !adminPassword) {
       toast({ title: "Error", description: "Please fill all required fields.", variant: "destructive" }); return;
     }
@@ -202,13 +217,41 @@ export default function HospitalOnboarding() {
 
     try {
       updateProvisionStep("schema", "running");
-      await new Promise(r => setTimeout(r, 1200));
+      if (import.meta.env.MODE !== "test") await new Promise(r => setTimeout(r, 1200));
 
       const slug = generateSlug(hospitalName);
-      const { data: hospital, error: hospErr } = await supabase
+      const facilityType = selectedFacilityProfile?.key ?? "hospital";
+      const hospitalPayload = {
+        name: hospitalName,
+        slug,
+        city,
+        phone,
+        email,
+        address,
+        license_package_id: selectedPkg || null,
+        license_status: asTrial ? "trial" : "active",
+        facility_type: facilityType,
+        settings: { facility_type: facilityType },
+        ...(asTrial ? {} : { license_started_at: new Date().toISOString() }),
+      };
+
+      console.log("DEBUG about to insert hospitals payload:", hospitalPayload);
+      let { data: hospital, error: hospErr } = await supabase
         .from("hospitals")
-        .insert({ name: hospitalName, slug, city, phone, email, address, license_package_id: selectedPkg || null, license_status: asTrial ? "trial" : "active", ...(asTrial ? {} : { license_started_at: new Date().toISOString() }) })
+        .insert(hospitalPayload as any)
         .select().single();
+      console.log("DEBUG insert result:", { hospital, hospErr });
+
+      // Older production schemas may not yet have the additive facility_type
+      // migration. The existing settings JSONB keeps the selected package intact
+      // while allowing registration to proceed until the migration is deployed.
+      if (hospErr && /facility_type.*(column|schema cache)|column.*facility_type/i.test(hospErr.message || "")) {
+        console.warn("hospitals.facility_type is not available yet; persisting the selected facility in hospitals.settings until the migration is applied.");
+        const { facility_type: _facilityType, ...legacyPayload } = hospitalPayload;
+        const retry = await supabase.from("hospitals").insert(legacyPayload as any).select().single();
+        hospital = retry.data;
+        hospErr = retry.error;
+      }
 
       if (hospErr) throw hospErr;
       updateProvisionStep("schema", "done", "✅ Hospital infrastructure created");
@@ -236,7 +279,7 @@ export default function HospitalOnboarding() {
           if (detail.startsWith("✅")) updateProvisionStep(provId, "done", detail);
           else updateProvisionStep(provId, "running", detail);
         }
-      });
+      }, selectedFacilityProfile?.key ?? "hospital");
 
       await supabase.from("license_audit_log").insert({
         hospital_id: hospital.id,
@@ -245,7 +288,7 @@ export default function HospitalOnboarding() {
       });
 
       updateProvisionStep("complete", "done", "✅ Hospital is ready!");
-      await new Promise(r => setTimeout(r, 2000));
+      if (import.meta.env.MODE !== "test") await new Promise(r => setTimeout(r, 2000));
       setProvisionComplete(true);
 
       toast({ title: "🎉 Hospital Registered!", description: `${hospitalName} is ready. Log in with username: ${adminUsername}` });
@@ -373,7 +416,7 @@ export default function HospitalOnboarding() {
             <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight">
               Bright<span className="text-primary">Care</span>
             </h1>
-            <p className="text-xl text-slate-300 mb-2 font-medium">Hospital Management & Medical POS</p>
+            <p className="text-xl text-slate-300 mb-2 font-medium">Healthcare Management Platform</p>
             <p className="text-slate-400 text-sm mb-10 max-w-lg mx-auto">
               Step into the digital future of healthcare. A complete ecosystem for hospitals, clinics, and pharmacies — built for Africa.
             </p>
@@ -408,8 +451,8 @@ export default function HospitalOnboarding() {
     );
   }
 
-  const totalSteps = 5;
-  const stepLabels = ["Agreement", "Package", "Hospital", "Admin", "Activate"];
+  const totalSteps = 6;
+  const stepLabels = ["Agreement", "Facility", "License", "Organization", "Admin", "Activate"];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">
@@ -420,7 +463,7 @@ export default function HospitalOnboarding() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-primary/60 text-primary-foreground font-black text-lg flex items-center justify-center shadow-lg shadow-primary/20">B</div>
-            <div><h1 className="font-bold text-lg text-white">BrightCare</h1><p className="text-xs text-slate-400">Hospital Registration</p></div>
+            <div><h1 className="font-bold text-lg text-white">BrightCare</h1><p className="text-xs text-slate-400">Facility Registration</p></div>
           </div>
           <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white" onClick={() => navigate("/login")}>Already have an account? Sign in</Button>
         </div>
@@ -517,7 +560,7 @@ export default function HospitalOnboarding() {
                   </div>
                   <div className="space-y-2 text-sm text-slate-300">
                     <p className="font-semibold text-white">Setup progress</p>
-                    {['Terms & Conditions', 'Select Plan', 'Hospital Details', 'Admin Account', 'Activate'].map((item) => (
+                    {['Terms & Conditions', 'Facility Type', 'License Plan', 'Organization Details', 'Admin Account', 'Activate'].map((item) => (
                       <div key={item} className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-primary" /><span>{item}</span></div>
                     ))}
                   </div>
@@ -527,244 +570,143 @@ export default function HospitalOnboarding() {
           </div>
         )}
 
-        {/* Step 2: Choose Package */}
+        {/* Step 2: Select the facility configuration, independently of billing */}
         {step === 2 && (
           <div className="animate-fade-in">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-white">Choose Your Plan</h2>
-              <p className="text-slate-400 mt-2">Start with a 14-day free trial or pay via M-Pesa. Dual pricing: KES & USD.</p>
+              <h2 className="text-3xl font-bold text-white">Select Your Facility Type</h2>
+              <p className="text-slate-400 mt-2">This configures Brightcare workflows and navigation. Your license plan is selected separately next.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {packages.map(pkg => (
-                <div
-                  key={pkg.id}
-                  className={`relative rounded-2xl border p-1 cursor-pointer transition-all duration-300 hover:scale-[1.02] ${
-                    selectedPkg === pkg.id
-                      ? "border-primary/50 bg-gradient-to-br from-primary/20 to-primary/5 shadow-xl shadow-primary/10 scale-[1.02]"
-                      : "border-white/10 bg-white/5 hover:border-white/20"
-                  }`}
-                  onClick={() => setSelectedPkg(pkg.id)}
-                >
-                  {pkg.name === "premium" && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                      <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 shadow-lg shadow-purple-500/30">
-                        <Star className="h-3 w-3 mr-1" /> Most Popular
-                      </Badge>
+              {FACILITY_ORDER.map((facilityKey) => {
+                const facility = FACILITY_PACKAGES[facilityKey];
+                const FacilityIcon = facility.icon;
+                const selected = selectedFacilityType === facility.key;
+                return (
+                  <button type="button" key={facility.key} aria-pressed={selected}
+                    className={`relative rounded-2xl border p-6 text-left transition-all duration-300 hover:-translate-y-1 ${selected ? "border-primary/70 bg-gradient-to-br from-primary/20 to-primary/5 shadow-xl ring-1 ring-primary/50" : "border-white/10 bg-white/5 hover:border-white/25"}`}
+                    onClick={() => setSelectedFacilityType(facility.key)}>
+                    {selected && <CheckCircle2 className="absolute right-5 top-5 h-5 w-5 text-emerald-400" />}
+                    <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${FACILITY_COLORS[facilityKey]} text-white flex items-center justify-center mb-5 shadow-lg`}>
+                      <FacilityIcon className="h-7 w-7" />
                     </div>
-                  )}
-                  <div className="p-5 rounded-xl">
-                    <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${TIER_COLORS[pkg.name] || "from-gray-500 to-gray-600"} text-white flex items-center justify-center mb-4 shadow-lg`}>
-                      {TIER_ICONS[pkg.name]}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{pkg.display_name}</h3>
-                    <p className="text-xs text-slate-400 mt-1">{TIER_TAGLINES[pkg.name]}</p>
-                    <div className="mt-4 mb-1">
-                      <span className="text-3xl font-black text-white">KES {((pkg.price_yearly || 0)).toLocaleString()}</span>
-                      <span className="text-slate-400 text-sm">/year</span>
-                    </div>
-                    <p className="text-xs text-slate-500 mb-1">≈ ${((pkg.price_yearly || 0) / 130).toFixed(0)} USD</p>
-                    <p className="text-xs text-slate-500 mb-4">+ KES {((pkg.maintenance_monthly || pkg.price_monthly || 3000)).toLocaleString()}/mo maintenance</p>
-                    {pkg.price_lifetime && (
-                      <div className="mb-4">
-                        <Badge variant="outline" className="gap-1 border-amber-500/30 text-amber-400">
-                          <Crown className="h-3 w-3" /> Lifetime: KES {pkg.price_lifetime.toLocaleString()}
-                        </Badge>
-                      </div>
-                    )}
-                    <ul className="space-y-2 text-sm text-slate-300">
-                      {(TIER_FEATURES[pkg.name] || []).map((feat, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <Check className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
+                    <h3 className="text-xl font-bold text-white">{facility.label}</h3>
+                    <p className="text-sm font-medium text-primary mt-1">{facility.tagline}</p>
+                    <p className="text-sm text-slate-400 mt-3 min-h-16">{facility.description}</p>
+                    <ul className="space-y-2 mt-4 text-sm text-slate-300">
+                      {facility.highlights.map((highlight) => <li key={highlight} className="flex items-start gap-2"><Check className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" /><span>{highlight}</span></li>)}
                     </ul>
-                  </div>
-                </div>
-              ))}
+                  </button>
+                );
+              })}
             </div>
             <div className="flex justify-center mt-8 gap-3">
-              <Button size="lg" variant="outline" className="gap-2 h-12 border-white/10 text-slate-300 hover:text-white" onClick={() => setStep(1)}>
-                <ArrowLeft className="h-4 w-4" /> Back
-              </Button>
-              <Button size="lg" className="gap-2 h-12 bg-gradient-to-r from-primary to-primary/80 shadow-xl shadow-primary/20" onClick={() => setStep(3)} disabled={!selectedPkg}>
-                Continue <ArrowRight className="h-4 w-4" />
-              </Button>
+              <Button size="lg" variant="outline" className="gap-2 h-12 border-white/10 text-slate-300 hover:text-white" onClick={() => setStep(1)}><ArrowLeft className="h-4 w-4" /> Back</Button>
+              <Button size="lg" className="gap-2 h-12" onClick={() => setStep(3)} disabled={!selectedFacilityType}>Continue <ArrowRight className="h-4 w-4" /></Button>
             </div>
           </div>
         )}
 
-        {/* Step 3: Hospital Details */}
+        {/* Step 3: Select a license tier; it does not determine facility type */}
         {step === 3 && (
-          <div className="animate-fade-in max-w-lg mx-auto">
-            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-white"><Building2 className="h-5 w-5 text-primary" /> Hospital Details</CardTitle>
-                <CardDescription className="text-slate-400">Tell us about your hospital</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div><Label className="text-slate-300">Hospital Name *</Label><Input value={hospitalName} onChange={e => setHospitalName(e.target.value)} placeholder="e.g. City General Hospital" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div><Label className="text-slate-300">City</Label><Input value={city} onChange={e => setCity(e.target.value)} placeholder="Nairobi" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                  <div><Label className="text-slate-300">Phone</Label><Input value={phone} onChange={e => setPhone(e.target.value)} placeholder="+254..." className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                </div>
-                <div><Label className="text-slate-300">Email *</Label><Input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="admin@hospital.com" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                <div><Label className="text-slate-300">Address</Label><Input value={address} onChange={e => setAddress(e.target.value)} placeholder="Full address" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                <div className="flex gap-3 pt-2">
-                  <Button variant="outline" onClick={() => setStep(2)} className="gap-1 border-white/10 text-slate-300 hover:text-white"><ArrowLeft className="h-4 w-4" /> Back</Button>
-                  <Button className="flex-1 gap-1 bg-gradient-to-r from-primary to-primary/80" onClick={() => {
-                    if (!hospitalName || !email) { toast({ title: "Error", description: "Hospital name and email are required.", variant: "destructive" }); return; }
-                    setStep(4);
-                  }}>Continue <ArrowRight className="h-4 w-4" /></Button>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="animate-fade-in">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-white">Choose Your License Plan</h2>
+              <p className="text-slate-400 mt-2">{selectedFacilityProfile?.label} selected. Choose a billing tier; the 14-day trial remains available at activation.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {packages.map((pkg) => {
+                const TierIcon = Sparkles;
+                return (
+                  <button type="button" key={pkg.id} aria-pressed={selectedPkg === pkg.id}
+                    className={`relative rounded-2xl border p-1 text-left transition-all duration-300 hover:scale-[1.02] ${selectedPkg === pkg.id ? "border-primary/50 bg-gradient-to-br from-primary/20 to-primary/5 shadow-xl scale-[1.02]" : "border-white/10 bg-white/5 hover:border-white/20"}`}
+                    onClick={() => setSelectedPkg(pkg.id)}>
+                    {pkg.name === "premium" && <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10"><Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0"><Star className="h-3 w-3 mr-1" /> Most Popular</Badge></div>}
+                    <div className="p-5 rounded-xl">
+                      <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${TIER_COLORS[pkg.name] || "from-slate-500 to-slate-700"} text-white flex items-center justify-center mb-4 shadow-lg`}>{TIER_ICONS[pkg.name] || <TierIcon className="h-7 w-7" />}</div>
+                      <h3 className="text-xl font-bold text-white">{pkg.display_name}</h3>
+                      <p className="text-xs text-slate-400 mt-1">{TIER_TAGLINES[pkg.name] || pkg.description}</p>
+                      <div className="mt-4 mb-1"><span className="text-3xl font-black text-white">KES {(pkg.price_yearly || 0).toLocaleString()}</span><span className="text-slate-400 text-sm">/year</span></div>
+                      <p className="text-xs text-slate-500 mb-1">≈ ${((pkg.price_yearly || 0) / 130).toFixed(0)} USD</p>
+                      <p className="text-xs text-slate-500 mb-4">+ KES {(pkg.maintenance_monthly || pkg.price_monthly || 3000).toLocaleString()}/mo maintenance</p>
+                      {pkg.price_lifetime && <div className="mb-4"><Badge variant="outline" className="gap-1 border-amber-500/30 text-amber-400"><Crown className="h-3 w-3" /> Lifetime: KES {pkg.price_lifetime.toLocaleString()}</Badge></div>}
+                      <ul className="space-y-2 text-sm text-slate-300">{(TIER_FEATURES[pkg.name] || pkg.allowed_modules || []).slice(0, 6).map((feature) => <li key={feature} className="flex items-start gap-2"><Check className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" /><span>{feature}</span></li>)}</ul>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            {packages.length === 0 && <p className="text-center text-slate-400 mt-6">License plans could not be loaded. You can still continue with a free trial.</p>}
+            <div className="flex justify-center mt-8 gap-3">
+              <Button size="lg" variant="outline" className="gap-2 h-12 border-white/10 text-slate-300 hover:text-white" onClick={() => setStep(2)}><ArrowLeft className="h-4 w-4" /> Back</Button>
+              <Button size="lg" className="gap-2 h-12" onClick={() => setStep(4)} disabled={!selectedPkg}>Continue <ArrowRight className="h-4 w-4" /></Button>
+            </div>
           </div>
         )}
 
-        {/* Step 4: Admin Account */}
+        {/* Step 4: Organization details */}
         {step === 4 && (
           <div className="animate-fade-in max-w-lg mx-auto">
             <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-white"><Users className="h-5 w-5 text-primary" /> Create Hospital Admin</CardTitle>
-                <CardDescription className="text-slate-400">Primary administrator for {hospitalName}</CardDescription>
-              </CardHeader>
+              <CardHeader><CardTitle className="flex items-center gap-2 text-white"><Building2 className="h-5 w-5 text-primary" /> Organization Details</CardTitle><CardDescription className="text-slate-400">Tell us about your {selectedFacilityProfile?.label.toLowerCase() ?? "facility"}</CardDescription></CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-3">
-                  <div><Label className="text-slate-300">First Name *</Label><Input value={adminFirst} onChange={e => setAdminFirst(e.target.value)} placeholder="John" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                  <div><Label className="text-slate-300">Last Name *</Label><Input value={adminLast} onChange={e => setAdminLast(e.target.value)} placeholder="Doe" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                </div>
-                <div><Label className="text-slate-300">Username *</Label><Input value={adminUsername} onChange={e => setAdminUsername(e.target.value)} placeholder="john.doe" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                <div><Label className="text-slate-300">Password *</Label><Input type="password" value={adminPassword} onChange={e => setAdminPassword(e.target.value)} placeholder="Min. 8 characters" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
-                <div className="text-xs space-y-1">
-                  <p className={adminPassword.length >= 8 ? "text-emerald-400" : "text-slate-500"}>✓ At least 8 characters</p>
-                  <p className={/[A-Z]/.test(adminPassword) ? "text-emerald-400" : "text-slate-500"}>✓ At least one uppercase letter</p>
-                  <p className={/[0-9]/.test(adminPassword) ? "text-emerald-400" : "text-slate-500"}>✓ At least one number</p>
-                </div>
-                <div className="flex gap-3 pt-2">
-                  <Button variant="outline" onClick={() => setStep(3)} className="gap-1 border-white/10 text-slate-300 hover:text-white"><ArrowLeft className="h-4 w-4" /> Back</Button>
-                  <Button className="flex-1 gap-1 bg-gradient-to-r from-primary to-primary/80" onClick={() => {
-                    if (!adminFirst || !adminLast || !adminUsername || !adminPassword) { toast({ title: "Error", description: "All fields are required.", variant: "destructive" }); return; }
-                    if (adminPassword.length < 8) { toast({ title: "Error", description: "Password must be at least 8 characters.", variant: "destructive" }); return; }
-                    setStep(5);
-                  }}>Continue to Activation <ArrowRight className="h-4 w-4" /></Button>
-                </div>
+                <div><Label className="text-slate-300">Organization Name *</Label><Input value={hospitalName} onChange={e => setHospitalName(e.target.value)} placeholder={selectedFacilityType === "herbal" ? "e.g. Greenleaf Herbal Clinic" : selectedFacilityType === "clinic" ? "e.g. City Medical Clinic" : "e.g. City General Hospital"} className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
+                <div className="grid grid-cols-2 gap-3"><div><Label className="text-slate-300">City</Label><Input value={city} onChange={e => setCity(e.target.value)} placeholder="Nairobi" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div><div><Label className="text-slate-300">Phone</Label><Input value={phone} onChange={e => setPhone(e.target.value)} placeholder="+254..." className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div></div>
+                <div><Label className="text-slate-300">Email *</Label><Input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="admin@example.com" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
+                <div><Label className="text-slate-300">Address</Label><Input value={address} onChange={e => setAddress(e.target.value)} placeholder="Full address" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
+                <div className="flex gap-3 pt-2"><Button variant="outline" onClick={() => setStep(3)} className="gap-1 border-white/10 text-slate-300 hover:text-white"><ArrowLeft className="h-4 w-4" /> Back</Button><Button className="flex-1 gap-1" onClick={() => { if (!hospitalName || !email) { toast({ title: "Error", description: "Organization name and email are required.", variant: "destructive" }); return; } setStep(5); }}>Continue <ArrowRight className="h-4 w-4" /></Button></div>
               </CardContent>
             </Card>
           </div>
         )}
 
-        {/* Step 5: Payment / Activation */}
+        {/* Step 5: Primary administrator */}
         {step === 5 && (
           <div className="animate-fade-in max-w-lg mx-auto">
             <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-white"><Rocket className="h-5 w-5 text-primary" /> Activate Your Plan</CardTitle>
-                <CardDescription className="text-slate-400">Pay via M-Pesa, use an activation key, or start a free trial</CardDescription>
-              </CardHeader>
+              <CardHeader><CardTitle className="flex items-center gap-2 text-white"><Users className="h-5 w-5 text-primary" /> Create Primary Administrator</CardTitle><CardDescription className="text-slate-400">Administrator for {hospitalName}</CardDescription></CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-2 gap-3"><div><Label className="text-slate-300">First Name *</Label><Input value={adminFirst} onChange={e => setAdminFirst(e.target.value)} placeholder="John" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div><div><Label className="text-slate-300">Last Name *</Label><Input value={adminLast} onChange={e => setAdminLast(e.target.value)} placeholder="Doe" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div></div>
+                <div><Label className="text-slate-300">Username *</Label><Input value={adminUsername} onChange={e => setAdminUsername(e.target.value)} placeholder="john.doe" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
+                <div><Label className="text-slate-300">Password *</Label><Input type="password" value={adminPassword} onChange={e => setAdminPassword(e.target.value)} placeholder="Min. 8 characters" className="bg-white/10 border-white/10 text-white placeholder:text-slate-500" /></div>
+                <div className="text-xs space-y-1"><p className={adminPassword.length >= 8 ? "text-emerald-400" : "text-slate-500"}>✓ At least 8 characters</p><p className={/[A-Z]/.test(adminPassword) ? "text-emerald-400" : "text-slate-500"}>✓ At least one uppercase letter</p><p className={/[0-9]/.test(adminPassword) ? "text-emerald-400" : "text-slate-500"}>✓ At least one number</p></div>
+                <div className="flex gap-3 pt-2"><Button variant="outline" onClick={() => setStep(4)} className="gap-1 border-white/10 text-slate-300 hover:text-white"><ArrowLeft className="h-4 w-4" /> Back</Button><Button className="flex-1 gap-1" onClick={() => { if (!adminFirst || !adminLast || !adminUsername || !adminPassword) { toast({ title: "Error", description: "All fields are required.", variant: "destructive" }); return; } if (adminPassword.length < 8) { toast({ title: "Error", description: "Password must be at least 8 characters.", variant: "destructive" }); return; } setStep(6); }}>Continue to Activation <ArrowRight className="h-4 w-4" /></Button></div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Step 6: Payment / activation */}
+        {step === 6 && (
+          <div className="animate-fade-in max-w-lg mx-auto">
+            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
+              <CardHeader><CardTitle className="flex items-center gap-2 text-white"><Rocket className="h-5 w-5 text-primary" /> Activate Your License</CardTitle><CardDescription className="text-slate-400">Pay via M-Pesa, use an activation key, or start a free trial</CardDescription></CardHeader>
               <CardContent className="space-y-5">
-                {/* Order Summary */}
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2 text-sm">
-                  <p className="font-bold text-base text-white">📋 Order Summary</p>
-                  <div className="flex justify-between"><span className="text-slate-400">Hospital</span><span className="font-medium text-white">{hospitalName}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Package</span><span className="font-medium text-white">{selectedPackage?.display_name}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Admin</span><span className="font-medium text-white">{adminFirst} {adminLast}</span></div>
-                  <div className="border-t border-white/10 pt-2 flex justify-between text-base">
-                    <span className="font-bold text-white">Annual License</span>
-                    <span className="font-black text-primary">KES {((selectedPackage?.price_yearly || 0)).toLocaleString()}</span>
-                  </div>
+                  <p className="font-bold text-base text-white">📋 Setup Summary</p>
+                  <div className="flex justify-between"><span className="text-slate-400">Facility type</span><span className="font-medium text-white">{selectedFacilityProfile?.label}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">License plan</span><span className="font-medium text-white">{selectedPackage?.display_name}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Organization</span><span className="font-medium text-white">{hospitalName}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Administrator</span><span className="font-medium text-white">{adminFirst} {adminLast}</span></div>
+                  <div className="border-t border-white/10 pt-2 flex justify-between text-base"><span className="font-bold text-white">Annual License</span><span className="font-black text-primary">KES {(selectedPackage?.price_yearly || 0).toLocaleString()}</span></div>
                 </div>
 
                 {paymentStatus === "idle" || paymentStatus === "failed" ? (
                   <div className="space-y-4">
-                    {/* Mode toggle */}
                     <div className="flex rounded-xl border border-white/10 overflow-hidden">
-                      <button
-                        className={`flex-1 py-3 px-4 text-sm font-medium transition-all flex items-center justify-center gap-2 ${activationMode === "payment" ? "bg-primary text-primary-foreground" : "bg-white/5 text-slate-400 hover:text-white"}`}
-                        onClick={() => setActivationMode("payment")}
-                      >
-                        <Phone className="h-4 w-4" /> M-Pesa Payment
-                      </button>
-                      <button
-                        className={`flex-1 py-3 px-4 text-sm font-medium transition-all flex items-center justify-center gap-2 ${activationMode === "key" ? "bg-primary text-primary-foreground" : "bg-white/5 text-slate-400 hover:text-white"}`}
-                        onClick={() => setActivationMode("key")}
-                      >
-                        <KeyRound className="h-4 w-4" /> Activation Key
-                      </button>
+                      <button className={`flex-1 py-3 px-4 text-sm font-medium flex items-center justify-center gap-2 ${activationMode === "payment" ? "bg-primary text-primary-foreground" : "bg-white/5 text-slate-400 hover:text-white"}`} onClick={() => setActivationMode("payment")}><Phone className="h-4 w-4" /> M-Pesa Payment</button>
+                      <button className={`flex-1 py-3 px-4 text-sm font-medium flex items-center justify-center gap-2 ${activationMode === "key" ? "bg-primary text-primary-foreground" : "bg-white/5 text-slate-400 hover:text-white"}`} onClick={() => setActivationMode("key")}><KeyRound className="h-4 w-4" /> Activation Key</button>
                     </div>
-
-                    {activationMode === "payment" ? (
-                      <div className="space-y-3">
-                        <div>
-                          <Label className="text-slate-300">M-Pesa Phone Number</Label>
-                          <Input value={paymentPhone} onChange={e => setPaymentPhone(e.target.value)} placeholder="254712345678" className="mt-1 bg-white/10 border-white/10 text-white placeholder:text-slate-500" />
-                          <p className="text-xs text-slate-500 mt-1">Enter the number to receive the STK push</p>
-                        </div>
-                        {paymentStatus === "failed" && (
-                          <div className="flex items-center gap-2 text-sm text-red-400 bg-red-500/10 rounded-lg p-3 border border-red-500/20">
-                            <XCircle className="h-4 w-4 shrink-0" /><span>Payment failed. Please try again.</span>
-                          </div>
-                        )}
-                        <Button className="w-full gap-2 h-12 text-base bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-xl shadow-emerald-500/20" onClick={handleMpesaPayment}>
-                          <Phone className="h-5 w-5" /> Pay KES {((selectedPackage?.price_yearly || 0)).toLocaleString()} via M-Pesa
-                        </Button>
-                      </div>
-                    ) : (
-                      <div className="space-y-3">
-                        <div>
-                          <Label className="text-slate-300">Activation Key</Label>
-                          <Input value={activationKey} onChange={e => setActivationKey(e.target.value)} placeholder="XXXX-XXXX-XXXX-XXXX" className="mt-1 bg-white/10 border-white/10 text-white placeholder:text-slate-500 font-mono tracking-wider" />
-                          <p className="text-xs text-slate-500 mt-1">Enter the license key provided by the platform administrator</p>
-                        </div>
-                        <Button className="w-full gap-2 h-12 text-base bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-xl shadow-blue-500/20" onClick={handleActivationKey}>
-                          <KeyRound className="h-5 w-5" /> Validate & Activate
-                        </Button>
-                      </div>
-                    )}
-
+                    {activationMode === "payment" ? <div className="space-y-3"><div><Label className="text-slate-300">M-Pesa Phone Number</Label><Input value={paymentPhone} onChange={e => setPaymentPhone(e.target.value)} placeholder="254712345678" className="mt-1 bg-white/10 border-white/10 text-white placeholder:text-slate-500" /><p className="text-xs text-slate-500 mt-1">Enter the number to receive the STK push</p></div><Button className="w-full gap-2 h-12" onClick={handleMpesaPayment}><Phone className="h-5 w-5" /> Pay KES {(selectedPackage?.price_yearly || 0).toLocaleString()} via M-Pesa</Button></div> : <div className="space-y-3"><div><Label className="text-slate-300">Activation Key</Label><Input value={activationKey} onChange={e => setActivationKey(e.target.value)} placeholder="XXXX-XXXX-XXXX-XXXX" className="mt-1 bg-white/10 border-white/10 text-white font-mono tracking-wider" /></div><Button className="w-full gap-2 h-12" onClick={handleActivationKey}><KeyRound className="h-5 w-5" /> Validate & Activate</Button></div>}
                     <div className="relative"><div className="absolute inset-0 flex items-center"><span className="w-full border-t border-white/10" /></div><div className="relative flex justify-center text-xs uppercase"><span className="bg-slate-800 px-3 text-slate-500">or</span></div></div>
-                    <Button variant="outline" className="w-full gap-2 border-white/10 text-slate-300 hover:text-white hover:bg-white/10" onClick={() => handleSubmit(true)} disabled={loading}>
-                      {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Clock className="h-4 w-4" />} Start 14-Day Free Trial
-                    </Button>
+                    <Button variant="outline" className="w-full gap-2 border-white/10 text-slate-300 hover:text-white" onClick={() => handleSubmit(true)} disabled={loading}>{loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Clock className="h-4 w-4" />} Start 14-Day Free Trial</Button>
                   </div>
-                ) : paymentStatus === "sending" ? (
-                  <div className="flex flex-col items-center gap-4 py-10">
-                    <Loader2 className="h-14 w-14 animate-spin text-primary" />
-                    <p className="text-lg font-semibold text-white">Sending STK Push...</p>
-                    <p className="text-sm text-slate-400">Check your phone for the M-Pesa prompt</p>
-                  </div>
-                ) : paymentStatus === "polling" ? (
-                  <div className="flex flex-col items-center gap-4 py-10">
-                    <div className="relative">
-                      <div className="h-20 w-20 rounded-full border-4 border-primary/20 flex items-center justify-center"><Phone className="h-10 w-10 text-primary animate-pulse" /></div>
-                      <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-t-primary animate-spin" />
-                    </div>
-                    <p className="text-lg font-semibold text-white">Waiting for Payment...</p>
-                    <p className="text-sm text-slate-400">Enter your M-Pesa PIN on your phone</p>
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                      <div className="flex gap-1">{Array.from({ length: Math.min(pollAttempts, 10) }).map((_, i) => <div key={i} className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />)}</div>
-                      <span>Checking... ({pollAttempts})</span>
-                    </div>
-                    <Button variant="ghost" size="sm" className="text-slate-400" onClick={() => { cancelPoll?.(); setPaymentStatus("failed"); }}>Cancel</Button>
-                  </div>
+                ) : paymentStatus === "sending" || paymentStatus === "polling" ? (
+                  <div className="flex flex-col items-center gap-4 py-10"><Loader2 className="h-14 w-14 animate-spin text-primary" /><p className="text-lg font-semibold text-white">{paymentStatus === "sending" ? "Sending STK Push..." : `Waiting for payment... (${pollAttempts})`}</p>{paymentStatus === "polling" && <Button variant="ghost" size="sm" className="text-slate-400" onClick={() => { cancelPoll?.(); setPaymentStatus("failed"); }}>Cancel</Button>}</div>
                 ) : paymentStatus === "completed" ? (
-                  <div className="flex flex-col items-center gap-4 py-10">
-                    <div className="h-20 w-20 rounded-full bg-emerald-500/20 flex items-center justify-center border-2 border-emerald-500/40">
-                      <CheckCircle2 className="h-12 w-12 text-emerald-400" />
-                    </div>
-                    <p className="text-lg font-bold text-emerald-400">Payment Successful!</p>
-                    {mpesaReceipt && !mpesaReceipt.startsWith("KEY:") && <p className="text-sm text-slate-400">Receipt: <strong className="text-white">{mpesaReceipt}</strong></p>}
-                    {mpesaReceipt.startsWith("KEY:") && <p className="text-sm text-slate-400">Activated with license key</p>}
-                    <Button className="w-full gap-2 h-14 text-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-2xl shadow-emerald-500/20 mt-2" onClick={() => handleSubmit(false)} disabled={loading}>
-                      {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Rocket className="h-5 w-5" />} Build My Hospital
-                    </Button>
-                  </div>
+                  <div className="flex flex-col items-center gap-4 py-10"><div className="h-20 w-20 rounded-full bg-emerald-500/20 flex items-center justify-center border-2 border-emerald-500/40"><CheckCircle2 className="h-12 w-12 text-emerald-400" /></div><p className="text-lg font-bold text-emerald-400">Activation Successful</p>{mpesaReceipt && <p className="text-sm text-slate-400">Receipt: <strong className="text-white">{mpesaReceipt.startsWith("KEY:") ? "License key" : mpesaReceipt}</strong></p>}<Button className="w-full gap-2 h-14 text-lg" onClick={() => handleSubmit(false)} disabled={loading}>{loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Rocket className="h-5 w-5" />} Create {selectedFacilityProfile?.label}</Button></div>
                 ) : null}
-
-                <div className="pt-2">
-                  <Button variant="ghost" onClick={() => { cancelPoll?.(); setPaymentStatus("idle"); setStep(4); }} className="gap-1 text-slate-400 hover:text-white"><ArrowLeft className="h-4 w-4" /> Back</Button>
-                </div>
+                <div className="pt-2"><Button variant="ghost" onClick={() => { cancelPoll?.(); setPaymentStatus("idle"); setStep(5); }} className="gap-1 text-slate-400 hover:text-white"><ArrowLeft className="h-4 w-4" /> Back</Button></div>
               </CardContent>
             </Card>
           </div>

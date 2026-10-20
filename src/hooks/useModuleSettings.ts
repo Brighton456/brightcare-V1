@@ -7,6 +7,8 @@ interface ModuleSettingsState {
   loading: boolean;
   /** Check if a module is enabled (by module_key or route path) */
   isEnabled: (keyOrPath: string) => boolean;
+  /** Set a module's enabled state (creates or updates the module_settings row) */
+  setModule: (moduleKey: string, enabled: boolean) => Promise<void>;
   refresh: () => Promise<void>;
 }
 
@@ -57,8 +59,21 @@ export function useModuleSettings(): ModuleSettingsState {
     [modules, staff?.role]
   );
 
+  const setModule = useCallback(
+    async (moduleKey: string, enabled: boolean) => {
+      if (!staff?.hospital_id) return;
+      await supabase.from("module_settings").upsert(
+        { module_key: moduleKey, is_enabled: enabled, hospital_id: staff.hospital_id },
+        { onConflict: "module_key,hospital_id" }
+      );
+      // Optimistically update local state
+      setModules((prev) => ({ ...prev, [moduleKey]: enabled }));
+    },
+    [staff?.hospital_id]
+  );
+
   return useMemo(
-    () => ({ modules, loading, isEnabled, refresh: fetch }),
-    [modules, loading, isEnabled, fetch]
+    () => ({ modules, loading, isEnabled, setModule, refresh: fetch }),
+    [modules, loading, isEnabled, setModule, fetch]
   );
 }

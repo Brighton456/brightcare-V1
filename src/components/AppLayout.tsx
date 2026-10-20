@@ -14,6 +14,8 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { MpesaPaymentModal } from "@/components/payments/MpesaPaymentModal";
 import { safeSupabase as supabase } from "@/lib/safeSupabase";
 import { useToast } from "@/hooks/use-toast";
+import { BranchProvider, useBranch } from "@/contexts/BranchContext";
+import { BranchSwitcher } from "@/components/BranchSwitcher";
 
 // Context to detect if we're inside AppShell already
 const ShellContext = createContext(false);
@@ -29,6 +31,7 @@ const ADMIN_ROLES = ["hospital_admin", "super_admin", "platform_admin"];
 const HeaderBar = memo(function HeaderBar({ title }: { title?: string }) {
   const { online, pendingCount, syncing, lastSynced, triggerSync } = useConnectivity();
   const { staff } = useAuth();
+  const { branches } = useBranch();
   const isAdmin = staff?.role ? ADMIN_ROLES.includes(staff.role) : false;
   const [aiOpen, setAiOpen] = useState(false);
 
@@ -40,6 +43,7 @@ const HeaderBar = memo(function HeaderBar({ title }: { title?: string }) {
           {title && <h1 className="text-base font-bold">{title}</h1>}
         </div>
         <div className="flex items-center gap-3">
+          {branches.length > 0 && <BranchSwitcher />}
           <GlobalSearch />
           <div className="flex items-center gap-1.5">
             <Tooltip>
@@ -208,19 +212,21 @@ function MaintenanceBanner() {
 export function AppShell() {
   return (
     <ShellContext.Provider value={true}>
-      <SidebarProvider>
-        <div className="min-h-screen flex w-full">
-          <AppSidebar />
-          <div className="flex-1 flex flex-col min-w-0">
-            <GracePeriodBanner />
-            <MaintenanceBanner />
-            <HeaderBar />
-            <main className="flex-1 overflow-auto p-4 md:p-5">
-              <Outlet />
-            </main>
+      <BranchProvider>
+        <SidebarProvider>
+          <div className="min-h-screen flex w-full">
+            <AppSidebar />
+            <div className="flex-1 flex flex-col min-w-0">
+              <GracePeriodBanner />
+              <MaintenanceBanner />
+              <HeaderBar />
+              <main className="flex-1 overflow-auto p-4 md:p-5">
+                <Outlet />
+              </main>
+            </div>
           </div>
-        </div>
-      </SidebarProvider>
+        </SidebarProvider>
+      </BranchProvider>
     </ShellContext.Provider>
   );
 }

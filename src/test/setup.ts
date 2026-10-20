@@ -13,3 +13,15 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: () => {},
   }),
 });
+
+// jsdom does not implement ResizeObserver; stub it so chart components
+// (recharts ResponsiveContainer) can mount in tests without crashing.
+Object.defineProperty(window, "ResizeObserver", {
+  writable: true,
+  value: class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  },
+});
+

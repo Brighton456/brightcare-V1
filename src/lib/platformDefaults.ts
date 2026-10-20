@@ -1,7 +1,7 @@
 import { supabase } from "@/integrations/supabase/client";
 
 /**
- * Platform-level defaults seeded for every new hospital.
+ * Platform-level defaults seeded for every new facility.
  * 1500+ configuration items across departments, modules, dropdowns, permissions, etc.
  */
 
@@ -102,59 +102,59 @@ const DEFAULT_MODULES: { module_key: string; module_name: string; category: stri
   { module_key: "supply_chain", module_name: "Supply Chain", category: "Pharmacy POS", description: "Supply chain management" },
   { module_key: "stock_reconciliation", module_name: "Stock Reconciliation", category: "Pharmacy POS", description: "Reconcile stock" },
   { module_key: "controlled_drugs", module_name: "Controlled Drugs", category: "Pharmacy POS", description: "Controlled substance tracking" },
-  { module_key: "expiry_alerts", module_name: "Expiry Alerts", category: "Pharmacy POS", description: "Medicine expiry monitoring" },
-  { module_key: "customers", module_name: "Customers", category: "Pharmacy POS", description: "Customer management" },
+  { module_key: "expiry_alerts", module_name: "Expiry Alerts", category: "Pharmacy POS", description: "Medicine expiry alerts" },
+  { module_key: "customers", module_name: "Customers", category: "Pharmacy POS", description: "Customer records" },
   { module_key: "suppliers", module_name: "Suppliers", category: "Pharmacy POS", description: "Supplier management" },
   // Inpatient & Ward
-  { module_key: "inpatient", module_name: "Ward Overview", category: "Inpatient & Ward", description: "Inpatient ward overview" },
-  { module_key: "bed_allocation", module_name: "Bed Allocation", category: "Inpatient & Ward", description: "Manage bed assignments" },
-  { module_key: "bed_occupancy", module_name: "Bed Occupancy", category: "Inpatient & Ward", description: "Bed occupancy tracking" },
-  { module_key: "nurse_console", module_name: "Nurse Console", category: "Inpatient & Ward", description: "Nurse dashboard" },
-  { module_key: "medication_administration", module_name: "Medication Admin", category: "Inpatient & Ward", description: "Medication administration" },
+  { module_key: "inpatient", module_name: "Ward Overview", category: "Inpatient & Ward", description: "Inpatient management dashboard" },
+  { module_key: "bed_allocation", module_name: "Bed Allocation", category: "Inpatient & Ward", description: "Assign and manage beds" },
+  { module_key: "bed_occupancy", module_name: "Bed Occupancy", category: "Inpatient & Ward", description: "Bed occupancy heatmap" },
+  { module_key: "nurse_console", module_name: "Nurse Console", category: "Inpatient & Ward", description: "Nursing workspace" },
+  { module_key: "medication_administration", module_name: "Medication Admin", category: "Inpatient & Ward", description: "Medication administration records" },
   { module_key: "vitals", module_name: "Vitals Recording", category: "Inpatient & Ward", description: "Record patient vitals" },
   { module_key: "nursing_notes", module_name: "Nursing Notes", category: "Inpatient & Ward", description: "Nursing documentation" },
-  { module_key: "ward_rounds", module_name: "Ward Rounds", category: "Inpatient & Ward", description: "Ward round documentation" },
-  { module_key: "handover", module_name: "Handover Board", category: "Inpatient & Ward", description: "Shift handover management" },
+  { module_key: "ward_rounds", module_name: "Ward Rounds", category: "Inpatient & Ward", description: "Ward round scheduling" },
+  { module_key: "handover", module_name: "Handover Board", category: "Inpatient & Ward", description: "Shift handover notes" },
   { module_key: "diet_plans", module_name: "Diet Plans", category: "Inpatient & Ward", description: "Patient diet management" },
-  { module_key: "surgery", module_name: "Surgery Scheduling", category: "Inpatient & Ward", description: "Surgery scheduling" },
-  { module_key: "icu", module_name: "ICU Monitoring", category: "Inpatient & Ward", description: "ICU patient monitoring" },
+  { module_key: "surgery", module_name: "Surgery Scheduling", category: "Inpatient & Ward", description: "Schedule surgical procedures" },
+  { module_key: "icu", module_name: "ICU Monitoring", category: "Inpatient & Ward", description: "Intensive care monitoring" },
   { module_key: "discharge_checklist", module_name: "Discharge Checklist", category: "Inpatient & Ward", description: "Pre-discharge checklist" },
-  { module_key: "discharge", module_name: "Discharge", category: "Inpatient & Ward", description: "Patient discharge workflow" },
+  { module_key: "discharge", module_name: "Discharge Workflow", category: "Inpatient & Ward", description: "Process patient discharges" },
   // Departments
   { module_key: "emergency", module_name: "Emergency", category: "Departments", description: "Emergency department" },
   { module_key: "emergency_protocols", module_name: "Emergency Protocols", category: "Departments", description: "Emergency protocol library" },
   { module_key: "opd", module_name: "OPD", category: "Departments", description: "Outpatient department" },
-  { module_key: "radiology", module_name: "Radiology", category: "Departments", description: "Radiology imaging" },
+  { module_key: "radiology", module_name: "Radiology", category: "Departments", description: "Radiology and imaging" },
   { module_key: "blood_bank", module_name: "Blood Bank", category: "Departments", description: "Blood bank management" },
   { module_key: "operation_theatre", module_name: "Operation Theatre", category: "Departments", description: "OT management" },
   { module_key: "nutrition", module_name: "Nutrition", category: "Departments", description: "Nutrition and dietetics" },
   { module_key: "physiotherapy", module_name: "Physiotherapy", category: "Departments", description: "Physical therapy" },
   { module_key: "telemedicine", module_name: "Telemedicine", category: "Departments", description: "Virtual consultations" },
   { module_key: "infection_control", module_name: "Infection Control", category: "Departments", description: "Infection prevention" },
-  { module_key: "quality_assurance", module_name: "Quality Assurance", category: "Departments", description: "Quality improvement" },
+  { module_key: "quality_assurance", module_name: "Quality Assurance", category: "Departments", description: "Quality management" },
   // Clinical Tools
-  { module_key: "clinical_tools", module_name: "Medical Calculators", category: "Clinical Tools", description: "Clinical calculation tools" },
+  { module_key: "clinical_tools", module_name: "Medical Calculators", category: "Clinical Tools", description: "BMI, eGFR, dose calculators" },
   // Administration
-  { module_key: "staff", module_name: "Staff Management", category: "Administration", description: "Staff management" },
+  { module_key: "staff", module_name: "Staff Management", category: "Administration", description: "Manage hospital staff" },
   { module_key: "staff_directory", module_name: "Staff Directory", category: "Administration", description: "Staff contact directory" },
-  { module_key: "staff_workload", module_name: "Staff Workload", category: "Administration", description: "Workload monitoring" },
-  { module_key: "staff_checkin", module_name: "Staff Check-In", category: "Administration", description: "Staff attendance check-in" },
-  { module_key: "hr_payroll", module_name: "HR & Payroll", category: "Administration", description: "HR and payroll management" },
-  { module_key: "attendance", module_name: "Attendance", category: "Administration", description: "Attendance tracking" },
-  { module_key: "performance", module_name: "Performance Reviews", category: "Administration", description: "Staff performance reviews" },
+  { module_key: "staff_workload", module_name: "Staff Workload", category: "Administration", description: "Monitor staff workload" },
+  { module_key: "staff_checkin", module_name: "Staff Check-In", category: "Administration", description: "Daily attendance" },
+  { module_key: "hr_payroll", module_name: "HR & Payroll", category: "Administration", description: "Payroll management" },
+  { module_key: "attendance", module_name: "Attendance", category: "Administration", description: "Track attendance" },
+  { module_key: "performance", module_name: "Performance Reviews", category: "Administration", description: "Staff performance evaluation" },
   { module_key: "assets", module_name: "Asset Management", category: "Administration", description: "Hospital asset tracking" },
   { module_key: "compliance", module_name: "Compliance", category: "Administration", description: "Regulatory compliance" },
-  { module_key: "incidents", module_name: "Incident Reporting", category: "Administration", description: "Incident management" },
-  { module_key: "mortality_review", module_name: "Mortality Review", category: "Administration", description: "Mortality case reviews" },
+  { module_key: "incidents", module_name: "Incident Reporting", category: "Administration", description: "Report and track incidents" },
+  { module_key: "mortality_review", module_name: "Mortality Review", category: "Administration", description: "Mortality case review" },
   { module_key: "audit_trail", module_name: "Audit Trail", category: "Administration", description: "System audit logs" },
-  { module_key: "reports", module_name: "Reports", category: "Administration", description: "Generate reports" },
-  { module_key: "end_of_day", module_name: "End of Day", category: "Administration", description: "End of day reconciliation" },
+  { module_key: "reports", module_name: "Reports & Analytics", category: "Administration", description: "Generate reports" },
+  { module_key: "end_of_day", module_name: "End of Day", category: "Administration", description: "Daily closeout procedures" },
   { module_key: "financial_reconciliation", module_name: "Reconciliation", category: "Administration", description: "Financial reconciliation" },
-  { module_key: "business_hours", module_name: "Business Hours", category: "Administration", description: "Operating hours config" },
+  { module_key: "business_hours", module_name: "Business Hours", category: "Administration", description: "Configure operating hours" },
   { module_key: "role_permissions", module_name: "Role Permissions", category: "Administration", description: "RBAC configuration" },
   { module_key: "notifications", module_name: "Notifications", category: "Administration", description: "Notification center" },
   { module_key: "documentation", module_name: "Documentation", category: "Administration", description: "System documentation" },
-  // Additional modules
+  // Additional modules (future packages can exclude these via profile.declare)
   { module_key: "ai_assistant", module_name: "AI Assistant", category: "AI & Analytics", description: "AI-powered clinical assistant" },
   { module_key: "predictive_analytics", module_name: "Predictive Analytics", category: "AI & Analytics", description: "AI-driven trend analysis" },
   { module_key: "patient_portal", module_name: "Patient Portal", category: "Digital Health", description: "Patient self-service portal" },
@@ -522,22 +522,51 @@ const DEFAULT_ROLE_PERMISSIONS: { role_name: string; feature_key: string; is_ena
  */
 export async function seedPlatformDefaults(
   hospitalId: string,
-  onProgress?: (step: string, detail: string) => void
+  onProgress?: (step: string, detail: string) => void,
+  facilityType?: string
 ): Promise<void> {
   const log = (s: string, d: string) => { onProgress?.(s, d); console.log(`[Seed] ${s}: ${d}`); };
 
   try {
-    // 1. Departments
-    log("departments", `Creating ${DEFAULT_DEPARTMENTS.length} departments...`);
-    const deptRows = DEFAULT_DEPARTMENTS.map(d => ({ ...d, hospital_id: hospitalId, is_active: true }));
+    // 1. Departments — derived from the selected facility package profile.
+    //    Hospital tenants get the full list; herbal clinics get a small council.
+    const profile = getFacilityPackage(facilityType);
+    const departments = profile.departments ?? DEFAULT_DEPARTMENTS;
+    log("departments", `Creating ${departments.length} departments...`);
+    const deptRows = departments.map(d => ({ ...d, hospital_id: hospitalId, is_active: true }));
     await supabase.from("departments").insert(deptRows as any);
-    log("departments", `✅ ${DEFAULT_DEPARTMENTS.length} departments created`);
+    log("departments", `✅ ${departments.length} departments created`);
 
-    // 2. Module Settings
-    log("modules", `Configuring ${DEFAULT_MODULES.length} modules...`);
-    const moduleRows = DEFAULT_MODULES.map(m => ({ ...m, hospital_id: hospitalId, is_enabled: true }));
-    await supabase.from("module_settings").insert(moduleRows as any);
-    log("modules", `✅ ${DEFAULT_MODULES.length} modules configured`);
+    // 2. Module Settings — seeded from the active package's module rules.
+    //    Hospital profile ('*') seeds every module enabled; clinic/herbal seed
+    //    everything except their exclude list. Always-on back-office modules are
+    //    guaranteed present on every facility.
+    const isModuleEnabled = (moduleKey: string): boolean => {
+      if (profile.modules === "*") return true;
+      return !profile.modules.exclude.includes(moduleKey);
+    };
+    const moduleNames: Record<string, string> = {};
+    const categories: Record<string, string> = {};
+    const descriptions: Record<string, string> = {};
+    DEFAULT_MODULES.forEach((m: any) => {
+      moduleNames[m.module_key] = m.module_name;
+      categories[m.module_key] = m.category;
+      descriptions[m.module_key] = m.description;
+    });
+    const moduleKeys = DEFAULT_MODULES.map((m: any) => m.module_key).concat(["facility_type"]);
+    const facilityTypeModule: any = { module_key: "facility_type", module_name: "Facility Package", category: "Administration", is_enabled: true, description: "The selected healthcare facility type" };
+    const allModules: any[] = moduleKeys.map((key: string) => ({
+      module_key: key,
+      module_name: moduleNames[key] || key.replace(/_/g, " "),
+      category: categories[key] || "General",
+      is_enabled: isModuleEnabled(key),
+      description: descriptions[key] || "",
+      hospital_id: hospitalId,
+    }));
+    allModules.push({ ...facilityTypeModule, hospital_id: hospitalId });
+    log("modules", `Configuring ${allModules.length} modules...`);
+    await supabase.from("module_settings").insert(allModules as any);
+    log("modules", `✅ ${allModules.length} modules configured`);
 
     // 3. Dropdown Options (in batches)
     log("dropdowns", `Loading ${DEFAULT_DROPDOWN_OPTIONS.length} clinical options...`);
@@ -549,20 +578,33 @@ export async function seedPlatformDefaults(
     }
     log("dropdowns", `✅ ${DEFAULT_DROPDOWN_OPTIONS.length} options loaded`);
 
-    // 4. Business Hours
-    log("hours", "Setting business hours...");
-    const hoursRows = DEFAULT_BUSINESS_HOURS.map(h => ({ ...h, hospital_id: hospitalId }));
-    await supabase.from("business_hours").insert(hoursRows as any);
-    log("hours", "✅ Business hours configured");
+  // 4. Business Hours
+  log("hours", "Setting business hours...");
+  const hoursRows = DEFAULT_BUSINESS_HOURS.map(h => ({ ...h, hospital_id: hospitalId }));
+  await supabase.from("business_hours").insert(hoursRows as any);
+  log("hours", "✅ Business hours configured");
 
-    // 5. Role Permissions (in batches)
-    log("permissions", `Setting ${DEFAULT_ROLE_PERMISSIONS.length} role permissions...`);
-    const permRows = DEFAULT_ROLE_PERMISSIONS.map(p => ({ ...p, hospital_id: hospitalId }));
-    for (let i = 0; i < permRows.length; i += batchSize) {
-      await supabase.from("role_permissions").insert(permRows.slice(i, i + batchSize) as any);
-      log("permissions", `Configured ${Math.min(i + batchSize, permRows.length)}/${permRows.length} permissions`);
-    }
-    log("permissions", `✅ ${DEFAULT_ROLE_PERMISSIONS.length} permissions set`);
+  // 5. Role Permissions (in batches)
+  log("permissions", `Setting ${DEFAULT_ROLE_PERMISSIONS.length} role permissions...`);
+  const permRows = DEFAULT_ROLE_PERMISSIONS.map(p => ({ ...p, hospital_id: hospitalId }));
+  for (let i = 0; i < permRows.length; i += batchSize) {
+    await supabase.from("role_permissions").insert(permRows.slice(i, i + batchSize) as any);
+    log("permissions", `Configured ${Math.min(i + batchSize, permRows.length)}/${permRows.length} permissions`);
+  }
+  log("permissions", `✅ ${DEFAULT_ROLE_PERMISSIONS.length} permissions set`);
+
+  // 5b. Store the active facility package as a module_settings row so the load
+  //     path always knows which profile to render (also visible in /admin → modules).
+  log("modules", "Persisting facility type...");
+  await supabase.from("module_settings").upsert({
+    module_key: "facility_type",
+    module_name: "Facility Package",
+    category: "Administration",
+    is_enabled: true,
+    description: `Selected facility: ${profile.label} (${profile.key})`,
+    hospital_id: hospitalId,
+  } as any);
+  log("modules", `✅ Facility type persisted: ${profile.label}`);
 
     // 6. Billing Settings
     log("billing", "Configuring billing defaults...");
@@ -578,11 +620,11 @@ export async function seedPlatformDefaults(
     } as any);
     log("billing", "✅ Billing configured");
 
-    const totalItems = DEFAULT_DEPARTMENTS.length + DEFAULT_MODULES.length + DEFAULT_DROPDOWN_OPTIONS.length + 7 + DEFAULT_ROLE_PERMISSIONS.length + 1;
+    const totalItems = departments.length + allModules.length + DEFAULT_DROPDOWN_OPTIONS.length + 7 + DEFAULT_ROLE_PERMISSIONS.length + 1;
     log("complete", `✅ ${totalItems} platform defaults seeded successfully`);
   } catch (err) {
     console.error("Error seeding platform defaults:", err);
-    log("error", "Some defaults may not have been created. Hospital is still functional.");
+    log("error", "Some defaults may not have been created. Facility is still functional.");
   }
 }
 

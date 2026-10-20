@@ -6,6 +6,8 @@ export interface Hospital {
   id: string;
   name: string;
   slug: string;
+  /** Facility package: hospital | clinic | herbal (defaults to hospital) */
+  facility_type?: string | null;
   logo_url: string | null;
   address: string | null;
   city: string | null;

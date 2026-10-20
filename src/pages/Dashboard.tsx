@@ -17,12 +17,15 @@ import { usePermissions } from "@/hooks/usePermissions";
 import { useModuleSettings } from "@/hooks/useModuleSettings";
 import { canAccessRoute } from "@/lib/routePermissions";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
+import { useFacility } from "@/hooks/useFacility";
+import { navToWorkflowSections, attachNavigate } from "@/config/dashboardSections";
 import { Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { MpesaPaymentModal } from "@/components/payments/MpesaPaymentModal";
 import { useToast } from "@/hooks/use-toast";
+import ClinicDashboard from "@/pages/ClinicDashboard";
 
 interface ActionTile {
   label: string;
@@ -50,6 +53,7 @@ interface DashStats {
 export default function Dashboard() {
   const navigate = useNavigate();
   const { staff } = useAuth();
+  const { pkg } = useFacility();
   const { trialDaysLeft, hospital, hospitalId, maintenanceWarning, maintenanceDaysLeft, isMaintenanceLocked, licensePackage, refreshHospital } = useHospital();
   const { permissions } = usePermissions();
   const { isEnabled } = useModuleSettings();
@@ -72,7 +76,7 @@ export default function Dashboard() {
   const [stats, setStats] = useState<DashStats>({ todayRevenue: 0, patientsToday: 0, pendingTests: 0, unpaidBills: 0 });
 
   useEffect(() => {
-    if (!hospitalId) return;
+    if (!hospitalId || pkg.dashboard !== "hospital") return;
     const fetchStats = async () => {
       const today = new Date().toISOString().split("T")[0];
       const [billsRes, patientsRes, testsRes, unpaidRes, pharmacyRes] = await Promise.all([
@@ -93,150 +97,18 @@ export default function Dashboard() {
       });
     };
     fetchStats();
-  }, [hospitalId]);
+  }, [hospitalId, pkg.dashboard]);
 
-  const sections: WorkflowSection[] = [
-    {
-      title: "HOSPITAL MANAGEMENT",
-      color: "text-blue-700 dark:text-blue-400",
-      bgColor: "bg-blue-50 dark:bg-blue-950/40",
-      borderColor: "border-blue-200 dark:border-blue-800",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      actions: [
-        { label: "Patient Registration", icon: UserPlus, route: "/patients", onClick: () => navigate("/patients") },
-        { label: "Patient Records", icon: Heart, route: "/patients", onClick: () => navigate("/patients") },
-        { label: "Appointments", icon: Calendar, route: "/appointments", onClick: () => navigate("/appointments") },
-        { label: "Staff Management", icon: Users, route: "/staff", onClick: () => navigate("/staff") },
-        { label: "Patient History", icon: FileText, route: "/patient-history", onClick: () => navigate("/patient-history") },
-        { label: "Medical Records", icon: ClipboardList, route: "/medical-records", onClick: () => navigate("/medical-records") },
-      ],
-    },
-    {
-      title: "DOCTOR & CONSULTATION",
-      color: "text-cyan-700 dark:text-cyan-400",
-      bgColor: "bg-cyan-50 dark:bg-cyan-950/40",
-      borderColor: "border-cyan-200 dark:border-cyan-800",
-      iconColor: "text-cyan-600 dark:text-cyan-400",
-      actions: [
-        { label: "Doctor Console", icon: Stethoscope, route: "/doctor", onClick: () => navigate("/doctor") },
-        { label: "Patient Queue", icon: Clock, route: "/patient-queue", onClick: () => navigate("/patient-queue") },
-        { label: "Write Prescription", icon: ClipboardList, route: "/prescriptions", onClick: () => navigate("/prescriptions") },
-        { label: "Request Lab Test", icon: FlaskConical, route: "/lab-pending", onClick: () => navigate("/lab-pending") },
-        { label: "Clinical Notes", icon: FileText, route: "/clinical-notes", onClick: () => navigate("/clinical-notes") },
-        { label: "Treatment Plans", icon: Heart, route: "/treatment-plans", onClick: () => navigate("/treatment-plans") },
-        { label: "Follow-up Scheduling", icon: Calendar, route: "/follow-up", onClick: () => navigate("/follow-up") },
-        { label: "Drug Interactions", icon: AlertTriangle, route: "/drug-interactions", onClick: () => navigate("/drug-interactions") },
-        { label: "Consultation Analytics", icon: BarChart3, route: "/consultation-analytics", onClick: () => navigate("/consultation-analytics") },
-      ],
-    },
-    {
-      title: "LABORATORY",
-      color: "text-purple-700 dark:text-purple-400",
-      bgColor: "bg-purple-50 dark:bg-purple-950/40",
-      borderColor: "border-purple-200 dark:border-purple-800",
-      iconColor: "text-purple-600 dark:text-purple-400",
-      actions: [
-        { label: "Lab Dashboard", icon: FlaskConical, route: "/laboratory", onClick: () => navigate("/laboratory") },
-        { label: "Pending Tests", icon: Clock, route: "/lab-pending", onClick: () => navigate("/lab-pending") },
-        { label: "Enter Results", icon: Activity, route: "/lab-results", onClick: () => navigate("/lab-results") },
-        { label: "Quality Control", icon: ShieldCheck, route: "/lab-quality", onClick: () => navigate("/lab-quality") },
-      ],
-    },
-    {
-      title: "BILLING & PAYMENTS",
-      color: "text-emerald-700 dark:text-emerald-400",
-      bgColor: "bg-emerald-50 dark:bg-emerald-950/40",
-      borderColor: "border-emerald-200 dark:border-emerald-800",
-      iconColor: "text-emerald-600 dark:text-emerald-400",
-      actions: [
-        { label: "Billing Overview", icon: CreditCard, route: "/billing", onClick: () => navigate("/billing") },
-        { label: "Create Bill", icon: Receipt, route: "/create-bill", onClick: () => navigate("/create-bill") },
-        { label: "Process Payment", icon: DollarSign, route: "/process-payment", onClick: () => navigate("/process-payment") },
-        { label: "M-Pesa Payment", icon: Smartphone, route: "/process-payment", onClick: () => navigate("/process-payment") },
-        { label: "Insurance Claims", icon: ShieldCheck, route: "/insurance-claims", onClick: () => navigate("/insurance-claims") },
-        { label: "Refund Management", icon: ArrowRightLeft, route: "/refunds", onClick: () => navigate("/refunds") },
-        { label: "Outstanding Balances", icon: AlertTriangle, route: "/outstanding-balances", onClick: () => navigate("/outstanding-balances") },
-        { label: "Billing Analytics", icon: BarChart3, route: "/billing-analytics", onClick: () => navigate("/billing-analytics") },
-      ],
-    },
-    {
-      title: "PHARMACY POS",
-      color: "text-amber-700 dark:text-amber-400",
-      bgColor: "bg-amber-50 dark:bg-amber-950/40",
-      borderColor: "border-amber-200 dark:border-amber-800",
-      iconColor: "text-amber-600 dark:text-amber-400",
-      actions: [
-        { label: "Make a Sale", icon: ShoppingCart, route: "/pos", onClick: () => navigate("/pos") },
-        { label: "Sales History", icon: Receipt, route: "/sales-history", onClick: () => navigate("/sales-history") },
-        { label: "Medicine List", icon: Pill, route: "/medicines", onClick: () => navigate("/medicines") },
-        { label: "Inventory", icon: Package, route: "/inventory", onClick: () => navigate("/inventory") },
-        { label: "Purchase Orders", icon: ShoppingCart, route: "/purchase-orders", onClick: () => navigate("/purchase-orders") },
-        { label: "Purchase Invoices", icon: FileText, route: "/invoices", onClick: () => navigate("/invoices") },
-        { label: "Stock Reconciliation", icon: ClipboardList, route: "/stock-reconciliation", onClick: () => navigate("/stock-reconciliation") },
-        { label: "Controlled Drugs", icon: ShieldCheck, route: "/controlled-drugs", onClick: () => navigate("/controlled-drugs") },
-        { label: "Expiry Alerts", icon: AlertTriangle, route: "/expiry-alerts", onClick: () => navigate("/expiry-alerts") },
-        { label: "Customers", icon: Users, route: "/customers", onClick: () => navigate("/customers") },
-        { label: "Suppliers", icon: Truck, route: "/suppliers", onClick: () => navigate("/suppliers") },
-      ],
-    },
-    {
-      title: "INPATIENT & WARD",
-      color: "text-rose-700 dark:text-rose-400",
-      bgColor: "bg-rose-50 dark:bg-rose-950/40",
-      borderColor: "border-rose-200 dark:border-rose-800",
-      iconColor: "text-rose-600 dark:text-rose-400",
-      actions: [
-        { label: "Ward Overview", icon: Bed, route: "/inpatient", onClick: () => navigate("/inpatient") },
-        { label: "Bed Allocation", icon: Bed, route: "/bed-allocation", onClick: () => navigate("/bed-allocation") },
-        { label: "Nurse Console", icon: Heart, route: "/nurse-console", onClick: () => navigate("/nurse-console") },
-        { label: "Vitals Recording", icon: Activity, route: "/vitals", onClick: () => navigate("/vitals") },
-        { label: "Nursing Notes", icon: FileText, route: "/nursing-notes", onClick: () => navigate("/nursing-notes") },
-        { label: "Ward Rounds", icon: ClipboardList, route: "/ward-rounds", onClick: () => navigate("/ward-rounds") },
-        { label: "Diet Plans", icon: Star, route: "/diet-plans", onClick: () => navigate("/diet-plans") },
-        { label: "Surgery Scheduling", icon: Calendar, route: "/surgery", onClick: () => navigate("/surgery") },
-        { label: "ICU Monitoring", icon: Activity, route: "/icu", onClick: () => navigate("/icu") },
-        { label: "Discharge Workflow", icon: ArrowRightLeft, route: "/discharge", onClick: () => navigate("/discharge") },
-      ],
-    },
-    {
-      title: "DEPARTMENTS",
-      color: "text-indigo-700 dark:text-indigo-400",
-      bgColor: "bg-indigo-50 dark:bg-indigo-950/40",
-      borderColor: "border-indigo-200 dark:border-indigo-800",
-      iconColor: "text-indigo-600 dark:text-indigo-400",
-      actions: [
-        { label: "Emergency", icon: Heart, route: "/emergency", onClick: () => navigate("/emergency") },
-        { label: "OPD", icon: Users, route: "/opd", onClick: () => navigate("/opd") },
-        { label: "Radiology", icon: Activity, route: "/radiology", onClick: () => navigate("/radiology") },
-        { label: "Blood Bank", icon: Heart, route: "/blood-bank", onClick: () => navigate("/blood-bank") },
-        { label: "Operation Theatre", icon: Star, route: "/operation-theatre", onClick: () => navigate("/operation-theatre") },
-        { label: "Nutrition", icon: Star, route: "/nutrition", onClick: () => navigate("/nutrition") },
-        { label: "Physiotherapy", icon: Activity, route: "/physiotherapy", onClick: () => navigate("/physiotherapy") },
-        { label: "Telemedicine", icon: Smartphone, route: "/telemedicine", onClick: () => navigate("/telemedicine") },
-        { label: "Quality Assurance", icon: ShieldCheck, route: "/quality-assurance", onClick: () => navigate("/quality-assurance") },
-      ],
-    },
-    {
-      title: "ADMINISTRATION",
-      color: "text-slate-700 dark:text-slate-400",
-      bgColor: "bg-slate-50 dark:bg-slate-950/40",
-      borderColor: "border-slate-200 dark:border-slate-800",
-      iconColor: "text-slate-600 dark:text-slate-400",
-      actions: [
-        { label: "HR & Payroll", icon: DollarSign, route: "/hr-payroll", onClick: () => navigate("/hr-payroll") },
-        { label: "Attendance", icon: Clock, route: "/attendance", onClick: () => navigate("/attendance") },
-        { label: "Performance Reviews", icon: Star, route: "/performance", onClick: () => navigate("/performance") },
-        { label: "Asset Management", icon: Package, route: "/assets", onClick: () => navigate("/assets") },
-        { label: "Compliance", icon: ShieldCheck, route: "/compliance", onClick: () => navigate("/compliance") },
-        { label: "Incident Reporting", icon: AlertTriangle, route: "/incidents", onClick: () => navigate("/incidents") },
-        { label: "Reports", icon: BarChart3, route: "/reports", onClick: () => navigate("/reports") },
-        { label: "End of Day", icon: CalendarCheck, route: "/end-of-day", onClick: () => navigate("/end-of-day") },
-        { label: "Admin Panel", icon: ShieldCheck, route: "/admin", onClick: () => navigate("/admin") },
-        { label: "Documentation", icon: FileText, route: "/documentation", onClick: () => navigate("/documentation") },
-        { label: "Settings", icon: Settings, route: "/settings", onClick: () => navigate("/settings") },
-      ],
-    },
-  ];
+  // Build workflow sections from the active facility package's nav.
+  // Hospital & clinic: one section per nav group (mirrors today's 8 sections).
+  // Herbal: compressed 3-section layout (Clinic, Medicines & Sales, Business).
+  const sections = navToWorkflowSections(pkg.nav, pkg.dashboard === "herbal" ? "herbal" : "hospital");
+  // Attach navigate closures to every action.
+  attachNavigate(sections, navigate);
+
+  if (pkg.dashboard === "clinic" || pkg.dashboard === "herbal") {
+    return <ClinicDashboard />;
+  }
 
   return (
     <AppLayout title="Home">

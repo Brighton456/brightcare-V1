@@ -102,6 +102,7 @@ export const ROUTE_PERMISSIONS: Record<string, string> = {
   "/staff-workload": "view_staff_analytics",
   "/staff-directory": "view_staff_directory",
   "/audit-trail": "audit_logs",
+  "/branches": "manage_branches",
 
   // Workflow
   "/clinical-tools": "view_drug_interactions",

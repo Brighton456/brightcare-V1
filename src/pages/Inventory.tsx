@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import { exportToCSV } from "@/utils/exportUtils";
 import { useHospital } from "@/contexts/HospitalContext";
+import { useFacility } from "@/hooks/useFacility";
 import { Search, Download, Package } from "lucide-react";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 
@@ -32,6 +33,8 @@ const EDITABLE_COLS: { key: EditableField; label: string; type: "number" | "text
 
 export default function Inventory() {
   const { hospitalId } = useHospital();
+  const { facilityType } = useFacility();
+  const isHerbal = facilityType === "herbal";
   const isAdmin = useIsAdmin();
   const [medicines, setMedicines] = useState<MedRow[]>([]);
   const [search, setSearch] = useState("");
@@ -203,7 +206,7 @@ export default function Inventory() {
   };
 
   return (
-    <AppLayout title="Inventory Management">
+    <AppLayout title={isHerbal ? "Herbal Stock Control" : "Inventory Management"}>
       <div className="space-y-4">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           <Card><CardContent className="p-4"><p className="text-xs text-muted-foreground">Total Items</p><p className="text-2xl font-bold">{medicines.length}</p></CardContent></Card>
@@ -239,7 +242,7 @@ export default function Inventory() {
               <table className="w-full text-sm border-collapse">
                 <thead className="sticky top-0 z-10">
                   <tr className="border-b bg-muted/80 backdrop-blur-sm">
-                    <th className="text-left p-2 pl-3 font-medium text-xs w-[200px]">Medicine</th>
+                    <th className="text-left p-2 pl-3 font-medium text-xs w-[200px]">{isHerbal ? "Herbal Product" : "Medicine"}</th>
                     {EDITABLE_COLS.map(col => (
                       <th key={col.key} className={`p-2 font-medium text-xs ${col.align}`}>{col.label}</th>
                     ))}
