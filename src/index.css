@@ -113,6 +113,15 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
   }
+  /*
+   * Zoom lock (see src/lib/zoomLock.ts).
+   * `pan-x pan-y` keeps normal scrolling intact while removing the browser's
+   * double-tap and pinch zoom gestures on the root element.
+   */
+  html {
+    touch-action: pan-x pan-y;
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 @layer utilities {
